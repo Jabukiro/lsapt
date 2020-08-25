@@ -1,0 +1,14 @@
+.landing{
+    height: 100vh;
+    background-color: #1e232b;
+    max-width: 100%;
+}
+.background-video{
+    opacity: .5;
+    max-width: 100%;
+}
+.background-video video {
+    background-size: cover;
+    margin-right: auto;
+    margin-left: auto;
+}
