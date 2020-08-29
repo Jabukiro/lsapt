@@ -218,158 +218,6 @@ a:hover {
     bottom: 0;
     width: 12px;    
 }
-/*
--------------------------------------------------------
- QuickAction pop html. 
--------------------------------------------------------
-*/
-.quickAction {
-    position: fixed;
-    display: none;
-    z-index: 1000;
-    -webkit-transition: opacity .3s ease-in;
-    transition: opacity .3s ease-in;
-    width: 50px;
-    height: 50px;
-    right: 10%;
-    bottom: 16px;
-}
-.quickActionOverlay {
-	background-color: #fff;
-	opacity: 0.9;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 999;
-	-webkit-transition: opacity .4s;
-	transition: opacity .4s;
-    will-change: opacity;
-    height: 100vh;
-    width: 100vw;
-}
-
-.quickActionClosed .quickActionOverlay {
-    opacity: 0;
-    pointer-events: none;
-}
-.quickActionButton{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 1);
-    fill: #4682B4;
-    border: 0px solid rgba(255, 255, 255, 1);
-    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.6);
-    box-sizing: border-box;
-    cursor: pointer;
-    z-index: 1001;
-    position: sticky;
-}
-
-/* Begin Dots. Order to be kept! */
-.quickActionDots {
-	list-style: none;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	/* display: -webkit-box; */
-	/* display: -webkit-flex; */
-	display: flex;
-	line-height: calc(50px - (2 * 0px));
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    font-size: 10px;
-    z-index: 1002;
-}
-.quickActionDots li{
-    font-size: 10px;
-}
-
-.quickActionButton .quickActionDots li::before {
-	content: '';
-	height: 6px;
-	width: 6px;
-	display: inline-block;
-	background: #ED0012;
-	-webkit-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-}
-
-.quickActionButton li.quickActionFirstDot::before {
-	width: 17px;
-	height: 3px;
-	-webkit-transform: translate(8.5px, -2px) rotate(-45deg);
-	transform: translate(8.5px, -2px) rotate(-45deg);
-}
-.quickActionButton li.quickActionThirdDot::before {
-	width: 17px;
-	height: 3px;
-	margin-right: 0;
-	-webkit-transform: translate(-8.5px, -2px) rotate(45deg);
-	transform: translate(-8.5px, -2px) rotate(45deg);
-}
-.quickActionButton li.quickActionSecondDot::before {
-	height: 0;
-	width: 0;
-	opacity: 0;
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
-}
-.quickActionClosed .quickActionButton .quickActionDots li::before {
-	background: #ED0012;
-	content: '';
-	height: 6px;
-	width: 6px;
-	display: inline-block;
-	border-radius: 27px;
-	-webkit-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-	opacity: 1;
-	-webkit-transform: scale(1);
-    transform: scale(1);
-}
-.quickActionClosed .quickActionFirstDot, .quickActionClosed .quickActionSecondDot {
-    margin-right: 3px;
-}
-/* End Dots. Order to be kept! */
-.quickActionBar {
-	bottom: 0;
-	pointer-events: none;
-	min-height: 50px;
-	min-width: 50px;
-    position: absolute;
-    z-index: 1001;
-}
-.quickActionBar a[data-quick-action="action"] {
-	padding: 0;
-	pointer-events: auto;
-	position: relative;
-	width: 44px;
-	height: 44px;
-	border-radius: 50%;
-	will-change: opacity;
-	/* position: relative; */
-	display: block;
-    margin: 0 auto 14px;
-    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.8);
-}
-.quickActionBar a[data-quick-action="action"]:nth-last-of-type(1) {
-	margin-bottom: 66px;
-}
-.quickActionBar a[data-quick-action="action"]:nth-of-type(4) {
-	-webkit-transition: opacity .3s .08s;
-	transition: opacity .3s .08s;
-}
-/*
--------------------------------------------------------
- END QuickAction pop html. 
--------------------------------------------------------
-*/
 .about {
     position: relative;
     max-width: 100%;
@@ -380,9 +228,25 @@ a:hover {
     padding: 20px;
 }
 .insta-embed{
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    max-width: 500px;
     justify-content: center;
+    box-shadow: 0 22px 44px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    border: solid #efefef;
+    border-width: 0;
+    border-top-width: 28px;
+    position: relative;
+}
+.insta-embed::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: -19px;
+	left: 13px;
+	width: 38px;
+	height: 10px;
+	background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDM4IDEwIj4gIDxnIGZpbGw9Im5vbmUiIGZpbGwtb3BhY2l0eT0iLjYiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgIDxjaXJjbGUgY3g9IjUiIGN5PSI1IiByPSI1IiBmaWxsPSIjQzJDMkMyIi8+ICAgIDxjaXJjbGUgY3g9IjE5IiBjeT0iNSIgcj0iNSIgZmlsbD0iI0MyQzJDMiIvPiAgICA8Y2lyY2xlIGN4PSIzMyIgY3k9IjUiIHI9IjUiIGZpbGw9IiNDMkMyQzIiLz4gIDwvZz48L3N2Zz4=") left center repeat;
 }
 .on-red{
     color: #fff;
@@ -393,13 +257,29 @@ a:hover {
 }
 .about-text{
     max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
     padding-top: 50px;
 }
 .p-med{
     font-weight: 400;
     letter-spacing: 0;
+}
+.instaFrameWrapper{
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    background-color: #fff;
+}
+.instaFrame {
+    width: 100%;
+}
+.insta-embed{
+    margin-left: auto;
+    margin-right:auto;
+}
+.about-text{
+    margin-left: auto;
+    margin-right:auto;
 }
 /* Max width 1000px Changes */
 @media screen and ( max-width: 1000px ) {
