@@ -2,6 +2,7 @@
 var instaBodyTopPadding = 28;
 var minWidth = 300;
 var maxWidth = 500;
+var viewHeight = (window.innerHeight || document.documentElement.clientHeight);
 // Frame Width size calculation. To call on first load and resize as well.
 function getWidth(element){
     stringTarget = getComputedStyle(element).width;
@@ -43,3 +44,17 @@ if (isMobile) {
     });
 }
 //End Quick Action
+function popScroll() {
+    // Icons will have a transition when they are in the viewport.
+    var bulletIcons = document.getElementsByClassName("big-bullet-icon");
+  
+    for ( i = bulletIcons.length; i--; ){
+      var bulletIcon = bulletIcons[i],
+          pos= bulletIcon.getBoundingClientRect(),
+          bottomPerc = pos.bottom    / viewHeight * 100;
+      if ( bottomPerc < 90 ){
+        bulletIcon.classList.add("pop-scroll");
+      }
+    }
+}popScroll();//Run in case starting viewPort is long enough to contain the bulet-icons.
+document.addEventListener("scroll", popScroll);

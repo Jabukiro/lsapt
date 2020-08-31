@@ -130,7 +130,6 @@ a:hover {
     max-width: 100%;
     position: relative;
     z-index: 1;
-    box-shadow: #15191c;
 }
 .background-video{
     opacity: .5;
@@ -257,7 +256,8 @@ a:hover {
 }
 .about-text{
     max-width: 500px;
-    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
 }
 .p-med{
     font-weight: 400;
@@ -279,8 +279,59 @@ a:hover {
 }
 .about-text{
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
+    padding-left: 15px;
 }
+.about-text h1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+.about-text p {
+    padding-top: 50px;
+}
+.parent{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row-reverse;
+    background-color: #f7f7f7;
+    width: 100%;
+    padding-left: 15px;
+}
+.big-bullet-wrapper{
+    margin-top: 20px;
+}
+.big-bullet-parent{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: flex-start;
+}
+.big-bullet-icon{
+    opacity: 0;
+    transform: scale3d(0.6, 0.6, 0.6);
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin-right: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    background-color:#3f4d55;
+}
+
+.big-bullet-icon-img{
+    max-height: 150px;
+    max-width: 150px;
+}
+
+.big-bullet-content-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 /* Max width 1000px Changes */
 @media screen and ( max-width: 1000px ) {
     .about-text {
@@ -310,7 +361,21 @@ a:hover {
     .about {
         flex-flow: column;
     }
+    .insta-embed {
+        margin-bottom: 50px;
+    }
     .about-text {
         max-width: 500px;
     }
+    .about-text p {
+        padding-top: 20px;
+    }
+    
 }
+/* Js Effect */
+.pop-scroll{
+    opacity: 1;
+    transform: scaleX(1) scaleY(1) scaleZ(1);
+    transition: opacity 400ms ease 0s, transform 600ms ease 0s;
+}
+/*----------------*/
