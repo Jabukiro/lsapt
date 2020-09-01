@@ -7,26 +7,38 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/quickAction.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/events.css">
 </head>
 <body style="min-width: 300px;">
-    <div class="container top-nav-wrapper">
-        <div class="nav-section">
-            <div class="nav-flex">
-                <div class="nav-bar-container">
-                    <div class="nav-bar">
-                        <a class="nav-bar-brand" href="/.">
-                            <img src="media/temp_logo.jpg" alt="" srcset="">
-                        </a>
-                        <nav class="nav-menu">
-                            <a class="nav-link" href="#Contact">Contact</a>
-                            <a class="nav-link" href="#Events">Events</a>
-                            <a class="nav-link" href="#Events">About</a>
-                        </nav>
-                    </div>
-                </div>
+    <div id="topNavBar" class="container top-nav-wrapper">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <a class="navbar-brand mr-auto" href="#"><img src="media/temp_logo.jpg" alt="" srcset=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarsExample03">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Events</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown03">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+              </ul>
             </div>
-        </div>
+          </nav>
         <div class="top-nav-gradient"></div>
     </div>
     <div class="container landing">
@@ -67,8 +79,71 @@
         </div>
     </div>
     <div class="parent">
-        <div>
-            Events
+        <div id="events" class="events">
+            <h2 class="events-title text-center"><span>COMING UP</span></h2>
+            <div class="events-toggle-frame-container">
+                <div class="events-toggle-frame">
+                    <div data-collapsed="false" class="events-toggle-accordion active">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title align-middle">ACCELERATION - Session</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, sapien vel egestas accumsan, magna odio mollis ante, id sollicitudin libero mi sed magna. Vivamus iaculis eros ac metus viverra, quis viverra justo consectetur. Suspendisse ac risus nisi. Nam blandit erat vitae ipsum ullamcorper, eu pulvinar nisi commodo. Praesent vitae auctor est, in ullamcorper tortor. In laoreet lectus eget pulvinar pretium. Vivamus id egestas eros. Nullam convallis eros a urna lacinia, sed finibus felis malesuada.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeated structure as above -->
+                <div class="events-toggle-frame">
+                    <div data-collapsed="true" class="events-toggle-accordion">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title">OCTOBER HOLIDAY CLINIC - OPEN</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <p>
+                                <strong>CHOOSE ANY 4 EVENTS PER DAY</strong> Australia's #1 athletics holiday clinic is on again<a href="https://sprintingfast.com/holiday-clinic/">Tuesday 6th &amp; Wednesday 7th of October 2020</a> at the WA Athletics Stadium. Kids aged 8-16 years old can learn (with your friends) correct techniques from the best in the West... GET THE EDGE!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="events-toggle-frame">
+                    <div data-collapsed="true" class="events-toggle-accordion">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title">OCTOBER HOLIDAY CLINIC - OPEN</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <p>
+                                <strong>CHOOSE ANY 4 EVENTS PER DAY</strong> Australia's #1 athletics holiday clinic is on again<a href="https://sprintingfast.com/holiday-clinic/">Tuesday 6th &amp; Wednesday 7th of October 2020</a> at the WA Athletics Stadium. Kids aged 8-16 years old can learn (with your friends) correct techniques from the best in the West... GET THE EDGE!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="events-toggle-frame">
+                    <div data-collapsed="true" class="events-toggle-accordion">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title">OCTOBER HOLIDAY CLINIC - OPEN</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <p>
+                                <strong>CHOOSE ANY 4 EVENTS PER DAY</strong> Australia's #1 athletics holiday clinic is on again<a href="https://sprintingfast.com/holiday-clinic/">Tuesday 6th &amp; Wednesday 7th of October 2020</a> at the WA Athletics Stadium. Kids aged 8-16 years old can learn (with your friends) correct techniques from the best in the West... GET THE EDGE!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="big-bullet-wrapper">
             <div class="big-bullet-parent">
@@ -76,7 +151,7 @@
                     <img src="media/big_bullet_icon_1.jpg" alt="mouse cursor" class="big-bullet-icon-img">
                 </div>
                 <div class="big-bullet-content-wrapper">
-                    <h3 class="h3-large">Book in one click!</h3>
+                    <h3 class="h3-large font_7">Youth Training Program</h3>
                     <p>
                         Our website makes it easy to book a pick up and drop off in one go.
                     </p>
@@ -87,7 +162,7 @@
                     <img src="img/camera.svg" alt="mouse cursor" class="big-bullet-icon-img">
                 </div>
                 <div class="big-bullet-content-wrapper">
-                    <h3 class="h3-large">Quality Assurance</h3>
+                    <h3 class="h3-large font_7">Quality Assurance</h3>
                     <p>
                         Our drivers take pictures of the car for quality assurances. You can access those pictures as soon as they are taken!
                     </p>
@@ -132,7 +207,10 @@
         </div>
     </div>
     <!--End Quick Action PopUp-->
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/style.js"></script>
+    <script src="js/events.js"></script>
 </body>
 </html>
