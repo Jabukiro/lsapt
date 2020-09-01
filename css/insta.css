@@ -66,6 +66,17 @@ body>div{
 	line-height: 32px;
 	padding: 24px 10px 10px;
 }
+.instagram-feed-title a{
+	display: inline-flex;
+	padding-top: 10px;
+}
+.instagram-feed-title img{
+	position: relative;
+	max-height: 25px;
+	bottom: 0px;
+	margin-right: 5px;
+	margin-top: 6px;
+}
 .instagram-slider {
 	position: relative;
 	height: 100%;
