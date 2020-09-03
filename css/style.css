@@ -254,8 +254,9 @@ a:hover {
     box-sizing: border-box;
     flex-direction: row-reverse;
     background-color: #f7f7f7;
+    max-width: 100%;
     width: 100%;
-    padding: 20px 60px;
+    padding: 20px 60px 60px;
     color: #6a695e;
     line-height: 26px;
     font-size: 400;
@@ -306,6 +307,56 @@ a:hover {
     letter-spacing: -1.6px;
 }
 
+/* Italian COntact Form*/
+#contatti{
+    background-color: #ED0012;
+    letter-spacing: -1.6px;
+    }
+  #contatti a{
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  
+  @media (max-width: 575.98px) {
+  
+    #contatti{padding-bottom: 800px;}
+    #contatti .maps iframe{
+      width: 100%;
+      height: 450px;
+    }
+   }
+  
+  
+  @media (min-width: 576px) {
+  
+     #contatti{padding-bottom: 800px;}
+  
+     #contatti .maps iframe{
+       width: 100%;
+       height: 450px;
+     }
+   }
+  
+  @media (min-width: 768px) {
+  
+    #contatti{padding-bottom: 350px;}
+  
+    #contatti .maps iframe{
+      width: 100%;
+      height: 850px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    #contatti{padding-bottom: 200px;}
+  
+     #contatti .maps iframe{
+       width: 100%;
+       height: 700px;
+     }
+  }
+/* End Italian COntact Form */  
 /* Max width 1000px Changes */
 @media screen and ( max-width: 1000px ) {
     .about-text {
@@ -343,6 +394,28 @@ a:hover {
     }
     .about-text p {
         padding-top: 20px;
+    }
+    .parent{
+        flex-flow: column-reverse;
+    }
+    .big-bullet-parent{
+        flex-flow: column;
+    }
+    .big-bullet-parent>*,.big-bullet-parent>*>*{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .parent .events{
+        max-width: 100%;
+        margin-top: 20px;
+    }
+    .short-horizontal-divider {
+        display: block;
+        width: 250px;
+        height: 5px;
+        margin: 20px auto;
+        border-radius: 5px;
+        background-color: #a7adb2;
     }
     
 }
