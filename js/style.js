@@ -3,17 +3,19 @@ var instaBodyTopPadding = 28;
 var minWidth = 300;
 var maxWidth = 500;
 var viewHeight = (window.innerHeight || document.documentElement.clientHeight);
+var viewWidth = (window.innerWidth || document.documentElement.clientWidth);
 // Get the header
 var header = document.getElementById("topNavBar");
 // Get the offset position of the navbar
 var sticky = header.offsetTop;
 function stickyNav() {
-    if (window.pageYOffset > sticky) {
+    //Viewwidth as stickynav needed for viewwidth that are less than 576.
+    if ( window.pageYOffset > sticky || viewWidth < 576 ) {
         header.classList.add("top-nav-collapse");
     } else {
         header.classList.remove("top-nav-collapse");
     }
-}
+}stickyNav();
 document.addEventListener("scroll", stickyNav);
 // Frame Width size calculation. To call on first load and resize as well.
 function getWidth(element){
