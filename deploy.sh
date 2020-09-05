@@ -4,7 +4,7 @@
 ROOT="/var/www/html/D2G"
 #Files that are not to be deployed
 EXCLUDE="NotToBeDeployed.txt"
-SERVER="root@172.105.188.27:/var/www/html/public_html"
+SERVER="jabukiro@172.105.188.27:/var/www/html/public_html"
 
 if ! [[ -f "$EXCLUDE" ]]; then
     echo "Warning, this script might be included in deployment if it is in the same directory."
