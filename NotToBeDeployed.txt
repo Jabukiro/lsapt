@@ -1,0 +1,4 @@
+NotToBeDeployed.txt
+README.md
+deploy.sh
+.*
