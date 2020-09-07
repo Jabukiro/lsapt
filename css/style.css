@@ -294,7 +294,9 @@ a:hover {
     flex: 0 0 auto;
     background-color:#3f4d55;
 }
-
+.big-bullet-icon-img{
+    width: inherit;
+}
 .big-bullet-content-wrapper{
     display: flex;
     flex-direction: column;
