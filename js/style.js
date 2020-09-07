@@ -72,3 +72,20 @@ function popScroll() {
     }
 }popScroll();//Run in case starting viewPort is long enough to contain the bulet-icons.
 document.addEventListener("scroll", popScroll);
+["click", "touchend"].forEach( (eventType) => {
+    addEventListener(eventType, (e) => {
+        navbar=document.querySelector("#navbarsExample03");
+        navbarStyle=getComputedStyle(navbar);
+        if ( navbarStyle.display != "none" ) {
+            menuBtn=navbar.previousElementSibling;
+            menuBtn.click();
+            /*
+                menuBtn.classList.add("collapsed")
+                navbar.classList.remove("show");
+            */
+        }
+    });
+});
+window.addEventListener("hashchange", function () {
+    window.scrollTo(window.scrollX, window.scrollY - 100);
+});
