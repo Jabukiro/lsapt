@@ -75,10 +75,12 @@ document.addEventListener("scroll", popScroll);
 ["click", "touchend"].forEach( (eventType) => {
     addEventListener(eventType, (e) => {
         navbar=document.querySelector("#navbarsExample03");
+        menuBtn=navbar.previousElementSibling;
         navbarStyle=getComputedStyle(navbar);
-        if ( navbarStyle.display != "none" ) {
-            menuBtn=navbar.previousElementSibling;
+        menuBtnStyle=getComputedStyle(menuBtn);
+        if ( navbarStyle.display != "none" && menuBtnStyle.display != "none" ) {
             menuBtn.click();
+            console.log("Just closed menu.")
             /*
                 menuBtn.classList.add("collapsed")
                 navbar.classList.remove("show");
