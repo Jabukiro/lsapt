@@ -11,10 +11,10 @@ if ! [[ -f "$EXCLUDE" ]]; then
 fi
 
 if [[ $1 == "server" ]]; then
-    rsync -va -e "ssh" --exclude-from="$EXCLUDE" . "$SERVER"
+    rsync -va -e "ssh" --no-perms --no-owner --exclude-from="$EXCLUDE" . "$SERVER"
 else
     if ! [[ -d "$ROOT" ]]; then
         mkdir "$ROOT"
     fi
-    rsync -v -a --exclude-from="$EXCLUDE" . "$ROOT"
+    rsync -v --exclude-from="$EXCLUDE" . "$ROOT"
 fi
