@@ -4,6 +4,8 @@ var minWidth = 300;
 var maxWidth = 500;
 var viewHeight = (window.innerHeight || document.documentElement.clientHeight);
 var viewWidth = (window.innerWidth || document.documentElement.clientWidth);
+// Set playback to 0.8
+document.querySelector("#background_vid").playbackRate=0.8;
 // Get the header
 var header = document.getElementById("topNavBar");
 // Get the offset position of the navbar
