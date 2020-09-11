@@ -4,6 +4,12 @@ var minWidth = 300;
 var maxWidth = 500;
 var viewHeight = (window.innerHeight || document.documentElement.clientHeight);
 var viewWidth = (window.innerWidth || document.documentElement.clientWidth);
+smallWidthLogo = "/media/lapt_logo.svg";
+
+if (viewWidth <= 320){
+    //Change Logo
+    document.querySelector("#logo").src=smallWidthLogo;
+}
 // Set playback to 0.8
 document.querySelector("#background_vid").playbackRate=0.8;
 // Get the header

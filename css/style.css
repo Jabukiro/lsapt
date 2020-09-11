@@ -44,7 +44,7 @@ a:hover {
     margin: 0 auto;
 }
 .navbar-brand img {
-    max-width: 160px;
+    max-width: 280px;
     vertical-align: middle;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
@@ -186,14 +186,22 @@ a:hover {
     justify-content: space-between;
     padding: 20px;
 }
+.instagram{
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+}
 .insta-embed{
     height: 100%;
     width: 100%;
     max-width: 500px;
     justify-content: center;
-    box-shadow: 0 22px 44px rgba(0,0,0,0.1);
+    box-shadow: 0 22px 44px rgba(0,0,0,0.2);
     border-radius: 8px;
-    border: solid #efefef;
+    border: solid #333232;
     border-width: 0;
     border-top-width: 28px;
     position: relative;
@@ -235,8 +243,7 @@ a:hover {
     width: 100%;
 }
 .insta-embed{
-    margin-left: auto;
-    margin-right:auto;
+    margin: auto;
 }
 .about-text{
     margin-left: auto;
@@ -309,7 +316,17 @@ a:hover {
     font-weight: 600;
     letter-spacing: -1.6px;
 }
-
+.short-horizontal-divider {
+    display: none;
+    width: 250px;
+    height: 5px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background-color: #a7adb2;
+}
+.display{
+    display: block;
+}
 /* Italian COntact Form*/
 #contact{
     background-color: #ED0012;
@@ -397,6 +414,12 @@ a:hover {
         padding-right: 0;
         padding-left: 0;
     }
+    .top-nav-wrapper{
+        padding: 30px 20px;
+    }
+    .top-nav-collapse{
+        padding: 0 15px;
+    }
     .landing-content {
         max-width: 500px;
         padding-bottom: 0;
@@ -409,6 +432,7 @@ a:hover {
     }
     .about {
         flex-flow: column;
+        padding: 20px 7px;
     }
     .insta-embed {
         margin-bottom: 50px;
@@ -440,13 +464,25 @@ a:hover {
     }
     .short-horizontal-divider {
         display: block;
-        width: 250px;
-        height: 5px;
-        margin: 20px auto;
-        border-radius: 5px;
-        background-color: #a7adb2;
     }
     
+}
+@media screen and ( max-width: 576px ) {
+    .top-nav-wrapper{
+        padding: 10px 15px;
+    }
+    .top-nav-collapse{
+        padding: 0;
+    }
+    .navbar-brand img{
+        max-width: 250px;
+    }
+}
+/* Small screen */
+@media screen and ( max-width: 320px ) {
+    .navbar-brand img{
+        max-width: 150px;
+    }
 }
 /* Js Effect */
 .pop-scroll{
