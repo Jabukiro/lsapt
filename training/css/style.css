@@ -1,0 +1,111 @@
+.training-sessions{
+    height: 50vh;
+}
+.training-sessions .content-wrapper{
+    justify-content: center;
+}
+.training-sessions .background-video{
+    opacity: 0.8;
+}
+.training-sessions .background-video img, .training-list .background-video img{
+	background-size: cover;
+	background-position: 50% 50%;
+	position: absolute;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	right: -100%;
+	bottom: -100%;
+	top: -80%;
+	left: -100%;
+	object-fit: cover;
+	z-index: -100;
+}
+.training-list .parent{
+    background-color: #fff;
+}
+.training-list .big-bullet-wrapper{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.training-list .big-bullet-parent{
+    flex-direction: column;
+    justify-content: center;
+}
+.training-list .big-bullet-parent>*{
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+}
+.short-gradient{
+    position: relative;
+    height: 20px;
+    background-image: linear-gradient(180deg,#dbdbd8,transparent);
+}
+.breadcrumb{
+    background-color: transparent;
+    font-size: 12px;
+    padding: 0px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.breadcrumb a{
+    color: #ED0012;
+}
+.breadcrumb a:hover{
+    color: #b30413;
+}
+.main{
+    padding: 0 15px;
+}
+.training-content, .training-list .parent{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 36px 36px;
+    margin-bottom: 20px;
+}
+.training-content h1{
+    margin-bottom: 12px;
+    font-size: 2.5rem;
+}
+.training-content p{
+    margin-bottom: 24px;
+}
+.training-content ul{
+    margin-bottom: 24px;
+}
+.footer {
+	background: -o-linear-gradient(top,#303030,#171717);
+	background: -webkit-gradient(linear,left top,left bottom,from(#303030),to(#171717));
+	background: linear-gradient(to bottom,#303030,#171717);
+    border-top: 0;
+}
+.footer a{
+    color: #fff;
+}
+.footer a:hover, .footer a:focus{
+    color: #ED0012;
+}
+.footer .container{
+    padding-top: 20px;
+}
+.footer-links{
+    padding-top: 10px;
+}
+.footer p, footer span{
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+/* Max width 767px Changes */
+@media screen and ( max-width: 767px ) {
+    .training-content{
+        padding: 24px;
+    }
+    .training-content h1{
+        font-size: 2rem;
+    }
+}
