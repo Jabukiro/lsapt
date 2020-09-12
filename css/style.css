@@ -61,6 +61,12 @@ a:hover {
     background-color: transparent;
     color: #ED0012 !important;
 }
+.dropdown-menu{
+    background-color: #18191B;
+}
+.dropdown-item{
+    color: #cccccc;
+}
 .top-nav-collapse {
     padding: 0 30px;
     background-color: #18191B;
