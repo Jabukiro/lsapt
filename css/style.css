@@ -19,6 +19,7 @@ h1 {
 a{
     text-decoration: none;
     background-color: transparent;
+    transition: .3s color ease-in-out;
 }
 a:hover {
     text-decoration: none;
@@ -301,6 +302,9 @@ a:hover {
     flex: 0 0 auto;
     background-color:#3f4d55;
 }
+.big-bullet-icon a{
+    width: inherit;
+}
 .big-bullet-icon-img{
     width: inherit;
 }
@@ -315,6 +319,12 @@ a:hover {
     color: #ED0012;
     font-weight: 600;
     letter-spacing: -1.6px;
+}
+.big-bullet-content-wrapper a{
+    color: #4abf4f
+}
+.big-bullet-content-wrapper a:hover{
+    color: #358d39
 }
 .short-horizontal-divider {
     display: none;
@@ -457,6 +467,9 @@ a:hover {
     }
     .big-bullet-content-wrapper{
         padding-top: 15px;
+    }
+    .big-bullet-content-wrapper p{
+        text-align: center;
     }
     .parent .events{
         max-width: 100%;
