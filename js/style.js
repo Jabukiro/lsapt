@@ -45,27 +45,6 @@ function sizeInstaFrame () {
     document.getElementById("instaFrame").style.height = String(frameWidth) + "px";
 } sizeInstaFrame();
 document.addEventListener("resize", sizeInstaFrame);
-// Quick Action PopUp Styling and Functionality
-var quickAction = document.getElementById("quickAction");
-var quickActionBar = document.getElementById("quickActionBar")
-// Detect mobile browsing
-var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-if (isMobile) {
-    quickAction.style.display = "block";
-    // Open and Close handle of quick action
-    quickAction.addEventListener("click", function() {
-        if ( quickAction.dataset.isOpen == "false" ) {
-            quickAction.classList.remove("quickActionClosed");
-            quickActionBar.style.display = "block";
-            quickAction.dataset.isOpen = "true";
-        } else {
-            quickAction.classList.add("quickActionClosed");
-            quickActionBar.style.display = "none";
-            quickAction.dataset.isOpen = "false";
-        }
-    });
-}
-//End Quick Action
 function popScroll() {
     // Icons will have a transition when they are in the viewport.
     var bulletIcons = document.getElementsByClassName("big-bullet-icon");
@@ -80,6 +59,7 @@ function popScroll() {
     }
 }popScroll();//Run in case starting viewPort is long enough to contain the bulet-icons.
 document.addEventListener("scroll", popScroll);
+/*
 ["click", "touchend"].forEach( (eventType) => {
     addEventListener(eventType, (e) => {
         navbar=document.querySelector("#navbarsExample03");
@@ -92,10 +72,10 @@ document.addEventListener("scroll", popScroll);
             /*
                 menuBtn.classList.add("collapsed")
                 navbar.classList.remove("show");
-            */
         }
     });
 });
+*/
 window.addEventListener("hashchange", function () {
     window.scrollTo(window.scrollX, window.scrollY - 100);
 });
