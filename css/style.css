@@ -27,6 +27,9 @@ a:hover {
 .font_7 {
 	font: normal normal normal 24px/1.46em anton,sans-serif;
 }
+.text-md{
+    font-size: 1rem;
+}
 .top-nav-wrapper{
     position: fixed;
     padding: 30px;
@@ -60,6 +63,9 @@ a:hover {
 .nav-link:hover{
     background-color: transparent;
     color: #ED0012 !important;
+}
+.navbar-dark .navbar-nav .dropdown.show > .nav-link {
+	color: #ED0012;
 }
 .dropdown-menu{
     background-color: #18191B;
@@ -499,6 +505,18 @@ a:hover {
     }
     .navbar-brand img{
         max-width: 250px;
+    }
+    .landing-content h1{
+        font-size: 36px;
+    }
+    .landing-content p{
+        font-size: 18px;
+    }
+    .content-wrapper{
+        justify-content: center;
+    }
+    .landing-content h1{
+        text-align: center;
     }
 }
 /* Small screen */
