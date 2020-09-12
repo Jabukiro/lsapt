@@ -74,7 +74,7 @@ function popScroll() {
       var bulletIcon = bulletIcons[i],
           pos= bulletIcon.getBoundingClientRect(),
           bottomPerc = pos.bottom    / viewHeight * 100;
-      if ( bottomPerc < 90 ){
+      if ( bottomPerc < 100 ){
         bulletIcon.classList.add("pop-scroll");
       }
     }
