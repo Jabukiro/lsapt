@@ -1,3 +1,10 @@
+var viewWidth = (window.innerWidth || document.documentElement.clientWidth);
+smallWidthLogo = "/media/lapt_logo.svg";
+
+if (viewWidth <= 320){
+    //Change Logo
+    document.querySelector("#logo").src=smallWidthLogo;
+}
 // Quick Action PopUp Styling and Functionality
 var quickAction = document.getElementById("quickAction");
 var quickActionBar = document.getElementById("quickActionBar")
