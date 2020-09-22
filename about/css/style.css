@@ -1,0 +1,52 @@
+.about-page p {
+	margin: 0 0 16px;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #323232;
+}
+.about-page h3{
+ color: #ED0012;
+}
+.values{
+    max-width: 720px;
+}
+.values h5{
+    font-style: bold;
+}
+.short-horizontal-divider {
+    display: block;
+    width: 150px;
+    height: 5px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background-color: #a7adb2a2;
+}
+.heading {
+	margin-bottom: 32px;
+}
+.ltad-wrap {
+    max-width: 1248px;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: flex;
+}
+.ltad {
+	flex-basis: 960px;
+	max-width: 960px;
+}
+.ltad img{
+    max-width: 310px;
+}
+.alignleft, a.alignleft, img.alignleft, .wp-caption.alignleft {
+	float: left;
+	text-align: left;
+	margin: 24px 24px 24px 0;
+}
+.small-list{
+    margin-left: 5px;
+    color:#ED0012
+}

@@ -1,15 +1,21 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speed and Agility Training | LineSpeedAPT | Perth Speed Training</title>
-    <link rel="shortcut icon" href="/media/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/quickAction.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body style="min-width: 315px;" class="text-md">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Events | LineSpeedAPT | Perth Speed Training</title>
+        <meta name="description" content="LINESPEED Athletic Performance (LAPT) prime focus is to improve running speed of athletes from various sporting codes. Based in Perth Northern Suburbs, WA.">
+        <meta name="keywords" content="">
+        <link rel="shortcut icon" href="/media/favicon.svg" type="image/x-icon">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/quickAction.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/training/css/style.css">
+        <link rel="stylesheet" href="/css/events.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
     <div id="topNavBar" class="container top-nav-wrapper top-nav-collapse">
         <nav class="navbar navbar-expand-sm navbar-dark">
             <a class="navbar-brand mr-auto" href="/"><img id="logo" src="/media/logo.svg" alt="Linespeed Logo" srcset=""></a>
@@ -28,11 +34,12 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/#contact-form">Contact</a>
                 </li>
+                <!--To display on mobile only-->
                 <li id="training-link" class="nav-item" style="display: none;">
                     <a class="nav-link" href="/training">Sessions</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sessions</a>
+                  <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sessions</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown03">
                     <a class="dropdown-item" href="/training/team-speed/">Team Speed</a>
                     <a class="dropdown-item" href="/training/linear-speed/">Linear Speed</a>
@@ -43,13 +50,12 @@
               </ul>
             </div>
         </nav>
-        <div class="top-nav-gradient"></div>
     </div>
     <div class="container landing training-sessions">
         <div class="content-wrapper">
             <div class="landing-content">
                 <h1 class="on-dark">
-                    Speed &amp; <span style="color: #ED0012">Agility</span>
+                    <span style="color: #ED0012">Events</span>
                    <!--Improve Linear Speed and Athletic Performance-->
                 </h1>
                 <!-- <p class="on-dark p-large">
@@ -70,32 +76,78 @@
         </div>
     </div>
     <div class="short-gradient"></div>
-    <div class="main">
+    <div class="main about-page">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item"><a href="..">Training</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Speed-Agility</li>
+              <li class="breadcrumb-item active" aria-current="page">Events</li>
             </ol>
         </nav>
-        <div class="container training-content">
-            <h1><strong>Speed and Agility</strong></h1>
-            <p>
-                <strong>Duration:   </strong>90 minutes
-            </p>
-            <p>
-                <strong>Description:</strong>
-                Speed and Agility drills to improve performance in sports that require changing direction quickly whilst keeping balance, strength, speed and body in control.
-            </p>
-            <strong>Program:</strong>
-            <ul>
-                <li>Dynamic&nbsp;warmup</li>
-                <li>Plyometric&nbsp;Training</li>
-                <li>Running&nbsp;Mechanics</li>
-                <li>Sprint&nbsp;conditioning</li>
-                <li>Alternate&nbsp;Starts</li>
-                <li>Cooldown</li>
-            </ul>
+        <div id="events" class="events">
+            <h2 class="events-title text-center"><span>COMING UP</span></h2>
+            <div class="events-toggle-frame-container">
+                <div class="events-toggle-frame">
+                    <div data-collapsed="false" class="events-toggle-accordion active">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title align-middle">October Holiday Program</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <p>
+                                We will be conducting a holiday programme during the school holidays in October (5th - 9th). The programme will be challenging but baalanced and will aim to keep the children active and motivated and provide team building skills and mentorship
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeated structure as above -->
+                <div class="events-toggle-frame">
+                    <div data-collapsed="true" class="events-toggle-accordion">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title">SPEED & AGILITY - Training</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <p>
+                                <strong>Tuesday, Thursday, Friday - 4pm/5:30pm | Sunday 12.30pm/2pm</strong><br>Speed and Agility drills to improve performance in sports that require changing direction quickly whilst keeping balance, strength, speed and body in control.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="events-toggle-frame">
+                    <div data-collapsed="true" class="events-toggle-accordion">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title">Linear Speed - Sprint Training</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <p>
+                                <strong>Monday, Wednesday - 3:30pm/5pm | Sunday 10am/12pm</strong><br>0-30m as fast as possible. This session will get you primed to accelerate using optimal sprint technique. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="events-toggle-frame">
+                    <div data-collapsed="true" class="events-toggle-accordion">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title">Velocity - Sprint Training</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <p>
+                                <strong>Monday, Wednesday - 3:30pm/5pm | Sunday 10am/12pm</strong><br>Velocity training aims to achieve/increase your body's top mechanics. Velocity ENDURANCE training also focuses on maintainig our top speed as long as possible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <footer class="footer text-center">
@@ -149,5 +201,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="/js/base.js"></script>
+    <script src="/js/events.js"></script>
 </body>
 </html>
