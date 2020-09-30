@@ -1,8 +1,11 @@
 function getHeight (element) {
+    /*
     element.style.maxHeight="none";
     height = element.getBoundingClientRect().height;
     element.style.maxHeight="0px";
     return height;
+    */
+   return 300;
 }
 document.querySelectorAll(".events-toggle-accordion").forEach(toggle => {
     toggle.addEventListener("click", (e) => {

@@ -334,7 +334,6 @@ a:hover {
 .big-bullet-content-wrapper h3{
     color: #ED0012;
     font-weight: 600;
-    letter-spacing: -1.6px;
 }
 .big-bullet-content-wrapper a{
     color: #4abf4f
@@ -433,7 +432,7 @@ a:hover {
 /* Max width 767px Changes */
 @media screen and ( max-width: 767px ) {
     h1 {
-        font-size: 40px;
+        font-size: 45px;
     }
     .content-wrapper {
         margin-top: 0px;
@@ -506,9 +505,6 @@ a:hover {
     .navbar-brand img{
         max-width: 250px;
     }
-    .landing-content h1{
-        font-size: 36px;
-    }
     .landing-content p{
         font-size: 18px;
     }
@@ -530,5 +526,11 @@ a:hover {
     opacity: 1;
     transform: scaleX(1) scaleY(1) scaleZ(1);
     transition: opacity 400ms ease 0s, transform 600ms ease 0s;
+}
+.dis-block{
+    display: block;
+}
+.dis-none{
+    display: none;
 }
 /*----------------*/

@@ -19,30 +19,37 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarsExample03">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/events">Events</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/contact">Contact</a>
-                </li>
-                <!--To display on mobile only-->
-                <li id="training-link" class="nav-item" style="display: none;">
-                    <a class="nav-link" href="/training">Sessions</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sessions</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdown03">
-                    <a class="dropdown-item" href="/training/team-speed/">Team Speed</a>
-                    <a class="dropdown-item" href="/training/linear-speed/">Linear Speed</a>
-                    <a class="dropdown-item" href="/training/speed-strength/">Speed Strength</a>
-                    <a class="dropdown-item" href="/training/speed-agility/">Speed & Agility</a>
-                  </div>
-                </li>
-              </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active dis-none">
+                    <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown dis-block">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="/about">My Story</a>
+                            <a class="dropdown-item" href="/about/linespeed/">LineSpeedAPT</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/events">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <!--To display on mobile only-->
+                    <li id="training-link" class="nav-item dis-none">
+                        <a class="nav-link" href="/training">Sessions</a>
+                    </li>
+                    <li class="nav-item dropdown dis-block">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sessions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown03">
+                            <a class="dropdown-item" href="/training/team-speed/">Team Speed</a>
+                            <a class="dropdown-item" href="/training/linear-speed/">Linear Speed</a>
+                            <a class="dropdown-item" href="/training/speed-strength/">Speed Strength</a>
+                            <a class="dropdown-item" href="/training/speed-agility/">Speed & Agility</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
           </nav>
         <div class="top-nav-gradient"></div>
@@ -54,16 +61,18 @@
                     Start <span style="color: #ED0012">FAST</span> <br>Finish <span style="color: #ED0012">STRONG</span>
                    <!--Improve Linear Speed and Athletic Performance-->
                 </h1>
+                <!--
                 <p class="on-dark p-large">
                     Ages 6-16 are crucial for a child to reach their full atheltic performance. Discover how Linespeed's speed training method can help your child reach their full potential!
                 </p>
+                -->
                 <div>
-                    <a href="#contact" class="content-link">
+                    <label for="name_input" class="content-link">
                         <div class="content-link-text">
-                            Become Part of the #LinespeedCommunity in Perth
+                            Start your LineSpeed Journey
                         </div>
                         <img src="/media/arrow.svg" alt="" class="content-link-arrow">
-                    </a>
+                    </label>
                 </div>
             </div>
         </div>
@@ -73,7 +82,7 @@
     </div>
     <div id="about" class="container about">
         <div class="about-text on-red">
-            <h1 class="on-red">My Story</h1>
+            <h1 class="on-red">Start Fast</h1>
             <!--
             <p class="p-med">
                 Based In Perth, WA, I created LineSpeed to help young atheletes reach their full potential. Over the years LineSpeed has developped into a close-knit community and a lot of the atheletes I've trained have gone on to win trophies in their respective sports. Here at LineSpeed Athletic Performance Training we are committed to creating a CULTURE that allows our athletes to strive for EXCELLENCE in sport, and in LIFE. Speed is a core aspect to many sports as well as the general athletic performance of a person; for this reason, LineSpeed speed training focuses on improving running mechanics and movement efficiency.<br>We see every youth as an athlete; whether you see your child as a serious athlete looking to get better or just wanting to get fit and have fun doing it, the LineSpeed Training System has a corresponding program.<br><br><span class="about-quote text-center">"Good is not enough when BETTER is expected."</span>
@@ -86,9 +95,8 @@
             All youth start with varied physical capabilities, due to many factors that affect athletic development including growth, genetics, maturation, etc.
             But it’s not where you start, its where you finish that matters. 
             By focusing on the physical metrics that we can control/affect – Flexibility, Power, Coordination, Strength, SPEED, etc. we reduce the risk of injury, increase confidence, and improve athletic performance of the athlete.
-            <br>Discover how Linespeed athletic performance training can help your child reach their full potential.<br><br><span class="about-quote text-center">"Good is not enough when BETTER is expected."</span>
+            <br>Discover how Linespeed athletic performance training can help your child reach their full potential.<br><br><span class="about-quote text-center">Finish Strong</span>
                 <br><span class="d-flex"><a href="/about" class="mx-auto btn btn-success" role="button" aria-pressed="true">More&nbsp;Info</a></span>
-                
             </p>
 
         </div>
@@ -106,9 +114,14 @@
                         <h5 class="events-toggle-accordion-title align-middle">October Holiday Program</h5>
                     </div><div class="events-toggle-content">
                         <div class="block">
+                            <a href="media/holiday_prog.jpg" target="_blank">
+                                <img src="media/holiday_prog.jpg" alt="" srcset="">
+                            </a>
+                            <!--
                             <p>
                                We will be conducting a holiday programme during the school holidays in October (5th - 9th). The programme will be challenging but baalanced and will aim to keep the children active and motivated and provide team building skills and mentorship
                             </p>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -119,42 +132,12 @@
                             <input type="checkbox" id="switchBtn">
                             <span class="slider round"></span>
                         </label>
-                        <h5 class="events-toggle-accordion-title">SPEED & AGILITY - Training</h5>
+                        <h5 class="events-toggle-accordion-title">Shark - Rugby Academy</h5>
                     </div><div class="events-toggle-content">
                         <div class="block">
-                            <p>
-                                <strong>Tuesday, Thursday, Friday - 4pm/5:30pm | Sunday 12.30pm/2pm</strong><br>Speed and Agility drills to improve performance in sports that require changing direction quickly whilst keeping balance, strength, speed and body in control.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="events-toggle-frame">
-                    <div data-collapsed="true" class="events-toggle-accordion">
-                        <label class="switch">
-                            <input type="checkbox" id="switchBtn">
-                            <span class="slider round"></span>
-                        </label>
-                        <h5 class="events-toggle-accordion-title">Linear Speed - Sprint Training</h5>
-                    </div><div class="events-toggle-content">
-                        <div class="block">
-                            <p>
-                                <strong>Monday, Wednesday - 3:30pm/5pm | Sunday 10am/12pm</strong><br>0-30m as fast as possible. This session will get you primed to accelerate using optimal sprint technique. 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="events-toggle-frame">
-                    <div data-collapsed="true" class="events-toggle-accordion">
-                        <label class="switch">
-                            <input type="checkbox" id="switchBtn">
-                            <span class="slider round"></span>
-                        </label>
-                        <h5 class="events-toggle-accordion-title">Velocity - Sprint Training</h5>
-                    </div><div class="events-toggle-content">
-                        <div class="block">
-                            <p>
-                                <strong>Monday, Wednesday - 3:30pm/5pm | Sunday 10am/12pm</strong><br>Velocity training aims to achieve/increase your body's top mechanics. Velocity ENDURANCE training also focuses on maintainig our top speed as long as possible.
-                            </p>
+                            <a href="media/shark_flyer.jpg" target="_blank">
+                                <img src="media/shark_flyer.jpg" alt="" srcset="">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -164,12 +147,12 @@
         <div class="big-bullet-wrapper">
             <div class="big-bullet-parent">
                 <div class="big-bullet-icon">
-                    <a href="/">
-                        <img src="media/big_bullet_icon_1.jpg" alt="mouse cursor" class="big-bullet-icon-img" href="/">
+                    <a href="/training/speed-agility/">
+                        <img src="media/big_bullet_icon_1.jpg" alt="mouse cursor" class="big-bullet-icon-img">
                     </a>
                 </div>
                 <div class="big-bullet-content-wrapper">
-                    <h3 class="h3-large font_7">Speed and Agility Training</h3>
+                    <h3 class="text-center h3-large font_7">Speed and Agility Training</h3>
                     <p>
                         Speed and Agility drills to improve performance in sports that require changing direction quickly whilst keeping balance, strength, speed and body in control.<br><a href="/training/speed-agility/">Learn&nbsp;More...</a>
                     </p>
@@ -182,7 +165,7 @@
                     </a>
                 </div>
                 <div class="big-bullet-content-wrapper">
-                    <h3 class="h3-large font_7">Sports Team Specific Training</h3>
+                    <h3 class="text-center h3-large font_7">Sports Team Specific Training</h3>
                     <p>
                         Gain the competitive edge. Reduce chances of injury, increase movement efficiency, improve team confidence and unity.<br><a href="/training/team-speed/">Learn&nbsp;More...</a>
                     </p>
@@ -195,7 +178,7 @@
                     </a>
                 </div>
                 <div class="big-bullet-content-wrapper">
-                    <h3 class="h3-large font_7">Sprint Performance Training</h3>
+                    <h3 class="text-center h3-large font_7">Sprint Performance Training</h3>
                     <p>
                         Straight speed sprint training. Cover distance in faster time, on grass or on the court. Game breaker SKILL that is an integral part of any sport.<br><a href="/training/linear-speed/">Learn&nbsp;More...</a>
                     </p>
@@ -227,7 +210,7 @@
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <input type="text" class="form-control mt-2" placeholder="Name*" required>
+                        <input id="name_input"type="text" class="form-control mt-2" placeholder="Name*" required>
                       </div>
                     </div>
                     <div class="col-lg-6">
@@ -242,7 +225,7 @@
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <input type="number" class="form-control mt-2" placeholder="Tel">
+                        <input type="tel" class="form-control mt-2" placeholder="Tel">
                       </div>
                     </div>
                     <div class="col-12">
@@ -258,9 +241,9 @@
                 <div class="text-white">
                 <h2 class="text-uppercase mt-4 font-weight-bold">Details</h2>
         
-                <i class="fas fa-phone mt-3"></i> <a href="tel:+65403543403">(+65) 403 543 403</a><br>
+                <i class="fas fa-phone mt-3"></i> <a href="tel:+65403543403">(+61) 403 543 403</a><br>
                 <i class="fa fa-envelope mt-3"></i> <a href="mailto:info@linespeedapt.com">info@linespeedapt.com</a><br>
-                <i class="fas fa-globe mt-3"></i>Perth WA<br>
+                <i class="fas fa-globe mt-3"></i> Perth WA<br>
                 <div class="my-4">
                 <a href="https://www.facebook.com/pg/LinespeedAPT/"><i class="fab fa-facebook fa-3x pr-4"></i></a>
                 <a href="https://www.instagram.com/linespeedapt/"><i class="fab fa-instagram fa-3x"></i></a>
@@ -273,7 +256,7 @@
     </div>
     <footer class="footer text-center">
         <div class="container">
-            <p>'Good is not enough when BETTER is expected'</p>
+            <p>'Start FAST Finish STRONG'</p>
             <span class="text-muted">@ 2020 LineSpeedATP. All rights reserved.</span>
         </div>
     </footer>

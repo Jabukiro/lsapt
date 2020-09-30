@@ -139,4 +139,9 @@ label {
 	padding: 20px 10px 15px 10px;
 	margin: 0px;
 	color: #6a695e;
+	display: flex;
+	justify-content: center;
+}
+.events-toggle-content .block img{
+	max-height: 300px;
 }

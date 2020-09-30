@@ -7,14 +7,21 @@ if (viewWidth <= 320){
 }
 // Quick Action PopUp Styling and Functionality
 var quickAction = document.getElementById("quickAction");
-var quickActionBar = document.getElementById("quickActionBar")
+var quickActionBar = document.getElementById("quickActionBar");
 // Detect mobile browsing
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 if (isMobile) {
-    dropdownMenu=document.querySelector(".nav-item.dropdown");
-    trainLink=document.querySelector("#training-link");
-    dropdownMenu.style.display = "none";
-    trainLink.style.display = "block";
+    console.log("Switching dropdown to link only")
+    dropdownMenu=document.querySelectorAll(".dis-block");
+    linkOnly=document.querySelectorAll(".dis-none");
+    dropdownMenu.forEach(element => {
+        element.classList.remove("dis-block");
+        element.classList.add("dis-none");
+    });
+    linkOnly.forEach(element => {
+        element.classList.remove("dis-none");
+        element.classList.add("dis-block");
+    });
     quickAction.style.display = "block";
     // Open and Close handle of quick action
     quickAction.addEventListener("click", function() {
