@@ -91,8 +91,7 @@ a:hover {
     opacity: .77;
 }
 .top-nav-collapse .top-nav-gradient{
-    opacity: 0;
-    height: 150%;
+    display: none;
 }
 .top-nav-collapse .nav-link{
     font-size: 14px;
@@ -158,6 +157,10 @@ a:hover {
 }
 .on-dark{
     color: #fff;
+    font-size: 80px;
+}
+.on-dark.p-large{
+    font-size: 22px;
 }
 .content-link{
     position: relative;
@@ -198,6 +201,9 @@ a:hover {
     display: flex;
     justify-content: space-between;
     padding: 20px;
+}
+.about h1{
+    font-size: 40px;
 }
 .about-quote{
     display: block;
@@ -244,6 +250,7 @@ a:hover {
 .about-text{
     display: flex;
     flex-direction: column;
+    max-width: 700px;
 }
 .p-med{
     font-weight: 400;
@@ -352,6 +359,9 @@ a:hover {
 .quote-wrapper{
     margin: auto;
 }
+.training-list h1.on-dark{
+    font-size: 54px;
+}
 /* Italian COntact Form*/
 #contact{
     background-color: #ED0012;
@@ -423,14 +433,30 @@ a:hover {
     color: #ED0012;
 }
 /* ------------------------------------------------------ */
+/* Max width 1440px Changes */
+@media (max-width: 1441px) {
+    /* Events image width*/
+        .events-toggle-content .block img {
+            width: calc(33vw - 30px);
+            height: auto;
+        }
+}
 /* Max width 1000px Changes */
-@media screen and ( max-width: 1000px ) {
-    .about-text {
-        max-width: 450px;
+@media screen and ( max-width: 1025px ) {
+    .parent {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 /* Max width 767px Changes */
 @media screen and ( max-width: 767px ) {
+    .on-dark, .training-list h1.on-dark {
+        font-size: 43px;
+    }
+    .on-dark, .training-list h1.on-dark {
+        font-size: calc( 34px + 3vw);
+    }
+
     h1 {
         font-size: 45px;
     }
@@ -470,8 +496,6 @@ a:hover {
     }
     .parent{
         flex-flow: column-reverse;
-        padding-left: 15px;
-        padding-right: 15px;
     }
     .big-bullet-parent{
         flex-flow: column;
@@ -490,6 +514,10 @@ a:hover {
         max-width: 100%;
         margin: 20px 0px;
     }
+    .events-toggle-content .block img {
+        width: 90vw;
+        height: auto;
+    }
     .short-horizontal-divider {
         display: block;
     }
@@ -505,6 +533,9 @@ a:hover {
     .navbar-brand img{
         max-width: 250px;
     }
+    .container.landing{
+        padding: 0;
+    }
     .landing-content p{
         font-size: 18px;
     }
@@ -514,12 +545,51 @@ a:hover {
     .landing-content h1{
         text-align: center;
     }
+    .content-link-wrapper{
+        display: flex;
+    }
+    .content-link{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about h1{
+        font-size: 35px;
+    }
+}
+/* Medium fone screen */
+@media screen and ( max-width: 376px ) {
+    .container.landing{
+        padding: 0;
+    }
+    .content-link-wrapper{
+        display: flex;
+    }
+    .content-link{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 /* Small screen */
 @media screen and ( max-width: 320px ) {
     .navbar-brand img{
         max-width: 150px;
     }
+
+    .big-bullet-icon {
+        height: 180px;
+        width: 180px;
+    }
+    .font_7{
+        font-size: 22px;
+    }
+    .on-dark .training-list h1.on-dark{
+        font-size: 43px;
+    }
+    .about h1{
+        font-size: 30px;
+    }
+    
 }
 /* Js Effect */
 .pop-scroll{

@@ -21,6 +21,9 @@
 	object-fit: cover;
 	z-index: -100;
 }
+.training-list .on-dark.p-large{
+    padding: 5px;
+}
 .training-content, .training-list .parent{
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 36px 36px;
@@ -102,7 +105,7 @@
     padding-top: 10px;
 }
 .footer p, footer span{
-    font-size: 12px;
+    font-size: 18px;
     margin-bottom: 5px;
 }
 

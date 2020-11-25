@@ -1,11 +1,8 @@
 function getHeight (element) {
-    /*
     element.style.maxHeight="none";
     height = element.getBoundingClientRect().height;
     element.style.maxHeight="0px";
     return height;
-    */
-   return 300;
 }
 document.querySelectorAll(".events-toggle-accordion").forEach(toggle => {
     toggle.addEventListener("click", (e) => {
@@ -31,9 +28,12 @@ document.querySelectorAll(".events-toggle-accordion").forEach(toggle => {
         }
     })
 });
-toDisplay = document.getElementsByClassName("events-toggle-accordion active")[0].nextSibling;
-height = getHeight(toDisplay);
-toDisplay.style.maxHeight=String(height)+"px";
+//Wait for images to load first.
+window.onload = function() {
+    toDisplay = document.getElementsByClassName("events-toggle-accordion active")[0].nextSibling;
+    height = getHeight(toDisplay);
+    toDisplay.style.maxHeight=String(height)+"px";
+};
     /*
 (function ($) {
     /*

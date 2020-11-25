@@ -1,6 +1,9 @@
 .events {
 	min-height: 1px;
 	position: relative;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
 }
 .events-toggle-frame-container {
 	width: 100%;
@@ -129,7 +132,7 @@ label {
 
 .events-toggle-content{
     max-height: 0;            
-    overflow-y: hidden;
+    overflow: hidden;
     -webkit-transition: max-height 0.4s ease-in-out;
     -moz-transition: max-height 0.4s ease-in-out;
     -o-transition: max-height 0.4s ease-in-out;
@@ -143,5 +146,12 @@ label {
 	justify-content: center;
 }
 .events-toggle-content .block img{
-	max-height: 300px;
+	max-width: 400px;
+}
+
+/* Small screen */
+@media screen and ( max-width: 340px ) {
+	.events-toggle-content .block img{
+		max-height: 370px;
+	}
 }
