@@ -5,6 +5,26 @@ var maxWidth = 500;
 var viewHeight = (window.innerHeight || document.documentElement.clientHeight);
 var viewWidth = (window.innerWidth || document.documentElement.clientWidth);
 
+function load(){
+    const loaderBackground=document.getElementById("loaderBackground");
+    //var loadedContent=document.getElementById("loadedContent");
+    loaderBackground.style.opacity="0";
+    loadContent(loaderBackground);
+}
+setInterval(()=>{
+    load();
+}, 3000);
+
+function loadContent(loaderBackground){
+    const video = document.querySelector("#background_vid");
+    video.play();
+    loaderBackground.style.zIndex=0;
+    setInterval(()=>{
+        const load1 = document.querySelector("#load1");
+        load1.style.paddingTop="0";
+        load1.style.opacity="1";
+    }, 3000);
+}
 // Set playback to 0.8
 document.querySelector("#background_vid").playbackRate=0.8;
 // Get the header
