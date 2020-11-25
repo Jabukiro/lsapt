@@ -1,10 +1,10 @@
 #!/bin/bash
 ## Simply copies the website files to root directory using rsync
 
-ROOT="/var/www/html/lsapt"
+ROOT="/var/www/html"
 #Files that are not to be deployed
 EXCLUDE="NotToBeDeployed.txt"
-SERVER="jabukiro@172.105.188.27:/var/www/html/public_html"
+SERVER="jabukiro@172.105.188.27:/var/www/html/public_html/"
 ERRORSTRING="Error. Please make sure you've indicated correct parameters"
 if [ $# -eq 0 ]
     then
@@ -22,4 +22,12 @@ elif [ $1 == "live" ]
         else
             echo $ERRORSTRING;
         fi
+elif [ $1 == "dev" ]
+    then
+                    echo "Running dev deploy to localhost"
+                rsync -az --no-perms --force --delete --progress --exclude-from="$EXCLUDE"  ./ "$ROOT"
+elif [ $1 == "fetch" ]
+    then
+                    echo "Fetching website from server"
+                rsync -az --no-perms --force --delete --progress --exclude-from="$EXCLUDE" "$SERVER" ./
 fi
