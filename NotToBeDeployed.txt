@@ -1,4 +1,6 @@
 NotToBeDeployed.txt
 README.md
 deploy.sh
+index_loader.html
+index_no_loader.html
 .*

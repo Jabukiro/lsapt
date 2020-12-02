@@ -24,6 +24,7 @@
 .training-list .on-dark.p-large{
     padding: 5px;
 }
+
 .training-content, .training-list .parent{
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 36px 36px;

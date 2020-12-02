@@ -1,4 +1,34 @@
 //
+let videoPlay = document.querySelector('#loaderVideo').play();
+
+if (videoPlay !== undefined) {
+    videoPlay.then(() => { 
+        document.querySelector('#loaderVideo').addEventListener('ended', function(){
+            if (document.querySelector("#background_vid").readyState >= 3){
+                load();
+            } else {
+                document.querySelector('#loaderVideo').addEventListener('ended', function(){load()});
+                /*var b = setInterval(()=>{
+                    if(document.querySelector("#background_vid").readyState >= 3){
+                        load();
+                        clearInterval(b);
+                    }                   
+                },500);*/
+            }
+        });
+  }).catch(error => {
+      //No autoplay allowed
+      console.log(error);
+      const loaderBackground=document.getElementById("loaderBackground");
+      document.getElementById("loadedContent").style.display="block";
+      //var loadedContent=document.getElementById("loadedContent");
+      loaderBackground.style.opacity="0";
+      loaderBackground.style.zIndex=0;
+      const load1 = document.querySelector("#load1");
+      load1.style.paddingTop="0";
+      load1.style.opacity="1";
+  });
+}
 var instaBodyTopPadding = 28;
 var minWidth = 300;
 var maxWidth = 500;
@@ -7,19 +37,16 @@ var viewWidth = (window.innerWidth || document.documentElement.clientWidth);
 
 function load(){
     const loaderBackground=document.getElementById("loaderBackground");
+    document.getElementById("loadedContent").style.display="block";
     //var loadedContent=document.getElementById("loadedContent");
     loaderBackground.style.opacity="0";
     loadContent(loaderBackground);
 }
-setInterval(()=>{
-    load();
-}, 3000);
-
 function loadContent(loaderBackground){
     const video = document.querySelector("#background_vid");
     video.play();
     loaderBackground.style.zIndex=0;
-    setInterval(()=>{
+    setTimeout(()=>{
         const load1 = document.querySelector("#load1");
         load1.style.paddingTop="0";
         load1.style.opacity="1";
