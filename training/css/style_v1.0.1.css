@@ -1,8 +1,10 @@
 .training-sessions{
-    height: 50vh;
+    height: 80vh;
 }
 .training-sessions .content-wrapper{
     justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
 }
 .training-sessions .background-video{
     opacity: 0.8;
@@ -13,13 +15,17 @@
 	position: absolute;
 	margin: auto;
 	width: 100%;
-	height: 100%;
+    height: 100%;
 	right: -100%;
 	bottom: -100%;
-	top: -80%;
+    top: -80%;
 	left: -100%;
 	object-fit: cover;
-	z-index: -100;
+    z-index: -100;
+}
+.bg-controlled-height .background-video img{
+	top: calc(-100% + 50vw - 20vh);
+    height: auto;
 }
 .training-list .on-dark.p-large{
     padding: 5px;
@@ -120,9 +126,18 @@
         font-size: 20px;
     }
 }
-
+/* Max width 1000px Changes */
+@media screen and ( max-width: 1000px ) {
+    .training-sessions{
+        height: 50vh;
+    }
+}
 /* Max width 767px Changes */
 @media screen and ( max-width: 767px ) {
+    .bg-controlled-height .background-video img{
+        height: 100%;
+        top: -80%;
+    }
     .training-content{
         padding: 24px 5px;
     }

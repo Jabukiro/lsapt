@@ -45,6 +45,12 @@
 .heading {
 	margin-bottom: 32px;
 }
+.listParent{
+    margin-bottom: 10px;
+}
+.listChild{
+    margin-left: 15px;
+}
 .ltad-wrap {
     max-width: 1248px;
     -ms-flex-pack: center;

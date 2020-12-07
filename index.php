@@ -1,3 +1,63 @@
+<?php
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+    if ( isset($_POST['name']) )
+    {
+        $flag = false;
+        if ( empty($_POST['name']) )
+        {
+            $errMsg="No Name";
+            $msg="Please provide a name for us to contact you.";
+            $flag=true;
+        }
+        $name = test_input($_POST["name"]);
+        $email = test_input($_POST["email"]);
+        if ( !filter_var($email, FILTER_VALIDATE_EMAIL ))
+        {
+            $errMsg = "Invalid Email.";
+            $msg = "Please provide a valid email address.";
+            $flag=true;
+        }
+        $tel = test_input($_POST["tel"]);
+        if ( !preg_match("/^[0-9+()\s]+$/", $tel) )
+        {
+            $errMsg = "Invalid Phone Number.";
+            $msg = "Please provide a valid phone number";
+            $flag=true;
+        }
+        $question = test_input($_POST["message"]);
+        if ( $flag ) 
+        {
+            // Validation Failed. Redirect with proper error message.
+            header('Location: index.php?errMsg='.$errMsg.'&msg='.$msg.'#contact');
+            exit;
+        } else {
+            // Send email containing contacts.
+            $to = "d.barihuta@gmail.com";
+            $subject = "Lead: Customer Requested To Be Contacted.";
+            $headers = "From: linespeedapt@172.105.188.27\r\n";
+            //Enable HTML email
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            //HTML email
+            $HTML = "<html lang=\"en\"></body>";
+            $message = $HTML."<h3>Information sent by customer:</h3>";
+            $message .= "<b>Name:</b> ".$name."<br>";
+            $message .= "<b>Email:</b> ".$email."<br>";
+            $message .= "<b>Phone Number:</b>".$tel."<br>";
+            $message .= "<b>Message:</b><br><p>".$question."</p>";
+            $message .= "</body></html>";
+
+            mail($to, $subject, $message, $headers);
+            header('Location: index.php?success#contact');
+            exit;
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +70,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" href="css/quickAction.css">
     <link rel="stylesheet" href="css/events.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_v1.0.1.css">
 </head>
 <body style="min-width: 315px;">
     <div id="topNavBar" class="container top-nav-wrapper">
@@ -95,15 +155,21 @@
                 
             </p>
         -->
-        <p class="p-med">
-            Ages 8 – 16 are crucial for a child to reach their full athletic performance.
-            All youth start with varied physical capabilities, due to many factors that affect athletic development including growth, genetics, maturation, etc.
-            But it’s not where you start, its where you finish that matters. 
-            By focusing on the physical metrics that we can control/affect – Flexibility, Power, Coordination, Strength, SPEED, etc. we reduce the risk of injury, increase confidence, and improve athletic performance of the athlete.
-            <br>Discover how Linespeed athletic performance training can help your child reach their full potential.<br><br>
-            <br><span class="d-flex"><a href="/about" class="mx-auto btn btn-success" role="button" aria-pressed="true">More&nbsp;Info</a></span>
+        <p class="p-med mb-0">
+            SPEED is a skill that can be improved in any athlete with correct training and education towards preparation, technique and intensity.
+            Our structured training sessions expose athletes to components of SPEED DEVELOPMENT that will improve their sports performance:
         </p>
-
+        <ul class="list-inline justify-content-center">
+            <li>Increase their speed</li>
+            <li>Improve running technique</li>
+            <li>Improve running efficiency</li>
+            <li>Reduce risk of injury</li>
+            <li>Increase confidence</li>
+        </ul>
+        <p class="p-med">
+            From 8yrs old to adults, capabilities and experience, multiple sports codes, Linespeed APT strives to assist athletes to reach their full athletic potential.<br><br>
+            <br><a href="/about/linespeed" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact&nbsp;Us</a> to start your journey.
+        </p>
         </div>
     </div>
     <div class="container parent">
@@ -153,7 +219,7 @@
             <div class="big-bullet-parent">
                 <div class="big-bullet-icon">
                     <a href="/training/speed-agility/">
-                        <img src="media/speed_agility_bullet_icon.jpg" alt="mouse cursor" class="big-bullet-icon-img">
+                        <img src="media/agility_bullet_icon.jpg" alt="Speed and Agility Training" class="big-bullet-icon-img">
                     </a>
                 </div>
                 <div class="big-bullet-content-wrapper">
@@ -166,11 +232,11 @@
             <div class="big-bullet-parent">
                 <div class="big-bullet-icon">
                     <a href="/training/team-speed/">
-                        <img style="position: absolute; height: 200px; top: 0px; left: -25px; width: unset;" src="media/team_bullet_icon_1.jpg" alt="mouse cursor" class="big-bullet-icon-img">
+                        <img style="position: absolute; height: 200px; top: 0px; left: -25px; width: unset;" src="media/team_bullet_icon_1.jpg" alt="Sports Team Specific Training" class="big-bullet-icon-img">
                     </a>
                 </div>
                 <div class="big-bullet-content-wrapper">
-                    <h3 class="text-center h3-large font_7">Sports Team Specific Training</h3>
+                    <h3 class="text-center h3-large font_7">Sports Team Training</h3>
                     <p>
                         Gain the competitive edge. Reduce chances of injury, increase movement efficiency, improve team confidence and unity.<br><a href="/training/team-speed/">Learn&nbsp;More...</a>
                     </p>
@@ -179,11 +245,11 @@
             <div class="big-bullet-parent">
                 <div class="big-bullet-icon">
                     <a href="/training/linear-speed/">
-                        <img src="media/sprint_bullet_icon_1.jpg" alt="mouse cursor" class="big-bullet-icon-img">
+                        <img src="media/sprint_bullet_icon_1.jpg" alt="Linear Speed Training" class="big-bullet-icon-img">
                     </a>
                 </div>
                 <div class="big-bullet-content-wrapper">
-                    <h3 class="text-center h3-large font_7">Sprint Performance Training</h3>
+                    <h3 class="text-center h3-large font_7">Linear Speed Training</h3>
                     <p>
                         Straight speed sprint training. Cover distance in faster time, on grass or on the court. Game breaker SKILL that is an integral part of any sport.<br><a href="/training/linear-speed/">Learn&nbsp;More...</a>
                     </p>
@@ -192,13 +258,13 @@
             <div class="big-bullet-parent">
                 <div class="big-bullet-icon">
                     <a href="/training/holiday-program/">
-                        <img style="width: unset; height: 200px;"src="media/holiday_bullet_icon.jpg" alt="mouse cursor" class="big-bullet-icon-img">
+                        <img style="width: unset; height: 200px; position: absolute; top: 0px; left: -100px;"src="media/holiday_bullet_icon_1.jpg" alt="Holiday Programs" class="big-bullet-icon-img">
                     </a>
                 </div>
                 <div class="big-bullet-content-wrapper">
                     <h3 class="text-center h3-large font_7">Holiday Program</h3>
                     <p>
-                        Holiday Programs. <br><a href="/training/holiday-program/">Learn&nbsp;More...</a>
+                        Programs aimed at exposing athletes to the full Linespeed sports performance framework aswell as associating speed and agility to sports performance.<br><a href="/training/holiday-program/">Learn&nbsp;More...</a>
                     </p>
                 </div>
             </div>
@@ -220,35 +286,30 @@
         <div class="container mt-5" >
             <div class="row" style="height:550px;">
             <div class="col-md-6 maps" >
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d432907.5171976201!2d115.68134764061632!3d-32.039755863297415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32966cdb47733d%3A0x304f0b535df55d0!2sPerth%20WA!5e0!3m2!1sen!2sau!4v1599121699628!5m2!1sen!2sau" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27181.575406248932!2d115.66251178299923!3d-31.614763405644403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2bcd580144fe4053%3A0x504f0b535df3dd0!2sAlkimos%20WA%206038%2C%20Australia!5e0!3m2!1sen!2szm!4v1607018885452!5m2!1sen!2szm" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
             <div class="col-md-6" id="contact-form">
                 <h2 class="text-uppercase mt-3 font-weight-bold text-white">Contact</h2>
-                <form action="">
+                <form action="" method="post">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                     <div class="form-group">
-                        <input id="name_input"type="text" class="form-control mt-2" placeholder="Name*" required>
-                    </div>
-                    </div>
-                    <div class="col-lg-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control mt-2" placeholder="Surname">
+                        <input name="name" id="name_input"type="text" class="form-control mt-2" placeholder="Name*" required>
                     </div>
                     </div>
                     <div class="col-lg-6">
                     <div class="form-group">
-                        <input type="email" class="form-control mt-2" placeholder="Email*" required>
+                        <input name="email" type="email" class="form-control mt-2" placeholder="Email*" required>
                     </div>
                     </div>
                     <div class="col-lg-6">
                     <div class="form-group">
-                        <input type="tel" class="form-control mt-2" placeholder="Tel">
+                        <input name="tel" type="tel" class="form-control mt-2" placeholder="Tel">
                     </div>
                     </div>
                     <div class="col-12">
                     <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Reach out to us" rows="3" required></textarea>
+                        <textarea name="message" class="form-control" id="exampleFormControlTextarea1" placeholder="Reach out to us" rows="3" required></textarea>
                     </div>
                     </div>
                     <div class="col-12">

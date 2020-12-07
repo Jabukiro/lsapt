@@ -1,8 +1,10 @@
 .training-sessions{
-    height: 50vh;
+    height: 80vh;
 }
 .training-sessions .content-wrapper{
     justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
 }
 .training-sessions .background-video{
     opacity: 0.8;
@@ -120,7 +122,12 @@
         font-size: 20px;
     }
 }
-
+/* Max width 1000px Changes */
+@media screen and ( max-width: 1000px ) {
+    .training-sessions{
+        height: 50vh;
+    }
+}
 /* Max width 767px Changes */
 @media screen and ( max-width: 767px ) {
     .training-content{
