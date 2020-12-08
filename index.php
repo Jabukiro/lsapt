@@ -168,7 +168,7 @@
         </ul>
         <p class="p-med">
             From 8yrs old to adults, capabilities and experience, multiple sports codes, Linespeed APT strives to assist athletes to reach their full athletic potential.<br><br>
-            <br><a href="/about/linespeed" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact&nbsp;Us</a> to start your journey.
+            <br><a href="#contact" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact&nbsp;Us</a> to start your journey.
         </p>
         </div>
     </div>
