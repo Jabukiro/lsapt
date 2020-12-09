@@ -37,8 +37,8 @@
             exit;
         } else {
             // Send email containing contacts.
-            $to = "d.barihuta@gmail.com";
-            //$to = "info@linespeedapt.com";
+            //$to = "d.barihuta@gmail.com";
+            $to = "info@linespeedapt.com";
             $subject = "Lead: Customer Requested To Be Contacted.";
             $headers = "From: admin\r\n";
             //Enable HTML email
