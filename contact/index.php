@@ -1,3 +1,64 @@
+<?php
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+    if ( isset($_POST['name']) )
+    {
+        $flag = false;
+        if ( empty($_POST['name']) )
+        {
+            $errMsg="No Name";
+            $msg="Please provide a name for us to contact you.";
+            $flag=true;
+        }
+        $name = test_input($_POST["name"]);
+        $email = test_input($_POST["email"]);
+        if ( !filter_var($email, FILTER_VALIDATE_EMAIL ))
+        {
+            $errMsg = "Invalid Email.";
+            $msg = "Please provide a valid email address.";
+            $flag=true;
+        }
+        $tel = test_input($_POST["tel"]);
+        if ( !preg_match("/^[0-9+()\s]+$/", $tel) )
+        {
+            $errMsg = "Invalid Phone Number.";
+            $msg = "Please provide a valid phone number";
+            $flag=true;
+        }
+        $question = test_input($_POST["message"]);
+        if ( $flag ) 
+        {
+            // Validation Failed. Redirect with proper error message.
+            header('Location: index.php?errMsg='.$errMsg.'&msg='.$msg.'#contact');
+            exit;
+        } else {
+            // Send email containing contacts.
+            $to = "d.barihuta@gmail.com";
+            //$to = "info@linespeedapt.com";
+            $subject = "Lead: Customer Requested To Be Contacted.";
+            $headers = "From: admin\r\n";
+            //Enable HTML email
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            //HTML email
+            $HTML = "<html lang=\"en\"></body>";
+            $message = $HTML."<h3>Information sent by customer:</h3>";
+            $message .= "<b>Name:</b> ".$name."<br>";
+            $message .= "<b>Email:</b> ".$email."<br>";
+            $message .= "<b>Phone Number:</b>".$tel."<br>";
+            $message .= "<b>Message:</b><br><p>".$question."</p>";
+            $message .= "</body></html>";
+
+            mail($to, $subject, $message, $headers);
+            header('Location: index.php?success#contact');
+            exit;
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <!DOCTYPE html>
@@ -84,42 +145,37 @@
     <div id="contact" class="row">
         <div class="container mt-5" >
             <div class="row" style="height:550px;">
-                <div class="col-md-6 maps" >
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27181.575406248932!2d115.66251178299923!3d-31.614763405644403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2bcd580144fe4053%3A0x504f0b535df3dd0!2sAlkimos%20WA%206038%2C%20Australia!5e0!3m2!1sen!2szm!4v1607018885452!5m2!1sen!2szm" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                </div>
-                <div class="col-md-6" id="contact-form">
+            <div class="col-md-6 maps" >
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27181.575406248932!2d115.66251178299923!3d-31.614763405644403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2bcd580144fe4053%3A0x504f0b535df3dd0!2sAlkimos%20WA%206038%2C%20Australia!5e0!3m2!1sen!2szm!4v1607018885452!5m2!1sen!2szm" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <div class="col-md-6" id="contact-form">
                 <h2 class="text-uppercase mt-3 font-weight-bold text-white">Contact</h2>
-                <form action="">
-                    <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                        <input type="text" class="form-control mt-2" placeholder="Name*" required>
-                        </div>
+                <form action="" method="post">
+                <div class="row">
+                    <div class="col-lg-12">
+                    <div class="form-group">
+                        <input name="name" id="name_input"type="text" class="form-control mt-2" placeholder="Name*" required>
+                    </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form-group">
-                        <input type="text" class="form-control mt-2" placeholder="Surname">
-                        </div>
+                    <div class="form-group">
+                        <input name="email" type="email" class="form-control mt-2" placeholder="Email*" required>
+                    </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form-group">
-                        <input type="email" class="form-control mt-2" placeholder="Email*" required>
-                        </div>
+                    <div class="form-group">
+                        <input name="tel" type="tel" class="form-control mt-2" placeholder="Tel">
                     </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                        <input type="tel" class="form-control mt-2" placeholder="Tel">
-                        </div>
                     </div>
                     <div class="col-12">
-                        <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Reach out to us" rows="3" required></textarea>
-                        </div>
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" id="exampleFormControlTextarea1" placeholder="Reach out to us" rows="3" required></textarea>
+                    </div>
                     </div>
                     <div class="col-12">
-                        <button class="btn" type="submit">Submit</button>
+                    <button class="btn" type="submit">Submit</button>
                     </div>
-                    </div>
+                </div>
                 </form>
                 <div class="text-white">
                 <h2 class="text-uppercase mt-4 font-weight-bold">Details</h2>
@@ -132,7 +188,7 @@
                 <a href="https://www.instagram.com/linespeedapt/"><i class="fab fa-instagram fa-3x"></i></a>
                 </div>
                 </div>
-                </div>
+            </div>
         
             </div>
         </div>
@@ -144,7 +200,7 @@
         </div>
         <div class="container">
             <p>'Start FAST Finish STRONG'</p>
-            <span class="text-muted">@ 2020 LineSpeedATP. All rights reserved.</span>
+            <span class="text-muted">@2020 LinespeedAPT. All rights reserved</span>
         </div>
     </footer>
     <!--Quick Action PopUp-->

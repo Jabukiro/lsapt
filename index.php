@@ -38,8 +38,9 @@
         } else {
             // Send email containing contacts.
             $to = "d.barihuta@gmail.com";
+            //$to = "info@linespeedapt.com";
             $subject = "Lead: Customer Requested To Be Contacted.";
-            $headers = "From: linespeedapt@172.105.188.27\r\n";
+            $headers = "From: admin\r\n";
             //Enable HTML email
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -155,19 +156,23 @@
                 
             </p>
         -->
+        <p class="p-med">
+            SPEED is a skill that can be improved in any athlete with the correct training and education towards preparation, technique and intensity.
+        </p>
         <p class="p-med mb-0">
-            SPEED is a skill that can be improved in any athlete with correct training and education towards preparation, technique and intensity.
-            Our structured training sessions expose athletes to components of SPEED DEVELOPMENT that will improve their sports performance:
+            Our structured training sessions expose athletes to components of SPEED DEVELOPMENT that will:
         </p>
         <ul class="list-inline justify-content-center">
-            <li>Increase their speed</li>
+            <li>Increase speed</li>
+            <li>Improve sports performance</li>
             <li>Improve running technique</li>
             <li>Improve running efficiency</li>
             <li>Reduce risk of injury</li>
             <li>Increase confidence</li>
         </ul>
         <p class="p-med">
-            From 8yrs old to adults, capabilities and experience, multiple sports codes, Linespeed APT strives to assist athletes to reach their full athletic potential.<br><br>
+            From 8yrs old to adults, different range of capabilities and experience, multiple sports codes, Linespeed APT strives to assist athletes to reach their full athletic potential.
+            <br>Its not where you START, its where you FINISH.<br><br>
             <br><a href="#contact" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact&nbsp;Us</a> to start your journey.
         </p>
         </div>
@@ -336,7 +341,7 @@
     <footer class="footer text-center">
         <div class="container">
             <p>'Start FAST Finish STRONG'</p>
-            <span class="text-muted">@ 2020 LineSpeedATP. All rights reserved.</span>
+            <span class="text-muted">@2020 LinespeedAPT. All rights reserved</span>
         </div>
     </footer>
     <!--Quick Action PopUp-->
