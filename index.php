@@ -65,6 +65,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LineSpeedAPT | Perth Speed Training</title>
+    <meta name="description" content="LINESPEED Athletic Performance (LAPT) prime focus is to improve running speed of athletes from various sporting codes. Based in Perth Northern Suburbs, WA.">
+    <meta name="keywords" content="">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KQSKV8X');</script>
+    <!-- End Google Tag Manager -->
     <link rel="preload" href="media/loader.mp4" as="video">
     <link rel="shortcut icon" href="/media/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -74,6 +83,10 @@
     <link rel="stylesheet" href="css/style_v1.0.1.css">
 </head>
 <body style="min-width: 315px;">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQSKV8X"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="topNavBar" class="container top-nav-wrapper">
         <nav class="navbar navbar-expand-sm navbar-dark">
             <a class="navbar-brand mr-auto" href="/"><img id="logo" src="media/logo.svg" alt="Linespeed Logo" srcset=""></a>
