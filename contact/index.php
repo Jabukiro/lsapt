@@ -37,10 +37,11 @@
             exit;
         } else {
             // Send email containing contacts.
-            //$to = "d.barihuta@gmail.com";
-            $to = "info@linespeedapt.com";
+            $to = "d.barihuta@gmail.com";
+            //$to = "info@linespeedapt.com";
             $subject = "Lead: Customer Requested To Be Contacted.";
             $headers = "From: admin\r\n";
+            //$headers .= "Bcc: d.barihuta@gmail.com\r\n";
             //Enable HTML email
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -66,9 +67,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About Us | LineSpeedAPT | Perth Speed Training</title>
-        <meta name="description" content="LINESPEED Athletic Performance (LAPT) prime focus is to improve running speed of athletes from various sporting codes. Based in Perth Northern Suburbs, WA.">
-        <meta name="keywords" content="">
+        <title>Contact Us | LineSpeedAPT | Perth Speed Training</title>
+        <meta name="description" content="Send us an email or a call!">
+        <meta name="keywords" content="Best Sprint Coach Perth, Sprint training Perth, Speed Training Perth, WA best Little Athletics coach, Sprinting Perth, Perth Athletics coach, Sprint coach Perth, Linespeed">
+        <meta property="og:locale" content="en_AU">
+        <meta property="og:title" content="Contact Details | LinespeedAPT">
+        <meta property="og:image" content="https://linespeedapt.com/media/last.jpg">
+        <meta property="og:url" content="https://linespeedapt.com">
+        <meta property="og:site_name" content="Linespeed Atheltic Performance">
+        <meta name="twitter:card" content="summary_large_image">
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -191,7 +198,7 @@
                 <div class="text-white">
                 <h2 class="text-uppercase mt-4 font-weight-bold">Details</h2>
         
-                <i class="fas fa-phone mt-3"></i> <a href="tel:+65403543403">(+61) 403 543 403</a><br>
+                <i class="fas fa-phone mt-3"></i> <a href="tel:+61403543403">(+61) 403 543 403</a><br>
                 <i class="fa fa-envelope mt-3"></i> <a href="mailto:info@linespeedapt.com">info@linespeedapt.com</a><br>
                 <i class="fas fa-globe mt-3"></i> Perth WA<br>
                 <div class="my-4">
