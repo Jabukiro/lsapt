@@ -37,10 +37,11 @@
             exit;
         } else {
             // Send email containing contacts.
-            //$to = "d.barihuta@gmail.com";
-            $to = "info@linespeedapt.com";
+            $to = "d.barihuta@gmail.com";
+            //$to = "info@linespeedapt.com";
             $subject = "Lead: Customer Requested To Be Contacted.";
             $headers = "From: admin\r\n";
+            //$headers .= "Bcc: d.barihuta@gmail.com\r\n";
             //Enable HTML email
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -65,8 +66,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LineSpeedAPT | Perth Speed Training</title>
-    <meta name="description" content="LINESPEED Athletic Performance (LAPT) prime focus is to improve running speed of athletes from various sporting codes. Based in Perth Northern Suburbs, WA.">
-    <meta name="keywords" content="">
+    <meta name="description" content="Linespeed Athletic Performance (LAPT) prime focus is to improve running speed of athletes from various sporting codes. Based in Perth Northern Suburbs, WA.">
+    <meta name="keywords" content="Best Sprint Coach Perth, Sprint training Perth, Speed Training Perth, WA best Little Athletics coach, Sprinting Perth, Perth Athletics coach, Sprint coach Perth, Linespeed">
+    <meta property="og:locale" content="en_AU">
+    <meta property="og:title" content="LinespeedAPT | Perth Speed Training">
+    <meta property="og:locale" content="Linespeed Athletic Performance (LAPT) prime focus is to improve running speed of athletes from various sporting codes. Based in Perth Northern Suburbs, WA.">
+    <meta property="og:image" content="https://linespeedapt.com/media/last.jpg">
+    <meta property="og:url" content="https://linespeedapt.com">
+    <meta property="og:site_name" content="Linespeed Atheltic Performance">
+    <meta name="twitter:card" content="summary_large_image">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -74,13 +82,13 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KQSKV8X');</script>
     <!-- End Google Tag Manager -->
-    <link rel="preload" href="media/loader.mp4" as="video">
+    <link rel="preload" href="media/loader_min.mp4" as="video">
     <link rel="shortcut icon" href="/media/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" href="css/quickAction.css">
     <link rel="stylesheet" href="css/events.css">
-    <link rel="stylesheet" href="css/style_v1.0.1.css">
+    <link rel="stylesheet" href="css/style_v1.0.3.css">
 </head>
 <body style="min-width: 315px;">
     <!-- Google Tag Manager (noscript) -->
@@ -155,7 +163,7 @@
         <!--Uncomment for full width and height background<div class="container background-video">-->
         <!--Full Width only background and centered vertically -->
         <div class="container landscape-background-video">
-            <video id="background_vid" src="media/loader.mp4" muted></video>
+            <video id="background_vid" src="media/loader_min.mp4" muted></video>
             <img id="background_img" style="display: none;" src="media/last.jpg" />
         </div>
     </div>
@@ -288,15 +296,62 @@
             </div>
         </div>
     </div>
-    <div class="container instagram">
+    <div class="container reviews">
+        <h2 class="heading">Parents are saying</h2>
         <!--<div class="quote-wrapper">
             <p class="quote">
                 SPEED is a SKILL, and like any skill, it must be practised correctly, and honed with consistency to achieve greater results.
             </p>
         </div>-->
+        <!--
         <div class="insta-embed" id="instaFrameContainer">
             <div class="instaFrameWrapper">
                 <iframe id = "instaFrame" src="insta.html" frameborder="0" scrolling="no" class="instaFrame"></iframe>
+            </div>
+        </div>-->
+        <div class="container slides">
+            <!--<div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">-->
+            <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item text-center active testimonial">
+                        <!--<div class="carousel-header d-block w-100">-->
+                        <div class="carousel-img"><img src="/media/sec_rev.jpg"></img></div>
+                        <p>Linespeed is such a well thought out and targeted training program that achieves amazing results. Jacob takes a genuine interest in the personal development of all his athletes & truly gets the best out of everyone that attends. Great work team & highly recommend you to all athletes looking for a pathway to reach peak performance in a fun, supportive & challenging environment.</p>
+                        <p class="author">Katina Muncaster</p>
+                    </div>
+                    <div class="carousel-item text-center testimonial">
+                    <!--<div class="carousel-header d-block w-100">-->
+                        <div class="carousel-img"><img src="/media/first_rev.jpg"></img></div>
+                        <p>My daughter has been doing linespeed for around 2months now and the improvement in her speed, agility and overall confidence has been amazing! Jacob and the team have worked on her individual needs & goals to improve her game, knowledge and skill base and the results have been incredible to watch on and off the court/field.  Thank you to the team, we are so grateful for all your hard work and dedication!!</p>
+                        <p class="author">Stacey Ashby</p>
+                    </div>
+                    <div class="carousel-item text-center testimonial">
+                        <div class="carousel-img"><img src="/media/third_rev.jpg"></img></div>
+                        <p>Thank you Jacob and his team for all the amazing training they have done for our kids! My husband and i are so happy to find that perfect coach as what makes Jacob outstanding is the passion, dedication and heart when he trains all these children as he just wants to see your kids strive the very best they can be! Thankyou for being the best coach and mentor to our kids!</p>
+                        <p class="author">Louise & Daryn Pakau</p>
+                    </div>
+                    <div class="carousel-item text-center testimonial">
+                        <div class="carousel-img"><img src="/media/fourth_rev.jpg"></img></div>
+                        <p>Our son has attended weekly linespeed sessions for over a year now and enjoys it immensely. Not only has his starts and running technique improved tenfold from when he began but his attitude and drive have also improved- he is a completely different child. Jacob works hard with the kids to bring out the best in them and help them realise their potential and increase their confidence. Linespeed isn't just another sport our child attends it is a place he can go that teaches him valuable lessons that he can use in every aspect of his life. It is also a place he can be with like minded children who have now become his best friends.</p>
+                        <p class="author">Stephanie Parr</p>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <!---<a class="carousel-control-prev" href="#carouselFade" role="button" data-slide="prev">-->
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <!--<a class="carousel-control-next" href="#carouselFade" role="button" data-slide="next">-->
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
     </div>
@@ -338,7 +393,7 @@
                 <div class="text-white">
                 <h2 class="text-uppercase mt-4 font-weight-bold">Details</h2>
         
-                <i class="fas fa-phone mt-3"></i> <a href="tel:+65403543403">(+61) 403 543 403</a><br>
+                <i class="fas fa-phone mt-3"></i> <a href="tel:+61403543403">(+61) 403 543 403</a><br>
                 <i class="fa fa-envelope mt-3"></i> <a href="mailto:info@linespeedapt.com">info@linespeedapt.com</a><br>
                 <i class="fas fa-globe mt-3"></i> Perth WA<br>
                 <div class="my-4">
@@ -397,7 +452,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="js/style_no_loader.js"></script>
+    <script src="js/style_no_loader_v1.0.1.js"></script>
     <script src="js/events.js"></script>
     <script src="js/base.js"></script>
 </body>
