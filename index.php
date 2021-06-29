@@ -198,7 +198,7 @@
         </p>
         </div>
     </div>
-    <div class="container parent">
+    <div class="container parent offWhiteSurface">
         <div id="events" class="events">
             <h2 class="events-title text-center"><span>COMING UP</span></h2>
             <div class="events-toggle-frame-container">
@@ -208,17 +208,12 @@
                             <input type="checkbox" id="switchBtn">
                             <span class="slider round"></span>
                         </label>
-                        <h5 class="events-toggle-accordion-title align-middle">October Holiday Program</h5>
+                        <h5 class="events-toggle-accordion-title align-middle">January Holiday Program</h5>
                     </div><div class="events-toggle-content">
                         <div class="block">
-                            <a href="media/holiday_prog.jpg" target="_blank">
-                                <img src="media/holiday_prog.jpg" alt="" srcset="">
+                            <a href="media/holiday_flyer.jpg" target="_blank">
+                                <img src="media/holiday_flyer.jpg" alt="" srcset="">
                             </a>
-                            <!--
-                            <p>
-                            We will be conducting a holiday programme during the school holidays in October (5th - 9th). The programme will be challenging but baalanced and will aim to keep the children active and motivated and provide team building skills and mentorship
-                            </p>
-                            -->
                         </div>
                     </div>
                 </div>
@@ -235,6 +230,26 @@
                             <a href="media/shark_flyer.jpg" target="_blank">
                                 <img src="media/shark_flyer.jpg" alt="" srcset="">
                             </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="events-toggle-frame">
+                    <div data-collapsed="true" class="events-toggle-accordion">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title align-middle">October Holiday Program</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <a href="/media/holiday_prog.jpg" target="_blank">
+                                <img src="/media/holiday_prog.jpg" alt="" srcset="">
+                            </a>
+                            <!--
+                            <p>
+                               We will be conducting a holiday programme during the school holidays in October (5th - 9th). The programme will be challenging but baalanced and will aim to keep the children active and motivated and provide team building skills and mentorship
+                            </p>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -321,15 +336,15 @@
                 <div class="carousel-inner">
                     <div class="carousel-item text-center active testimonial">
                         <!--<div class="carousel-header d-block w-100">-->
-                        <div class="carousel-img"><img src="/media/sec_rev.jpg"></img></div>
-                        <p>Linespeed is such a well thought out and targeted training program that achieves amazing results. Jacob takes a genuine interest in the personal development of all his athletes & truly gets the best out of everyone that attends. Great work team & highly recommend you to all athletes looking for a pathway to reach peak performance in a fun, supportive & challenging environment.</p>
-                        <p class="author">Katina Muncaster</p>
-                    </div>
-                    <div class="carousel-item text-center testimonial">
-                    <!--<div class="carousel-header d-block w-100">-->
                         <div class="carousel-img"><img src="/media/first_rev.jpg"></img></div>
                         <p>My daughter has been doing linespeed for around 2months now and the improvement in her speed, agility and overall confidence has been amazing! Jacob and the team have worked on her individual needs & goals to improve her game, knowledge and skill base and the results have been incredible to watch on and off the court/field.  Thank you to the team, we are so grateful for all your hard work and dedication!!</p>
                         <p class="author">Stacey Ashby</p>
+                    </div>
+                    <div class="carousel-item text-center testimonial">
+                    <!--<div class="carousel-header d-block w-100">-->
+                        <div class="carousel-img"><img src="/media/sec_rev.jpg"></img></div>
+                        <p>Linespeed is such a well thought out and targeted training program that achieves amazing results. Jacob takes a genuine interest in the personal development of all his athletes & truly gets the best out of everyone that attends. Great work team & highly recommend you to all athletes looking for a pathway to reach peak performance in a fun, supportive & challenging environment.</p>
+                        <p class="author">Katina Muncaster</p>
                     </div>
                     <div class="carousel-item text-center testimonial">
                         <div class="carousel-img"><img src="/media/third_rev.jpg"></img></div>
@@ -355,6 +370,29 @@
             </div>
         </div>
     </div>
+    <!--
+    <div class="container d-flex offWhiteSurface">
+        <div class="big-bullet-icon">
+            <a href="/training/speed-agility/">
+                <img src="media/agility_bullet_icon.jpg" alt="Speed and Agility Training" class="big-bullet-icon-img">
+            </a>
+        </div>
+        <div class="big-bullet-icon">
+            <a href="/training/speed-agility/">
+                <img src="media/team_bullet_icon.jpg" alt="Speed and Agility Training" class="big-bullet-icon-img">
+            </a>
+        </div>
+        <div class="big-bullet-icon">
+            <a href="/training/speed-agility/">
+                <img src="media/sprint_bullet_icon.jpg" alt="Speed and Agility Training" class="big-bullet-icon-img">
+            </a>
+        </div>
+        <div class="big-bullet-icon">
+            <a href="/training/speed-agility/">
+                <img src="media/holiday_bullet_icon.jpg" alt="Speed and Agility Training" class="big-bullet-icon-img">
+            </a>
+        </div>
+    </div>-->
     <div id="contact" class="row">
         <div class="container mt-5" >
             <div class="row" style="height:550px;">
