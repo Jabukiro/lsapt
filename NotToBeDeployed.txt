@@ -1,0 +1,8 @@
+NotToBeDeployed.txt
+README.md
+deploy.sh
+index_loader.html
+index_no_loader.html
+.*
+backup_media/
+media_orig/

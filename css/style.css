@@ -19,12 +19,30 @@ h1 {
 a{
     text-decoration: none;
     background-color: transparent;
+    transition: .3s color ease-in-out;
 }
 a:hover {
     text-decoration: none;
 }
+.loaderBackground{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    z-index: 9000;
+    transition: all 1s ease-in-out;
+}
+.loader{
+    display: block;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
 .font_7 {
 	font: normal normal normal 24px/1.46em anton,sans-serif;
+}
+.text-md{
+    font-size: 1rem;
 }
 .top-nav-wrapper{
     position: fixed;
@@ -44,7 +62,7 @@ a:hover {
     margin: 0 auto;
 }
 .navbar-brand img {
-    max-width: 160px;
+    max-width: 280px;
     vertical-align: middle;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
@@ -59,6 +77,15 @@ a:hover {
 .nav-link:hover{
     background-color: transparent;
     color: #ED0012 !important;
+}
+.navbar-dark .navbar-nav .dropdown.show > .nav-link {
+	color: #ED0012;
+}
+.dropdown-menu{
+    background-color: #18191B;
+}
+.dropdown-item{
+    color: #cccccc;
 }
 .top-nav-collapse {
     padding: 0 30px;
@@ -78,8 +105,7 @@ a:hover {
     opacity: .77;
 }
 .top-nav-collapse .top-nav-gradient{
-    opacity: 0;
-    height: 150%;
+    display: none;
 }
 .top-nav-collapse .nav-link{
     font-size: 14px;
@@ -104,6 +130,24 @@ a:hover {
     position: absolute;
     overflow: hidden;
 }
+.landscape-background-video {
+    opacity: 0.9;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -101;
+}
 .background-video video {
     background-size: cover;
     background-position: 50% 50%;
@@ -116,6 +160,11 @@ a:hover {
     top: -100%;
     left: -100%;
     object-fit: cover;
+    z-index: -100;
+}
+.landscape-background-video video, .landscape-background-video img{
+    position: absolute;
+    width: 100vw;
     z-index: -100;
 }
 .content-wrapper{
@@ -136,21 +185,27 @@ a:hover {
 
 .landing-content{
     max-width: 670px;
+    transition: all 1s cubic-bezier(0, 0, 0.2, 1);
 }
 .p-large{
-    opacity: .7;
+    opacity: .9;
     color: #2f3743;
     font-size: 22px;
     line-height: 160%;
 }
 .on-dark{
     color: #fff;
+    font-size: 80px;
+}
+.on-dark.p-large{
+    font-size: 22px;
 }
 .content-link{
     position: relative;
     display: inline-block;
     margin-top: 4px;
-    margin-left: -10px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 6px 19px 6px 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -169,7 +224,7 @@ a:hover {
 }
 .content-link-text{
     display: inline;
-    font-weight: 700px;
+    font-weight: 700;
 }
 .content-link-arrow{
     position: relative;
@@ -186,14 +241,30 @@ a:hover {
     justify-content: space-between;
     padding: 20px;
 }
+.about h1{
+    font-size: 40px;
+}
+.about-quote{
+    display: block;
+    font-weight: 700;
+}
+.instagram{
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 7px;
+}
 .insta-embed{
     height: 100%;
     width: 100%;
     max-width: 500px;
     justify-content: center;
-    box-shadow: 0 22px 44px rgba(0,0,0,0.1);
+    box-shadow: 0 22px 44px rgba(0,0,0,0.2);
     border-radius: 8px;
-    border: solid #efefef;
+    border: solid #333232;
     border-width: 0;
     border-top-width: 28px;
     position: relative;
@@ -216,9 +287,9 @@ a:hover {
     letter-spacing: 0;
 }
 .about-text{
-    max-width: 500px;
     display: flex;
     flex-direction: column;
+    max-width: 700px;
 }
 .p-med{
     font-weight: 400;
@@ -235,8 +306,7 @@ a:hover {
     width: 100%;
 }
 .insta-embed{
-    margin-left: auto;
-    margin-right:auto;
+    margin: auto;
 }
 .about-text{
     margin-left: auto;
@@ -247,9 +317,9 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
 }
-.about-text p {
+/*.about-text p {
     padding-top: 50px;
-}
+}*/
 .parent{
     display: flex;
     box-sizing: border-box;
@@ -294,6 +364,9 @@ a:hover {
     flex: 0 0 auto;
     background-color:#3f4d55;
 }
+.big-bullet-icon a{
+    width: inherit;
+}
 .big-bullet-icon-img{
     width: inherit;
 }
@@ -307,9 +380,27 @@ a:hover {
 .big-bullet-content-wrapper h3{
     color: #ED0012;
     font-weight: 600;
-    letter-spacing: -1.6px;
 }
-
+.big-bullet-content-wrapper a{
+    color: #4abf4f
+}
+.big-bullet-content-wrapper a:hover{
+    color: #358d39
+}
+.short-horizontal-divider {
+    display: none;
+    width: 250px;
+    height: 5px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background-color: #a7adb2;
+}
+.quote-wrapper{
+    margin: auto;
+}
+.training-list h1.on-dark{
+    font-size: 54px;
+}
 /* Italian COntact Form*/
 #contact{
     background-color: #ED0012;
@@ -381,25 +472,50 @@ a:hover {
     color: #ED0012;
 }
 /* ------------------------------------------------------ */
+/* Max width 1440px Changes */
+@media (max-width: 1441px) {
+    /* Events image width*/
+        .events-toggle-content .block img {
+            width: calc(33vw - 30px);
+            height: auto;
+        }
+}
 /* Max width 1000px Changes */
-@media screen and ( max-width: 1000px ) {
-    .about-text {
-        max-width: 450px;
+@media screen and ( max-width: 1025px ) {
+    .parent {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 /* Max width 767px Changes */
 @media screen and ( max-width: 767px ) {
+    .on-dark, .training-list h1.on-dark {
+        font-size: 43px;
+    }
+    .on-dark, .training-list h1.on-dark {
+        font-size: calc( 34px + 3vw);
+    }
+
     h1 {
-        font-size: 40px;
+        font-size: 45px;
     }
     .content-wrapper {
         margin-top: 0px;
         padding-right: 0;
         padding-left: 0;
     }
+    .top-nav-wrapper{
+        padding: 30px 20px;
+    }
+    .top-nav-collapse{
+        padding: 0 15px;
+    }
     .landing-content {
         max-width: 500px;
         padding-bottom: 0;
+    }
+    .landscape-background-video {
+        opacity: 1;
     }
     .p-large {
         font-size: 20px;
@@ -409,6 +525,7 @@ a:hover {
     }
     .about {
         flex-flow: column;
+        padding: 20px 7px;
     }
     .insta-embed {
         margin-bottom: 50px;
@@ -421,8 +538,6 @@ a:hover {
     }
     .parent{
         flex-flow: column-reverse;
-        padding-left: 15px;
-        padding-right: 15px;
     }
     .big-bullet-parent{
         flex-flow: column;
@@ -434,17 +549,87 @@ a:hover {
     .big-bullet-content-wrapper{
         padding-top: 15px;
     }
+    .big-bullet-content-wrapper p{
+        text-align: center;
+    }
     .parent .events{
         max-width: 100%;
         margin: 20px 0px;
     }
+    .events-toggle-content .block img {
+        width: 90vw;
+        height: auto;
+    }
     .short-horizontal-divider {
         display: block;
-        width: 250px;
-        height: 5px;
-        margin: 20px auto;
-        border-radius: 5px;
-        background-color: #a7adb2;
+    }
+    
+}
+@media screen and ( max-width: 576px ) {
+    .top-nav-wrapper{
+        padding: 10px 15px;
+    }
+    .top-nav-collapse{
+        padding: 0;
+    }
+    .navbar-brand img{
+        max-width: 250px;
+    }
+    .container.landing{
+        padding: 0;
+    }
+    .landing-content p{
+        font-size: 18px;
+    }
+    .content-wrapper{
+        justify-content: center;
+    }
+    .landing-content h1{
+        text-align: center;
+    }
+    .content-link-wrapper{
+        display: flex;
+    }
+    .content-link{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about h1{
+        font-size: 35px;
+    }
+}
+/* Medium fone screen */
+@media screen and ( max-width: 376px ) {
+    .container.landing{
+        padding: 0;
+    }
+    .content-link-wrapper{
+        display: flex;
+    }
+    .content-link{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+/* Small screen */
+@media screen and ( max-width: 320px ) {
+    .navbar-brand img{
+        max-width: 150px;
+    }
+
+    .big-bullet-icon {
+        height: 180px;
+        width: 180px;
+    }
+    .font_7{
+        font-size: 22px;
+    }
+    .on-dark .training-list h1.on-dark{
+        font-size: 43px;
+    }
+    .about h1{
+        font-size: 30px;
     }
     
 }
@@ -453,5 +638,11 @@ a:hover {
     opacity: 1;
     transform: scaleX(1) scaleY(1) scaleZ(1);
     transition: opacity 400ms ease 0s, transform 600ms ease 0s;
+}
+.dis-block{
+    display: block;
+}
+.dis-none{
+    display: none;
 }
 /*----------------*/

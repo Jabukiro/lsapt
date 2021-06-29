@@ -28,9 +28,13 @@ document.querySelectorAll(".events-toggle-accordion").forEach(toggle => {
         }
     })
 });
-toDisplay = document.getElementsByClassName("events-toggle-accordion active")[0].nextSibling;
-height = getHeight(toDisplay);
-toDisplay.style.maxHeight=String(height)+"px";
+//Wait for images to load first.
+window.onload = function() {
+    toDisplay = document.getElementsByClassName("events-toggle-accordion active")[0].nextSibling;
+    height = getHeight(toDisplay);
+    console.log("Events Image Height: ", height);
+    toDisplay.style.maxHeight=String(height)+"px";
+};
     /*
 (function ($) {
     /*

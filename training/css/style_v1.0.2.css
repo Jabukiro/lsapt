@@ -1,0 +1,164 @@
+.training-sessions{
+    height: 80vh;
+}
+.training-sessions .content-wrapper{
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+.training-sessions .background-video{
+    opacity: 0.8;
+}
+.training-sessions .background-video img, .training-list .background-video img{
+	background-size: cover;
+	background-position: 50% 50%;
+	position: absolute;
+	margin: auto;
+	width: 100%;
+    height: 100%;
+	right: -100%;
+	bottom: -100%;
+    top: -80%;
+	left: -100%;
+	object-fit: cover;
+    z-index: -100;
+}
+.training-sessions .bg-controlled-height img, .training-list .bg-controlled-height img{
+	top: calc(-100% + 50vw - 20vh);
+    height: auto;
+}
+.training-list .on-dark.p-large{
+    padding: 5px;
+}
+
+.training-content, .training-list .parent{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 36px 36px;
+    margin-bottom: 20px;
+}
+.training-list .parent{
+    background-color: #fff;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.training-list .big-bullet-wrapper{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.training-list .big-bullet-parent{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.training-list .big-bullet-parent>*{
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+}
+.training-list .big-bullet-icon{
+    margin-bottom: 16px;
+}
+.short-gradient{
+    position: relative;
+    height: 20px;
+    background-image: linear-gradient(180deg,#dbdbd8,transparent);
+}
+.breadcrumb{
+    background-color: transparent;
+    font-size: 12px;
+    padding: 0px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.breadcrumb a{
+    color: #ED0012;
+}
+.breadcrumb a:hover{
+    color: #b30413;
+}
+.main{
+    padding: 0 15px;
+}
+.training-content h1{
+    margin-bottom: 12px;
+    font-size: 2.5rem;
+}
+.training-content p{
+    margin-bottom: 24px;
+}
+.training-content ul{
+    margin-bottom: 24px;
+}
+.footer {
+	background: -o-linear-gradient(top,#303030,#171717);
+	background: -webkit-gradient(linear,left top,left bottom,from(#303030),to(#171717));
+	background: linear-gradient(to bottom,#303030,#171717);
+    border-top: 0;
+}
+.footer a{
+    color: #fff;
+}
+.footer a:hover, .footer a:focus{
+    color: #ED0012;
+}
+.footer .container{
+    padding-top: 20px;
+}
+.footer-links{
+    padding-top: 10px;
+}
+.footer p, footer span{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Max width 1200px Changes */
+@media screen and ( max-width: 1200px ) {
+    .training-list .big-bullet-icon{
+        width: 150px;
+        height: 150px;
+    }
+    .training-list .font_7{
+        font-size: 20px;
+    }
+}
+/* Max width 1000px Changes */
+@media screen and ( max-width: 1000px ) {
+    .training-sessions{
+        height: 50vh;
+    }
+}
+/* Max width 767px Changes */
+@media screen and ( max-width: 767px ) {
+    .training-sessions .bg-controlled-height img, .training-list .bg-controlled-height img{
+        height: 100%;
+        top: -80%;
+    }
+    .training-content{
+        padding: 24px 5px;
+    }
+    .training-content h1{
+        font-size: 2rem;
+    }
+    .training-list .big-bullet-wrapper{
+        flex-direction: column;
+    }
+    .training-list .big-bullet-icon{
+        width: 200px;
+        height: 200px;
+    }
+    .training-list .font_7{
+        font-size: 22px;
+    }
+}
+
+/* Max width 576px Changes */
+@media screen and (max-width: 576px) {
+    .training-list .landing-content .on-dark.p-large {
+        text-align: center;
+    }
+}
