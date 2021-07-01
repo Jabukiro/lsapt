@@ -208,11 +208,11 @@
                             <input type="checkbox" id="switchBtn">
                             <span class="slider round"></span>
                         </label>
-                        <h5 class="events-toggle-accordion-title align-middle">January Holiday Program</h5>
+                        <h5 class="events-toggle-accordion-title align-middle">School Holiday Program</h5>
                     </div><div class="events-toggle-content">
                         <div class="block">
-                            <a href="media/holiday_flyer.jpg" target="_blank">
-                                <img src="media/holiday_flyer.jpg" alt="" srcset="">
+                            <a href="media/shool_holiday_program.jpg" target="_blank">
+                                <img src="media/shool_holiday_program.jpg" alt="" srcset="">
                             </a>
                         </div>
                     </div>
@@ -224,11 +224,11 @@
                             <input type="checkbox" id="switchBtn">
                             <span class="slider round"></span>
                         </label>
-                        <h5 class="events-toggle-accordion-title">Shark - Rugby Academy</h5>
+                        <h5 class="events-toggle-accordion-title">Elite Sprint Session</h5>
                     </div><div class="events-toggle-content">
                         <div class="block">
-                            <a href="media/shark_flyer.jpg" target="_blank">
-                                <img src="media/shark_flyer.jpg" alt="" srcset="">
+                            <a href="media/elite_sprint_session.jpg" target="_blank">
+                                <img src="media/elite_sprint_session.jpg" alt="" srcset="">
                             </a>
                         </div>
                     </div>
@@ -239,11 +239,11 @@
                             <input type="checkbox" id="switchBtn">
                             <span class="slider round"></span>
                         </label>
-                        <h5 class="events-toggle-accordion-title align-middle">October Holiday Program</h5>
+                        <h5 class="events-toggle-accordion-title align-middle">Sprint Training | Term 3</h5>
                     </div><div class="events-toggle-content">
                         <div class="block">
-                            <a href="/media/holiday_prog.jpg" target="_blank">
-                                <img src="/media/holiday_prog.jpg" alt="" srcset="">
+                            <a href="/media/term3_speed_training.jpgls -" target="_blank">
+                                <img src="/media/term3_speed_training.jpg" alt="" srcset="">
                             </a>
                             <!--
                             <p>
