@@ -116,7 +116,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" href="css/quickAction.css">
     <link rel="stylesheet" href="css/events.css">
-    <link rel="stylesheet" href="css/style_v1.0.3.css">
+    <link rel="stylesheet" href="css/style_v1.0.4.css">
 </head>
 <body style="min-width: 315px;">
     <!-- Google Tag Manager (noscript) -->
@@ -452,7 +452,10 @@
                     </div>
                     </div>
                     <div class="col-12">
-                    <button class="btn" type="submit">Submit</button>
+                    <button id="SubmitBtn" class="btn" type="submit">
+                        <span id="SubmitBtnSpinner" class="spinner-border spinner-border-sm" style="display: none;" role="status" aria-hidden="true"></span>
+                        Submit
+                    </button>
                     </div>
                 </div>
                 </form>

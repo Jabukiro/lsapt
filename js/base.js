@@ -8,6 +8,8 @@ if (viewWidth <= 320) {
 //Fetch and attach token response to form before submitting
 var contactForm = document.getElementById("contact-form"); contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    document.getElementById("SubmitBtn").disabled = true;
+    document.getElementById("SubmitBtnSpinner").style.display = "inline-block";
     console.log(`contact-form submit-eventListener called with: ${e}`);
     grecaptcha.enterprise.ready(function () {
         grecaptcha.enterprise.execute('6LcVmn8bAAAAAAbCHhXQzz9uiQ8S8IrHZKABfnZE', { action: 'contact' }).then(function (token) {
@@ -18,6 +20,10 @@ var contactForm = document.getElementById("contact-form"); contactForm.addEventL
             contactForm.appendChild(input);
             contactForm.submit();
             //HTMLFormElement.prototype.submit.call(contactForm);
+        }).catch((reason) => {
+            console.log(`grecaptcha.enterprise.execute failed with reason ${reason}`);
+            document.getElementById("SubmitBtn").disabled = false;
+            document.getElementById("SubmitBtnSpinner").style.display = "none";
         });
     });
 });
