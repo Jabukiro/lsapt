@@ -2,3 +2,6 @@ backup_media/
 media_orig/
 vendor/
 composer.lock
+.htaccess
+.htpasswd
+cred/
