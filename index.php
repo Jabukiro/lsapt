@@ -1,12 +1,12 @@
 <?php
-    $DEBUG = false;
+    $ENV = parse_ini_file( "env.ini" );
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
     }
-    if ($DEBUG){
+    if ($ENV["DEBUG"]){
         ob_start();
         var_dump($_POST);
         $result = ob_get_clean();
@@ -47,7 +47,7 @@
             header('Location: index.php?errMsg='.$errMsg.'&msg='.$msg.'#contact');
             exit;
         } else {
-            if ($DEBUG){
+            if ($ENV["DEBUG"]){
                 header('Location: index.php?success#contact');
                 exit;
             }
@@ -456,6 +456,11 @@
                         <span id="SubmitBtnSpinner" class="spinner-border spinner-border-sm" style="display: none;" role="status" aria-hidden="true"></span>
                         Submit
                     </button>
+                    </div>
+                    <div class="col-12 reCaptchaAnnounce">
+                    This site is protected by reCAPTCHA and the Google
+                        <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                        <a href="https://policies.google.com/terms">Terms of Service</a> apply.
                     </div>
                 </div>
                 </form>
