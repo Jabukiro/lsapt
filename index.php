@@ -6,6 +6,15 @@
         $data = htmlspecialchars($data);
         return $data;
     }
+    function isSpam($score, $reason_code){
+        if (!is_nan($score) && $score >= 0.5){
+            return false;
+        }
+        if ($reason_code === 1){
+            return false;
+        }
+        return true;
+    }
     if ($ENV["DEBUG"]){
         ob_start();
         var_dump($_POST);
@@ -16,7 +25,7 @@
     {
         require 'reCaptcha.php';
         error_log('Evaluation of score:'.$SCORE);
-        error_log('Reason if spam:'.$REASON);
+        error_log('Reason if spam:'.$REASON["string"]);
 
         $flag = false;
         if ( empty($_POST['name']) )
@@ -47,10 +56,8 @@
             header('Location: index.php?errMsg='.$errMsg.'&msg='.$msg.'#contact');
             exit;
         } else {
-            if ($ENV["DEBUG"]){
-                header('Location: index.php?success#contact');
-                exit;
-            }
+            //Determine if spam
+            $isSpam = isSpam($SCORE, $REASON["code"]);
             // Send email containing contacts.
             // One to the business email and another to the developer to monitor reCaptcha analysis.
             $toDev = "d.barihuta@gmail.com";
@@ -72,14 +79,21 @@
             $message .= "<b>Phone Number:</b>".$tel."<br>";
             $message .= "<b>Message:</b><br><p>".$question."</p>";
 
-            $messageDev .= $message."<h3>reCaptcha Analysis Information:</h3>";
+            $messageDev = $message."<h3>reCaptcha Analysis Information:</h3>";
             $messageDev .= "<b>Score:</b> ".$SCORE."<br>";
-            $messageDev .= "<b>Reason:</b> ".$REASON."<br>";
+            $messageDev .= "<b>Reason:</b> ".$REASON["string"]."<br>";
+            $messageDev .= "<b>Is Considered Spam?:</b> ".($isSpam ? "Yes" : "No")."<br>";
 
             $message .= $HTMLEND;
             $messageDev .= $HTMLEND;
-
-            mail($to, $subject, $message, $headers);
+            error_log("Is considered spam? ".($isSpam ? "Yes" : "No"));
+            if ($ENV["DEBUG"]){
+                header('Location: index.php?success#contact');
+                exit;
+            }
+            if (!$isSpam){
+                mail($to, $subject, $message, $headers);
+            }
             mail($toDev, $subjectDev, $messageDev, $headers);
             header('Location: index.php?success#contact');
             exit;
@@ -116,7 +130,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" href="css/quickAction.css">
     <link rel="stylesheet" href="css/events.css">
-    <link rel="stylesheet" href="css/style_v1.0.4.css">
+    <link rel="stylesheet" href="css/style_v1.0.5.css">
 </head>
 <body style="min-width: 315px;">
     <!-- Google Tag Manager (noscript) -->
