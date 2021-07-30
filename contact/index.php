@@ -1,65 +1,3 @@
-<?php
-    function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-    if ( isset($_POST['name']) )
-    {
-        $flag = false;
-        if ( empty($_POST['name']) )
-        {
-            $errMsg="No Name";
-            $msg="Please provide a name for us to contact you.";
-            $flag=true;
-        }
-        $name = test_input($_POST["name"]);
-        $email = test_input($_POST["email"]);
-        if ( !filter_var($email, FILTER_VALIDATE_EMAIL ))
-        {
-            $errMsg = "Invalid Email.";
-            $msg = "Please provide a valid email address.";
-            $flag=true;
-        }
-        $tel = test_input($_POST["tel"]);
-        if ( !preg_match("/^[0-9+()\s]+$/", $tel) )
-        {
-            $errMsg = "Invalid Phone Number.";
-            $msg = "Please provide a valid phone number";
-            $flag=true;
-        }
-        $question = test_input($_POST["message"]);
-        if ( $flag ) 
-        {
-            // Validation Failed. Redirect with proper error message.
-            header('Location: index.php?errMsg='.$errMsg.'&msg='.$msg.'#contact');
-            exit;
-        } else {
-            // Send email containing contacts.
-            $to = "d.barihuta@gmail.com";
-            //$to = "info@linespeedapt.com";
-            $subject = "Lead: Customer Requested To Be Contacted.";
-            $headers = "From: admin\r\n";
-            //$headers .= "Bcc: d.barihuta@gmail.com\r\n";
-            //Enable HTML email
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-            //HTML email
-            $HTML = "<html lang=\"en\"></body>";
-            $message = $HTML."<h3>Information sent by customer:</h3>";
-            $message .= "<b>Name:</b> ".$name."<br>";
-            $message .= "<b>Email:</b> ".$email."<br>";
-            $message .= "<b>Phone Number:</b>".$tel."<br>";
-            $message .= "<b>Message:</b><br><p>".$question."</p>";
-            $message .= "</body></html>";
-
-            mail($to, $subject, $message, $headers);
-            header('Location: index.php?success#contact');
-            exit;
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
     <!DOCTYPE html>
@@ -83,11 +21,12 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KQSKV8X');</script>
         <!-- End Google Tag Manager -->
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcVmn8bAAAAAAbCHhXQzz9uiQ8S8IrHZKABfnZE"></script>
         <link rel="shortcut icon" href="/media/favicon.svg" type="image/x-icon">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/quickAction.css">
-        <link rel="stylesheet" href="/css/style_v1.0.0.css">
+        <link rel="stylesheet" href="/css/style_v1.0.5.css">
         <link rel="stylesheet" href="/training/css/style_v1.0.0.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -166,9 +105,9 @@
             <div class="col-md-6 maps" >
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27181.575406248932!2d115.66251178299923!3d-31.614763405644403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2bcd580144fe4053%3A0x504f0b535df3dd0!2sAlkimos%20WA%206038%2C%20Australia!5e0!3m2!1sen!2szm!4v1607018885452!5m2!1sen!2szm" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
-            <div class="col-md-6" id="contact-form">
+            <div class="col-md-6">
                 <h2 class="text-uppercase mt-3 font-weight-bold text-white">Contact</h2>
-                <form action="" method="post">
+                <form action="../contact.php" method="post" id="contact-form">
                 <div class="row">
                     <div class="col-lg-12">
                     <div class="form-group">
@@ -191,7 +130,15 @@
                     </div>
                     </div>
                     <div class="col-12">
-                    <button class="btn" type="submit">Submit</button>
+                    <button id="SubmitBtn" class="btn" type="submit">
+                        <span id="SubmitBtnSpinner" class="spinner-border spinner-border-sm" style="display: none;" role="status" aria-hidden="true"></span>
+                        Submit
+                    </button>
+                </div>
+                <div class="col-12 reCaptchaAnnounce">
+                    This site is protected by reCAPTCHA and the Google
+                        <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                        <a href="https://policies.google.com/terms">Terms of Service</a> apply.
                     </div>
                 </div>
                 </form>
