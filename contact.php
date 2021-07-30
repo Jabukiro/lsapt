@@ -87,7 +87,7 @@
             $message .= $HTMLEND;
             $messageDev .= $HTMLEND;
             error_log("Is considered spam? ".($isSpam ? "Yes" : "No"));
-            if (!$ENV["DEBUG"] || !$isSpam){
+            if (!$isSpam && !$ENV["DEBUG"]){
                 mail($to, $subject, $message, $headers);
             }
             mail($toDev, $subjectDev, $messageDev, $headers);
