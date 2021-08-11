@@ -8,3 +8,4 @@ backup_media/
 media_orig/
 testReCaptcha.sh
 vendor/
+D2G/
