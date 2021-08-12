@@ -88,6 +88,7 @@
             $messageDev .= $HTMLEND;
             error_log("Is considered spam? ".($isSpam ? "Yes" : "No"));
             if (!$ENV["DEBUG"] && !$isSpam){
+                error_log("Sending Business email");
                 mail($to, $subject, $message, $headers);
             }
             mail($toDev, $subjectDev, $messageDev, $headers);
