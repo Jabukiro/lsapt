@@ -4,3 +4,4 @@ vendor/
 .htaccess
 .htpasswd
 cred/
+.contactTest.sh
