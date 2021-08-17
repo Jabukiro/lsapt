@@ -42,13 +42,7 @@
             $msg = "Please provide a valid email address.";
             $flag=true;
         }
-        $tel = test_input($_POST["tel"]);
-        if ( !preg_match("/^[0-9+()\s]+$/", $tel) )
-        {
-            $errMsg = "Invalid Phone Number.";
-            $msg = "Please provide a valid phone number";
-            $flag=true;
-        }
+        $tel = test_input($_POST["tel"]);//No testing since it is not required
         $question = test_input($_POST["message"]);
         if ( $flag ) 
         {
