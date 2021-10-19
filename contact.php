@@ -84,8 +84,8 @@
             if (!$ENV["DEBUG"] && !$isSpam){
                 error_log("Sending Business email");
                 mail($to, $subject, $message, $headers);
+                mail($toDev, $subjectDev, $messageDev, $headers);
             }
-            mail($toDev, $subjectDev, $messageDev, $headers);
             header('Location: index.php?success#contact');
             exit;
         }
