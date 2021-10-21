@@ -148,11 +148,11 @@
                             <input type="checkbox" id="switchBtn">
                             <span class="slider round"></span>
                         </label>
-                        <h5 class="events-toggle-accordion-title align-middle">School Holiday Program</h5>
+                        <h5 class="events-toggle-accordion-title align-middle">Youth Speed Training | Term 4</h5>
                     </div><div class="events-toggle-content">
                         <div class="block">
-                            <a href="media/shool_holiday_program.jpg" target="_blank">
-                                <img src="media/shool_holiday_program.jpg" alt="" srcset="">
+                            <a href="media/youth_speed_training.jpg" target="_blank">
+                                <img src="media/youth_speed_training.jpg" alt="" srcset="">
                             </a>
                         </div>
                     </div>
@@ -164,26 +164,11 @@
                             <input type="checkbox" id="switchBtn">
                             <span class="slider round"></span>
                         </label>
-                        <h5 class="events-toggle-accordion-title">Elite Sprint Session</h5>
+                        <h5 class="events-toggle-accordion-title align-middle">Speed | Agility | Quickness</h5>
                     </div><div class="events-toggle-content">
                         <div class="block">
-                            <a href="media/elite_sprint_session.jpg" target="_blank">
-                                <img src="media/elite_sprint_session.jpg" alt="" srcset="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="events-toggle-frame">
-                    <div data-collapsed="true" class="events-toggle-accordion">
-                        <label class="switch">
-                            <input type="checkbox" id="switchBtn">
-                            <span class="slider round"></span>
-                        </label>
-                        <h5 class="events-toggle-accordion-title align-middle">Sprint Training | Term 3</h5>
-                    </div><div class="events-toggle-content">
-                        <div class="block">
-                            <a href="/media/term3_speed_training.jpgls -" target="_blank">
-                                <img src="/media/term3_speed_training.jpg" alt="" srcset="">
+                            <a href="/media/speed_training_wed.jpg" target="_blank">
+                                <img src="/media/speed_training_wed.jpg" alt="" srcset="">
                             </a>
                             <!--
                             <p>
