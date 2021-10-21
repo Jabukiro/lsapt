@@ -1,7 +1,7 @@
 #!/bin/bash
 ## Simply copies the website files to root directory using rsync
 
-ROOT="/var/www/html"
+ROOT="/var/www/LAPT/public_html"
 #Files that are not to be deployed
 EXCLUDE="NotToBeDeployed.txt"
 SERVER="jabukiro@172.105.188.27:/var/www/html/public_html/"
