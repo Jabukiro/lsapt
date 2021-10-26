@@ -84,6 +84,32 @@ function popScroll() {
     }
 }popScroll();//Run in case starting viewPort is long enough to contain the bulet-icons.
 document.addEventListener("scroll", popScroll);
+
+
+//Cart stuff
+const cartDrawer = document.getElementById("cart-drawer")
+const [backdrop, drawerPaper] = cartDrawer.children;
+const openDrawer = () => {
+    cartDrawer.style.visibility = "visible";
+    backdrop.style.opacity = 0.5;
+    drawerPaper.style.width = "500px";
+}
+const closeDrawer = () => {
+    cartDrawer.style.visibility = "hidden";
+    backdrop.style.opacity = 0;
+    drawerPaper.style.width = 0;
+}
+backdrop.addEventListener("click", () => {
+    closeDrawer();
+})
+document.getElementById("cartIcon").addEventListener("click", () => {
+    openDrawer();
+})
+document.getElementById("cartCloseBtn").addEventListener("click", () => {
+    closeDrawer();
+})
+
+
 /*
 ["click", "touchend"].forEach( (eventType) => {
     addEventListener(eventType, (e) => {

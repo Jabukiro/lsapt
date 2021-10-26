@@ -43,6 +43,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarsExample03">
                 <ul class="navbar-nav ml-auto">
+                    <li id="cartIcon" class="nav-item">
+                        <img src="/media/shopping-cart.svg" alt="" srcset="">
+                    </li>
                     <li class="nav-item active dis-none">
                     <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
                     </li>
@@ -377,6 +380,17 @@
             </div>
         </div>
     </div>
+    <!--Drawer for the cart from right only.-->
+    <div id="cart-drawer">
+        <div class="backdrop">
+        </div>
+        <div class="cart-paper">
+            <button id="cartCloseBtn" type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <!-- End Drawer -->
     <footer class="footer text-center">
         <div class="container">
             <p>'Start FAST Finish STRONG'</p>
