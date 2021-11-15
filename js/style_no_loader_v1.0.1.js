@@ -2,24 +2,24 @@
 let videoPlay = document.querySelector('#background_vid').play();
 
 if (videoPlay !== undefined) {
-    videoPlay.then(() => { 
-        document.querySelector('#background_vid').addEventListener('ended', function(){
-            if (document.querySelector("#background_vid").readyState >= 3){
+    videoPlay.then(() => {
+        document.querySelector('#background_vid').addEventListener('ended', function () {
+            if (document.querySelector("#background_vid").readyState >= 3) {
                 load();
             } else {
-                var b = setInterval(()=>{
-                    if(document.querySelector("#background_vid").readyState >= 3){
+                var b = setInterval(() => {
+                    if (document.querySelector("#background_vid").readyState >= 3) {
                         load();
                         clearInterval(b);
-                    }                   
-                },500);
+                    }
+                }, 500);
             }
         });
-  }).catch(error => {
-      //No autoplay allowed
-      console.log(error);
-      load();
-  });
+    }).catch(error => {
+        //No autoplay allowed
+        console.log(error);
+        load();
+    });
 }
 var instaBodyTopPadding = 28;
 var minWidth = 300;
@@ -27,31 +27,31 @@ var maxWidth = 500;
 var viewHeight = (window.innerHeight || document.documentElement.clientHeight);
 var viewWidth = (window.innerWidth || document.documentElement.clientWidth);
 
-function load(){
+function load() {
     console.log("Loading content link and img backgorund");
-    document.getElementById("background_vid").style.display="none";
-    document.getElementById("background_img").style.display="block";
+    document.getElementById("background_vid").style.display = "none";
+    document.getElementById("background_img").style.display = "block";
     const load1 = document.querySelector("#load1");
-    load1.style.paddingTop="45vh";
-    load1.style.opacity="1";
+    load1.style.paddingTop = "45vh";
+    load1.style.opacity = "1";
 }
 // Set playback to 0.8
-document.querySelector("#background_vid").playbackRate=0.8;
+document.querySelector("#background_vid").playbackRate = 0.8;
 // Get the header
 var header = document.getElementById("topNavBar");
 // Get the offset position of the navbar
 var sticky = header.offsetTop;
 function stickyNav() {
     //Viewwidth as stickynav needed for viewwidth that are less than 576.
-    if ( window.pageYOffset > sticky || viewWidth < 576 ) {
+    if (window.pageYOffset > sticky || viewWidth < 576) {
         header.classList.add("top-nav-collapse");
     } else {
         header.classList.remove("top-nav-collapse");
     }
-}stickyNav();
+} stickyNav();
 document.addEventListener("scroll", stickyNav);
 // Frame Width size calculation. To call on first load and resize as well.
-function getWidth(element){
+function getWidth(element) {
     stringTarget = getComputedStyle(element).width;
     //Very Lazy match
     match = stringTarget.match(/^[0-9]*/)[0];
@@ -73,16 +73,16 @@ document.addEventListener("resize", sizeInstaFrame); */
 function popScroll() {
     // Icons will have a transition when they are in the viewport.
     var bulletIcons = document.getElementsByClassName("big-bullet-icon");
-  
-    for ( i = bulletIcons.length; i--; ){
-      var bulletIcon = bulletIcons[i],
-          pos= bulletIcon.getBoundingClientRect(),
-          bottomPerc = pos.bottom    / viewHeight * 100;
-      if ( bottomPerc < 100 ){
-        bulletIcon.classList.add("pop-scroll");
-      }
+
+    for (i = bulletIcons.length; i--;) {
+        var bulletIcon = bulletIcons[i],
+            pos = bulletIcon.getBoundingClientRect(),
+            bottomPerc = pos.bottom / viewHeight * 100;
+        if (bottomPerc < 100) {
+            bulletIcon.classList.add("pop-scroll");
+        }
     }
-}popScroll();//Run in case starting viewPort is long enough to contain the bulet-icons.
+} popScroll();//Run in case starting viewPort is long enough to contain the bulet-icons.
 document.addEventListener("scroll", popScroll);
 
 
@@ -92,12 +92,14 @@ const [backdrop, drawerPaper] = cartDrawer.children;
 const openDrawer = () => {
     cartDrawer.style.visibility = "visible";
     backdrop.style.opacity = 0.5;
-    drawerPaper.style.width = "500px";
+    //drawerPaper.style.width = "500px";
+    drawerPaper.style.right = 0;
 }
 const closeDrawer = () => {
     cartDrawer.style.visibility = "hidden";
     backdrop.style.opacity = 0;
-    drawerPaper.style.width = 0;
+    drawerPaper.style.right = "-500px";
+    //drawerPaper.style.width = 0;
 }
 backdrop.addEventListener("click", () => {
     closeDrawer();
