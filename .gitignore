@@ -5,3 +5,4 @@ vendor/
 .htpasswd
 cred/
 .contactTest.sh
+node_modules/
