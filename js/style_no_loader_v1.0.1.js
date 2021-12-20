@@ -87,6 +87,7 @@ document.addEventListener("scroll", popScroll);
 
 
 //Cart stuff
+/*
 const cartDrawer = document.getElementById("cart-drawer")
 const [backdrop, drawerPaper] = cartDrawer.children;
 const openDrawer = () => {
@@ -110,7 +111,7 @@ document.getElementById("cartIcon").addEventListener("click", () => {
 document.getElementById("cartCloseBtn").addEventListener("click", () => {
     closeDrawer();
 })
-
+*/
 
 /*
 ["click", "touchend"].forEach( (eventType) => {
