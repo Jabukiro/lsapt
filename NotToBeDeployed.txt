@@ -9,4 +9,4 @@ media_orig/
 testReCaptcha.sh
 vendor/
 D2G/
-node_modules/
+svelte/
