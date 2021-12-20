@@ -10,3 +10,4 @@ testReCaptcha.sh
 vendor/
 D2G/
 svelte/
+node_modules/

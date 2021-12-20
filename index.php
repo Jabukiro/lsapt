@@ -153,11 +153,11 @@
                             <input type="checkbox" id="switchBtn">
                             <span class="slider round"></span>
                         </label>
-                        <h5 class="events-toggle-accordion-title align-middle">Youth Speed Training | Term 4</h5>
+                        <h5 class="events-toggle-accordion-title align-middle">Speed Training | Holiday Program</h5>
                     </div><div class="events-toggle-content">
                         <div class="block">
-                            <a href="media/youth_speed_training.jpg" target="_blank">
-                                <img src="media/youth_speed_training.jpg" alt="" srcset="">
+                            <a href="media/dec/1.jpg" target="_blank">
+                                <img src="media/dec/1.jpg" alt="" srcset="">
                             </a>
                         </div>
                     </div>
@@ -169,11 +169,111 @@
                             <input type="checkbox" id="switchBtn">
                             <span class="slider round"></span>
                         </label>
-                        <h5 class="events-toggle-accordion-title align-middle">Speed | Agility | Quickness</h5>
+                        <h5 class="events-toggle-accordion-title align-middle">SAQ Training | Holiday Program</h5>
                     </div><div class="events-toggle-content">
                         <div class="block">
-                            <a href="/media/speed_training_wed.jpg" target="_blank">
-                                <img src="/media/speed_training_wed.jpg" alt="" srcset="">
+                            <a href="/media/dec/2.jpg" target="_blank">
+                                <img src="/media/dec/2.jpg" alt="" srcset="">
+                            </a>
+                            <!--
+                            <p>
+                               We will be conducting a holiday programme during the school holidays in October (5th - 9th). The programme will be challenging but baalanced and will aim to keep the children active and motivated and provide team building skills and mentorship
+                            </p>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                <div class="events-toggle-frame">
+                    <div data-collapsed="true" class="events-toggle-accordion">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title align-middle">Agility Training | Holiday Program</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <a href="/media/dec/3.jpg" target="_blank">
+                                <img src="/media/dec/3.jpg" alt="" srcset="">
+                            </a>
+                            <!--
+                            <p>
+                               We will be conducting a holiday programme during the school holidays in October (5th - 9th). The programme will be challenging but baalanced and will aim to keep the children active and motivated and provide team building skills and mentorship
+                            </p>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                <div class="events-toggle-frame">
+                    <div data-collapsed="true" class="events-toggle-accordion">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title align-middle">Basketball SAQ | Holiday Program</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <a href="/media/dec/4.jpg" target="_blank">
+                                <img src="/media/dec/4.jpg" alt="" srcset="">
+                            </a>
+                            <!--
+                            <p>
+                               We will be conducting a holiday programme during the school holidays in October (5th - 9th). The programme will be challenging but baalanced and will aim to keep the children active and motivated and provide team building skills and mentorship
+                            </p>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                <div class="events-toggle-frame">
+                    <div data-collapsed="true" class="events-toggle-accordion">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title align-middle">Netball SAQ | Holiday Program</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <a href="/media/dec/5.jpg" target="_blank">
+                                <img src="/media/dec/5.jpg" alt="" srcset="">
+                            </a>
+                            <!--
+                            <p>
+                               We will be conducting a holiday programme during the school holidays in October (5th - 9th). The programme will be challenging but baalanced and will aim to keep the children active and motivated and provide team building skills and mentorship
+                            </p>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                <div class="events-toggle-frame">
+                    <div data-collapsed="true" class="events-toggle-accordion">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title align-middle">Field Agility | Holiday Program</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <a href="/media/dec/6.jpg" target="_blank">
+                                <img src="/media/dec/6.jpg" alt="" srcset="">
+                            </a>
+                            <!--
+                            <p>
+                               We will be conducting a holiday programme during the school holidays in October (5th - 9th). The programme will be challenging but baalanced and will aim to keep the children active and motivated and provide team building skills and mentorship
+                            </p>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                <div class="events-toggle-frame">
+                    <div data-collapsed="true" class="events-toggle-accordion">
+                        <label class="switch">
+                            <input type="checkbox" id="switchBtn">
+                            <span class="slider round"></span>
+                        </label>
+                        <h5 class="events-toggle-accordion-title align-middle">Senior Speed Training | Holiday Program</h5>
+                    </div><div class="events-toggle-content">
+                        <div class="block">
+                            <a href="/media/dec/7.jpg" target="_blank">
+                                <img src="/media/dec/7.jpg" alt="" srcset="">
                             </a>
                             <!--
                             <p>
