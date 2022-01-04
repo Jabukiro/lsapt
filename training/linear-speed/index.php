@@ -1,22 +1,18 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Speed Training | LineSpeedAPT | Perth Speed Training</title>
-    <meta name="description" content="LINESPEED Athletic Performance (LAPT) prime focus is to improve running speed of athletes from various sporting codes. Based in Perth Northern Suburbs, WA.">
-    <meta name="keywords" content="">
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KQSKV8X');</script>
-    <!-- End Google Tag Manager -->
-    <link rel="shortcut icon" href="/media/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<?php
+//Required variables by _openHead.php
+$webroot = $_SERVER['DOCUMENT_ROOT'];
+$HEAD = parse_ini_file( "$webroot/head.ini" );
+$title="Linear Speed Training | Perth Speed Training";
+$description=$HEAD["DESCRIPTION"];
+$keywords = $HEAD["KEYWORDS"].", Top-Speed Training";
+
+$image = $HEAD["IMAGE"];
+$SITE_NAME = $HEAD["SITE_NAME"];
+require "$webroot/_openHead.php"
+?>
     <link rel="stylesheet" href="/css/quickAction.css">
     <link rel="stylesheet" href="/css/style_v1.0.1.css">
-    <link rel="stylesheet" href="../css/style_v1.0.2.css">
+    <link rel="stylesheet" href="../css/style_v1.0.1.css">
 </head>
 <body style="min-width: 315px;" class="text-md">
     <!-- Google Tag Manager (noscript) -->
@@ -70,7 +66,7 @@
         <div class="content-wrapper">
             <div class="landing-content">
                 <h1 class="on-dark">
-                    Team <span style="color: #ED0012">Speed</span>
+                    Linear <span style="color: #ED0012">Speed</span>
                    <!--Improve Linear Speed and Athletic Performance-->
                 </h1>
                 <!-- <p class="on-dark p-large">
@@ -86,8 +82,8 @@
                 </div> -->
             </div>
         </div>
-        <div class="container background-video bg-controlled-height">
-            <img src="/media/team_specific.jpg" alt="" srcset="">
+        <div class="container background-video">
+            <img src="/media/linear_speed_3.jpg" alt="" srcset="">
         </div>
     </div>
     <div class="short-gradient"></div>
@@ -96,29 +92,43 @@
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item"><a href="..">Training</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Team-Speed</li>
+              <li class="breadcrumb-item active" aria-current="page">Linear-Speed</li>
             </ol>
         </nav>
         <div class="container training-content">
-            <h1><strong>Team Speed</strong></h1>
+            <h1><strong>Linear Speed</strong></h1>
             <p>
-                <strong>Duration:   </strong>60 to 90 minutes
+                <strong>Duration:   </strong>90 minutes
             </p>
+            <strong>Focus:</strong>
+            <ul>
+                <li>Acceleration (0m – 30m) – Sprint starts, Explosive movement, first step speed</li>
+                <li>Max Velocity (Max Speed – 30m+) Running Form, Stride length/frequency</li>
+                <li>Speed Endurance - maintaining speed over distance, sprint efficiency.</li>
+            </ul>
+            <strong>Groups*:</strong>
+            <ul>
+                <li>Foundation - 8yrs - 10yrs</li>
+                <li>Development - 11yrs - 13yrs</li>
+                <li>Performance - 14yrs+</li>
+            </ul>
+            <span>*Capabilities of athletes will also be assessed for session suitability.</span><br><br>
+            <!--
             <p>
                 <strong>Description:</strong>
-                Gain the competitive edge. Reduce chances of injury, increase movement efficiency, improve team confidence and unity. Our training program provides each team/organisation with customised training based on feedback from the school's/organisation coaches or staff. LAPT will act as an extension of the team/organisation by incorporating team mottos and/or philosophies.
-            </p>
+                Straight speed sprint training. Cover distance in faster time, on grass or on the court. Game breaker SKILL that is an integral part of any sport.
+            </p>-->
             <strong>Program:</strong>
             <ul>
                 <li>Dynamic&nbsp;warmup</li>
-                <li>Footwork&nbsp;drills</li>
+                <li>Plyometric&nbsp;Training</li>
                 <li>Running&nbsp;Mechanics</li>
-                <li>Change of direction drills</li>
-                <li>Acceleration&nbsp;drills</li>
-                <li>Cooldown - Static&nbsp;stretches</li>
+                <li>Sprint&nbsp;conditioning</li>
+                <li>Alternate&nbsp;Starts</li>
+                <li>Cooldown</li>
             </ul>
             <p>
-                <strong>Note:   </strong>Sessions can be adjusted to address customised focus areas of performance.<br><br><a href="/contact" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact Us</a> to begin your journey of increased team sport performance with Linespeed.
+                <a href="/contact" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact&nbsp;Us</a> to begin your journey towards increasing your linear speed with linespeed.
             </p>
         </div>
     </div>

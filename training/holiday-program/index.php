@@ -1,19 +1,15 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speed Strength Training | LineSpeedAPT | Perth Speed Training</title>
-    <meta name="description" content="LINESPEED Athletic Performance (LAPT) prime focus is to improve running speed of athletes from various sporting codes. Based in Perth Northern Suburbs, WA.">
-    <meta name="keywords" content="">
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KQSKV8X');</script>
-    <!-- End Google Tag Manager -->
-    <link rel="shortcut icon" href="/media/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<?php
+//Required variables by _openHead.php
+$webroot = $_SERVER['DOCUMENT_ROOT'];
+$HEAD = parse_ini_file( "$webroot/head.ini" );
+$title="Holiday Program |LineSpeedAPT | Perth Speed Training";
+$description=$HEAD["DESCRIPTION"];
+$keywords = $HEAD["KEYWORDS"];
+
+$image = $HEAD["IMAGE"];
+$SITE_NAME = $HEAD["SITE_NAME"];
+require "$webroot/_openHead.php"
+?>
     <link rel="stylesheet" href="/css/quickAction.css">
     <link rel="stylesheet" href="/css/style_v1.0.1.css">
     <link rel="stylesheet" href="../css/style_v1.0.1.css">
@@ -57,8 +53,8 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="/training/team-speed/">Team Speed</a>
                             <a class="dropdown-item" href="/training/linear-speed/">Linear Speed</a>
-                            <a class="dropdown-item" href="/training/speed-strength/">Speed Strength</a>
                             <a class="dropdown-item" href="/training/speed-agility/">Speed & Agility</a>
+                            <a class="dropdown-item" href="/training/holiday-program/">Holiday Program</a>
                         </div>
                     </li>
                 </ul>
@@ -70,7 +66,7 @@
         <div class="content-wrapper">
             <div class="landing-content">
                 <h1 class="on-dark">
-                    Speed <span style="color: #ED0012">Strength</span>
+                    Holiday <span style="color: #ED0012">Program</span>
                    <!--Improve Linear Speed and Athletic Performance-->
                 </h1>
                 <!-- <p class="on-dark p-large">
@@ -87,7 +83,7 @@
             </div>
         </div>
         <div class="container background-video">
-            <img src="/media/2.jpg" alt="" srcset="">
+            <img src="/media/holiday_program.jpg" alt="" srcset="">
         </div>
     </div>
     <div class="short-gradient"></div>
@@ -96,23 +92,23 @@
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
               <li class="breadcrumb-item"><a href="..">Training</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Speed-Strength</li>
+              <li class="breadcrumb-item active" aria-current="page">Holiday-Program</li>
             </ol>
         </nav>
         <div class="container training-content">
-            <h1><strong>Speed Strength</strong></h1>
+            <h1><strong>Holiday Program</strong></h1>
             <p>
-                <strong>Audience:   </strong>Ages 10+
+                <strong>Audience:   </strong>Ages 8+
             </p>
             <p>
                 <strong>Description:</strong>
-                First stages are catered towards corrective movement technique to assist running mechanics and relative strength. Further reducing injuries and developing neuromuscular patterns.
-                <br>Further stages will be aimed towards increased force production and optimize power output.
+                Half day / Full day programs aimed at exposing athletes to the full Linespeed sports performance framework aswell as associating speed and agility to sports performance. 
+                Mental preparedness, Speed development, team building skills, leadership skills and alot of fun and fitness.
+                Local sports club involvement is encouraged to further promote sports codes.
             </p>
             <p>
-                <strong>Note: </strong>Timings and venue to be confirmed.
+                <strong>Note:   </strong>Location and times to be confirmed.<br><br><a href="/contact" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact Us</a> to register your interest or for further information.
             </p>
-
         </div>
     </div>
     <footer class="footer text-center">

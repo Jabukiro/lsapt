@@ -1,34 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact Us | LineSpeedAPT | Perth Speed Training</title>
-        <meta name="description" content="Send us an email or a call!">
-        <meta name="keywords" content="Best Sprint Coach Perth, Sprint training Perth, Speed Training Perth, WA best Little Athletics coach, Sprinting Perth, Perth Athletics coach, Sprint coach Perth, Linespeed">
-        <meta property="og:locale" content="en_AU">
-        <meta property="og:title" content="Contact Details | LinespeedAPT">
-        <meta property="og:image" content="https://linespeedapt.com/media/last.jpg">
-        <meta property="og:url" content="https://linespeedapt.com">
-        <meta property="og:site_name" content="Linespeed Atheltic Performance">
-        <meta name="twitter:card" content="summary_large_image">
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-KQSKV8X');</script>
-        <!-- End Google Tag Manager -->
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcVmn8bAAAAAAbCHhXQzz9uiQ8S8IrHZKABfnZE"></script>
-        <link rel="shortcut icon" href="/media/favicon.svg" type="image/x-icon">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<?php
+//Required variables by _openHead.php
+$webroot = $_SERVER['DOCUMENT_ROOT'];
+$HEAD = parse_ini_file( "$webroot/head.ini" );
+$title="Contact Us | LineSpeedAPT | Perth Speed Training";
+$description="Send us an email or a call!";
+$keywords = $HEAD["KEYWORDS"]."Contact Linespeed, email";
+$image = $HEAD["IMAGE"];
+$SITE_NAME = $HEAD["SITE_NAME"];
+require "$webroot/_openHead.php"
+?>
         <link rel="stylesheet" href="/css/quickAction.css">
         <link rel="stylesheet" href="/css/style_v1.0.5.css">
         <link rel="stylesheet" href="/training/css/style_v1.0.0.css">
-        <link rel="stylesheet" href="css/style.css">
     </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -209,6 +192,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="/js/base.js"></script>
-    <script src="/js/events.js"></script>
 </body>
 </html>
