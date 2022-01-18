@@ -1,29 +1,9 @@
 <script>
-    const cartDrawer = document.getElementById("cart-drawer");
-    const [backdrop, drawerPaper] = cartDrawer.children;
-    const openDrawer = () => {
-        console.log(cartDrawer);
-        cartDrawer.style.visibility = "visible";
-        backdrop.style.opacity = 0.5;
-        //drawerPaper.style.width = "500px";
-        drawerPaper.style.right = 0;
-    };
-    const closeDrawer = () => {
-        cartDrawer.style.visibility = "hidden";
-        backdrop.style.opacity = 0;
-        drawerPaper.style.right = "-500px";
-        //drawerPaper.style.width = 0;
-    };
-
-    document.getElementById("cartIcon").addEventListener("click", () => {
-        openDrawer();
-    });
+    import CartContent from "./cartContent.svelte";
 </script>
 
 <div class="cart-paper">
-    <slot>
-        <em>No content provided</em>
-    </slot>
+    <CartContent />
 </div>
 
 <style>
@@ -40,6 +20,5 @@
         transition-duration: inherit;
         background-color: white;
         overflow-x: hidden;
-        padding: 1rem;
     }
 </style>
