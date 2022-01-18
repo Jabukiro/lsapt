@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "apollo-server-express": "^3.6.1",
+    "dotenv": "^14.2.0",
+    "express-mysql-session": "^2.1.7",
+    "express-session": "^1.17.2",
+    "graphql-upload": "^13.0.0"
+  }
+}
