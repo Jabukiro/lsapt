@@ -4,11 +4,14 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-    
+
         <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav ml-auto">
+                <li id="cartIcon" class="nav-item" aria-label="Open Cart">
+                    <img src="/media/shopping-cart.svg" alt="" srcset="">
+                </li>
                 <li class="nav-item active dis-none">
-                <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown dis-block">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
