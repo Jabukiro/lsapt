@@ -1,0 +1,33 @@
+Directory:
+
+Front | includes the web files aswell as svelte cart
+---- svelte | includes the cart
+------ components
+-------- cartDrawer.svelte | a container for the cart
+-------- cartContent.svelte | main logic for cart operations
+-------- cartProductCard.svelte | a template for a product
+---- *.php | the main web files
+
+DataServer | a NodeJS Graphql server. Session-managed with express-session-mysql
+---- server.js
+---- schema.js | Graphql schema
+---- databaseManajer.js | includes boilerplate code for intereacting with mysql
+
+
+Wednesday 19/01/2022
+
+Website has become multi-faceted:
+- svelte for the cart. Reasons were 3-fold
+---- Needed for cart operations to not require a server reload
+---- Something lightweight
+---- To learn svelte!
+- NodeJS(GraphQL) for the data server
+- PHP for the pages
+
+Product can be queried and added to the cart from the front-end with proper 'id'
+Logic resides in svelte
+
+Decided to add products on the landing page
+All or Just a few?!? TBD
+
+Logic for adding products to cart will reside in svelte
