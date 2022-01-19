@@ -5,7 +5,8 @@ var typeDefs = `
     id: ID
     name: String
     description: String
-    cost: Float
+    image: String
+    fee: Float
     timestamp: String
   }
   type CartProduct {
@@ -40,7 +41,7 @@ var resolvers = {
       console.log("cart sessionID: ", context.req.sessionID);
       return context.req.session.value
     },
-    getProduct: (_, { id }, { getTable }) => getTable({ tableName: "product", term: id })
+    getProduct: (_, { id }, { getTable }) => getTable({ tableName: "product", term: id }, true)
   },
   Mutation: {
     saveCart: (_, { input }, context) => {

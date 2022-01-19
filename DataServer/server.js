@@ -8,6 +8,7 @@ const { graphqlUploadExpress } = require('graphql-upload');
 const https = require('https');
 const fs = require('fs');
 const { schema } = require('./schema');
+const { DatabaseManager } = require('./databaseManager');
 const { NONAME } = require('dns');
 
 
