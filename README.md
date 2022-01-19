@@ -1,5 +1,18 @@
-# lsapt
-LineSpeedAPT website
+# Linespeed APT
+This repo contains the website files for Linespeed, a Perth-based speed-training camp.
+
+website: linespeedapt.com
+
+## Structure
+### PHP
+The website makes use of PHP for reCaptcha and contact logic.
+
+### Cart (Svelte)
+A cart is present on each webpage and is written in svelte. All cart-related logic is present in the ```/Front/svelte``` folder.
+The cart
+
+### GraphQl (NodeJS)
+The website makes use of a Graphql server for its data needs. Code is hosted in ```/DataServer``` folder
 
 ## Dev
 
