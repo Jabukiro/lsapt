@@ -612,6 +612,9 @@ line-height: 1.8;
 /* End cart Stuff*/
 
 /*Session Products Stuff*/
+.sessions-wrapper{
+    display: block;
+}
 .sessions{
     display: flex;
     flex-wrap: wrap;

@@ -291,9 +291,9 @@ require "$webroot/_openHead.php"
                 </div>
             </div>
         </div>
-        <div class="sessions-wrapper container parent offWhiteSurface">
+        <div class="sessions-wrapper container parent offWhiteSurface text-center">
             <h2 class="heading">Trainning Sessions</h2>
-            <div class="sessions text-center">
+            <div class="sessions">
                 <div class="session-product-container">
                     <div data-image-src="/media/dec/1.jpg" class="image-box" tabindex="0">
                         <img src="/media/dec/1.jpg" alt="" srcset="">
