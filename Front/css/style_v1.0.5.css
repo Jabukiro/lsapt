@@ -1,3 +1,6 @@
+:root{
+    --grey-redish: #634f50;;
+}
 body {
     color: #2c2e38;
     font-size: 18px;
@@ -24,6 +27,9 @@ a{
 }
 a:hover {
     text-decoration: none;
+}
+.subtext-redish{
+    color: var(--grey-redish);
 }
 .loaderBackground{
     position: fixed;
@@ -521,14 +527,7 @@ a:hover {
     color: gray;
     margin-left: 8px;
 }
-.close{
-    float: left;
-}
-.close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover {
-	color: #ED0012;
-	text-decoration: none;
-	opacity: .75;
-}
+
 .cart-body{
     display: flex;
     flex-direction: column;
@@ -611,6 +610,143 @@ text-align: center;
 line-height: 1.8;
 }
 /* End cart Stuff*/
+
+/*Session Products Stuff*/
+.sessions{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1rem;
+}
+.session-product-container{
+    width: calc(33% - 1.25rem);
+    margin: 1rem .625rem;
+    border: var(--grey-redish) solid 1px;
+}
+.session-product-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 11.25rem;
+    padding: 1.25rem .9375rem;
+}
+
+.image-box{
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.image-box *{
+    pointer-events: none;
+}
+.image-viewer-btn{
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-image: linear-gradient(rgba(0,0,0,0)0%, rgb(0, 0, 0)80%, rgb(0, 0, 0)100%)
+}
+.image-viewer-btn .btn-link{
+    text-decoration: none;
+    color:#ED0012;
+    border: transparent solid 1px;
+}
+.image-box:hover .btn-link, .image-box:focus .btn-link{
+    border-color: #ED0012;
+}
+.session-product-container .image-box{
+    height: 33vw;
+}
+.session-product-container .image-viewer-btn{
+    padding-top: 3rem;
+    padding-bottom: 0.3rem;
+}
+.session-product-container img{
+    width: 100%;
+}
+.session-product-content .content-title{
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.session-product-content .content-subtitle{
+    text-transform: capitalize;
+    letter-spacing: 0;
+    line-height: 1.5;
+    font-size: .95em;
+}
+.session-product-content .content-fee{
+    font-size: .90em;
+}
+
+.session-product-content .content-actions, .session-product-content .content-actions .btn{
+    width: 100%;
+}
+
+
+/* Image Viewer */
+
+/* The Modal (background) */
+#image-viewer {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding: 1rem;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    transition-timing-function: ease-in-out;
+    transition-duration: .25s;
+}
+#image-viewer .backdrop{
+    z-index: unset;
+    cursor: pointer;
+}
+
+#image-viewer .image-content {
+    position: relative;
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 100%;
+}
+
+#image-viewer.show{
+    display: flex;
+}
+
+#image-viewer.show .backdrop{
+    opacity: 0.9;
+}
+
+.image-content { 
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+#image-viewer .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    color: #ED0012;
+    opacity: .75 !important;
+}
+
+@media only screen and (max-width: 700px){
+    .image-content {
+        width: 100%;
+    }
+}
+/*End Image Viewer*/
 
 /* General tools */
 .very-small-font{
@@ -806,6 +942,28 @@ line-height: 1.8;
     .carousel-control-prev{
         left: -8%;
     }
+    .sessions-wrapper{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .sessions{
+        font-size:0.85rem;
+        justify-content: space-evenly;
+    }
+    .session-product-container{
+        width: calc(50% - .3rem);
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .session-product-container .image-box{
+        height: 50vw;
+    }
+    .session-product-content{
+        min-height: 10rem;
+        padding: .625rem;
+        word-break: break-word;
+    }
+
     
 }
 @media screen and ( max-width: 576px ) {
@@ -855,7 +1013,7 @@ line-height: 1.8;
     }
 
 }
-/* Small screen */
+/* Smoll screen */
 @media screen and ( max-width: 320px ) {
     .navbar-brand img{
         max-width: 150px;
@@ -912,6 +1070,12 @@ line-height: 1.8;
     width: 1rem;
     height: 1rem;
     border-width: .2em;
+}
+
+.close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover {
+	color: #ED0012 ;
+	text-decoration: none;
+	opacity: .75;
 }
 @keyframes spinner-border {
     0% { transform: rotate(0deg); }
