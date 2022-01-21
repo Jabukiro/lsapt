@@ -1,9 +1,11 @@
 const { makeExecutableSchema } = require('@graphql-tools/schema');
+const { logger } = require("./loger");
 
 var typeDefs = `
   type Product {
     id: ID
     name: String
+    attributes: String
     description: String
     image: String
     fee: Float
@@ -28,6 +30,7 @@ var typeDefs = `
   type Query{
     cart: [CartProduct]
     getProduct(id: ID!): Product
+    getProductList: [Product]!
   }
 
   type Mutation{
@@ -41,7 +44,24 @@ var resolvers = {
       console.log("cart sessionID: ", context.req.sessionID);
       return context.req.session.value
     },
-    getProduct: (_, { id }, { getTable }) => getTable({ tableName: "product", term: id }, true)
+    getProduct: (_, { id }, { getTable }) => getTable({ tableName: "product", term: id }, true),
+    getProductList: (_1, _2, { DBMan }) => {
+      const queryOptions = {
+        useDefaultQuery: false,
+        bindParams: ["product"],
+        customQuery: `SELECT * FROM ??`,
+      }
+      return DBMan.SelectQuery(queryOptions).then((products) => {
+        return products;
+      }).catch((reason) => {
+        logger.log({
+          level: "error",
+          message: "Error from DBMan whilst running getProductList with",
+          reason
+        });
+        return null;
+      });
+    }
   },
   Mutation: {
     saveCart: (_, { input }, context) => {
