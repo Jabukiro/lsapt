@@ -6,6 +6,7 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const { graphqlUploadExpress } = require('graphql-upload');
 const https = require('https');
+const http = require('http');
 const fs = require('fs');
 const { schema } = require('./schema');
 const { DatabaseManager } = require('./databaseManager');
@@ -100,9 +101,11 @@ app.use('/graphql',
 );
 
 let apollo = null;
-const CORS = { origin: ["https://lapt.localhost", "https://studio.apollographql.com"], credentials: "true" }
+const CORS = process.env.NODE_ENV === 'production' ?
+    { origin: process.env.ORIGIN, credentials: "true" } :
+    { origin: ["https://lapt.localhost", "https://studio.apollographql.com"], credentials: "true" };
+
 async function startServer() {
-    console.log("Async Fucntion");
     apollo = new ApolloServer({
         uploads: false,
         schema,
@@ -113,19 +116,21 @@ async function startServer() {
     apollo.applyMiddleware({ app, cors: CORS });
 }
 startServer();
-const server = https.createServer(
-    {
-        cert: fs.readFileSync(process.env.SSL_CERT),
-        key: fs.readFileSync(process.env.SSL_KEY),
-        passphrase: process.env.SSL_PASS
-    },
-    app
-);
+const server = process.env.USE_SSL === "true" ?
+    https.createServer(
+        {
+            cert: fs.readFileSync(process.env.SSL_CERT),
+            key: fs.readFileSync(process.env.SSL_KEY),
+            passphrase: process.env.SSL_PASS
+        },
+        app
+    ) :
+    http.createServer(app);
 
 //Go
 server.listen({ port: process.env.PORT }, () =>
     console.log(
         '🚀 Server ready at',
-        `https://${process.env.HOSTNAME}:${process.env.PORT}${apollo.graphqlPath}`
+        `http${process.env.USE_SSL === "true" ? "s" : ""}://${process.env.HOSTNAME}:${process.env.PORT}${apollo.graphqlPath}`
     )
 );
