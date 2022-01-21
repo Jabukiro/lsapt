@@ -31,3 +31,25 @@ Decided to add products on the landing page
 All or Just a few?!? TBD
 
 Logic for adding products to cart will reside in svelte
+
+Friday 21/01/2020
+Product Mockup was completed yesterday as well as an image viewer to view flyers
+Winston logger added to DataServer
+    npm i winston
+Products List:
+    A products list based on a flex design will be generated using php
+    php fetches data from the Graphql API and populates a product.html template with the data
+    PHP then construts an HTML of the product list. The flex-design resides in the main css file(Make own file?)
+    The use of a single data server is paying off already. ~few lines of php just to fetch the data
+    Graphql is amazing.
+Issues:
+    PHP fails to open connection using SSL. Says certificate validation fails but that might be
+    because the certificate is self signed on dev server. To test on live server
+        Solved by not checking certificate validity when environement is set to "development" in env.ini!!!!
+        Huge security hole so make sure env is set properly.
+
+Loading of products on the front page is automated (populated server-side)!!!!
+svelte cart currently adds an event listener on the "Add to cart" btn of the products
+    the button is populated,by php server side, with the product id on its 'data-id' attr.
+
+Good Productive day/week.
