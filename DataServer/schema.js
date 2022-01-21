@@ -1,5 +1,5 @@
 const { makeExecutableSchema } = require('@graphql-tools/schema');
-const { logger } = require("./loger");
+const { logger } = require("./logger");
 
 var typeDefs = `
   type Product {
