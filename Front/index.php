@@ -291,91 +291,9 @@ require "$webroot/_openHead.php"
                 </div>
             </div>
         </div>
-        <div class="sessions-wrapper container parent offWhiteSurface text-center">
-            <h2 class="heading">Trainning Sessions</h2>
-            <div class="sessions">
-                <div class="session-product-container">
-                    <div data-image-src="/media/dec/1.jpg" class="image-box" tabindex="0">
-                        <img src="/media/dec/1.jpg" alt="" srcset="">
-                        <div class="image-viewer-btn"><button class="btn btn-link">View Flyer</button></div>
-                    </div>
-                    <div class="session-product-content">
-                        <div>
-                            <div class="content-title">Speed-Training</div>
-                            <div class="content-subtitle subtext-redish">Acceleration + Top&nbsp;Speed</div>
-                            <div class="content-fee subtext-redish mt-1">$44</div>
-                        </div>
-                        <div class="content-actions">
-                            <button class="btn btn-primary">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="session-product-container">
-                    <div data-image-src="/media/dec/1.jpg" class="image-box" tabindex="0">
-                        <img src="/media/dec/1.jpg" alt="" srcset="">
-                        <div class="image-viewer-btn"><button class="btn btn-link">View Flyer</button></div>
-                    </div>
-                    <div class="session-product-content">
-                        <div>
-                            <div class="content-title">Speed-Training</div>
-                            <div class="content-subtitle subtext-redish">Acceleration + Top Speed</div>
-                            <div class="content-fee subtext-redish mt-1">$44</div>
-                        </div>
-                        <div class="content-actions">
-                            <button class="btn btn-primary">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="session-product-container">
-                    <div data-image-src="/media/dec/1.jpg" class="image-box" tabindex="0">
-                        <img src="/media/dec/1.jpg" alt="" srcset="">
-                        <div class="image-viewer-btn"><button class="btn btn-link">View Flyer</button></div>
-                    </div>
-                    <div class="session-product-content">
-                        <div>
-                            <div class="content-title">Speed-Training</div>
-                            <div class="content-subtitle subtext-redish">Acceleration + Top Speed</div>
-                            <div class="content-fee subtext-redish mt-1">$44</div>
-                        </div>
-                        <div class="content-actions">
-                            <button class="btn btn-primary">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="session-product-container">
-                    <div data-image-src="/media/dec/1.jpg" class="image-box" tabindex="0">
-                        <img src="/media/dec/1.jpg" alt="" srcset="">
-                        <div class="image-viewer-btn"><button class="btn btn-link">View Flyer</button></div>
-                    </div>
-                    <div class="session-product-content">
-                        <div>
-                            <div class="content-title">Speed-Training</div>
-                            <div class="content-subtitle subtext-redish">Acceleration + Top Speed</div>
-                            <div class="content-fee subtext-redish mt-1">$44</div>
-                        </div>
-                        <div class="content-actions">
-                            <button class="btn btn-primary">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="session-product-container">
-                    <div data-image-src="/media/dec/1.jpg" class="image-box" tabindex="0">
-                        <img src="/media/dec/1.jpg" alt="" srcset="">
-                        <div class="image-viewer-btn"><button class="btn btn-link">View Flyer</button></div>
-                    </div>
-                    <div class="session-product-content">
-                        <div>
-                            <div class="content-title">Speed-Training</div>
-                            <div class="content-subtitle subtext-redish">Acceleration + Top Speed</div>
-                            <div class="content-fee subtext-redish mt-1">$44</div>
-                        </div>
-                        <div class="content-actions">
-                            <button class="btn btn-primary">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!--Add automated product List-->
+        <?php require "$webroot/modules/products/products.php" ?>
+        <!--End automated product List-->
         <div class="container reviews">
             <h2 class="heading">Parents are saying</h2>
             <!--<div class="quote-wrapper">

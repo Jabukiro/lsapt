@@ -79,6 +79,9 @@ var app = (function () {
     function set_style(node, key, value, important) {
         node.style.setProperty(key, value, important ? 'important' : '');
     }
+    function toggle_class(element, name, toggle) {
+        element.classList[toggle ? 'add' : 'remove'](name);
+    }
     function custom_event(type, detail, bubbles = false) {
         const e = document.createEvent('CustomEvent');
         e.initCustomEvent(type, bubbles, false, detail);
@@ -517,20 +520,19 @@ var app = (function () {
     	let t4;
     	let div3;
     	let p;
-    	let t5_value = /*product*/ ctx[0].description + "";
+    	let raw_value = `${/*product*/ ctx[0].attributes}<br>${/*product*/ ctx[0].description}` + "";
     	let t5;
-    	let t6;
     	let div2;
     	let span1;
-    	let t7_value = `$${(/*product*/ ctx[0].fee * /*product*/ ctx[0].count).toFixed(2)}` + "";
+    	let t6_value = `$${(/*product*/ ctx[0].fee * /*product*/ ctx[0].count).toFixed(2)}` + "";
+    	let t6;
     	let t7;
-    	let t8;
     	let div1;
     	let button1;
-    	let t9;
+    	let t8;
     	let input;
     	let input_value_value;
-    	let t10;
+    	let t9;
     	let button2;
     	let mounted;
     	let dispose;
@@ -551,53 +553,52 @@ var app = (function () {
     			t4 = space();
     			div3 = element("div");
     			p = element("p");
-    			t5 = text(t5_value);
-    			t6 = space();
+    			t5 = space();
     			div2 = element("div");
     			span1 = element("span");
-    			t7 = text(t7_value);
-    			t8 = space();
+    			t6 = text(t6_value);
+    			t7 = space();
     			div1 = element("div");
     			button1 = element("button");
-    			t9 = space();
+    			t8 = space();
     			input = element("input");
-    			t10 = space();
+    			t9 = space();
     			button2 = element("button");
     			attr_dev(h4, "class", "h5");
-    			add_location(h4, file$2, 11, 8, 267);
+    			add_location(h4, file$2, 9, 4, 240);
     			attr_dev(span0, "aria-hidden", "true");
-    			add_location(span0, file$2, 19, 12, 520);
+    			add_location(span0, file$2, 17, 6, 449);
     			attr_dev(button0, "id", "removeItemBtn");
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "close small-font");
     			attr_dev(button0, "aria-label", "Remove product");
-    			add_location(button0, file$2, 12, 8, 310);
+    			add_location(button0, file$2, 10, 4, 279);
     			attr_dev(div0, "class", "cart-product-card-header d-flex flex-row justify-content-between");
-    			add_location(div0, file$2, 8, 4, 167);
+    			add_location(div0, file$2, 8, 2, 157);
     			if (!src_url_equal(img.src, img_src_value = /*product*/ ctx[0].image)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
     			attr_dev(img, "class", "cart-product-image");
-    			add_location(img, file$2, 23, 8, 656);
-    			add_location(p, file$2, 25, 12, 777);
+    			add_location(img, file$2, 21, 4, 573);
+    			add_location(p, file$2, 23, 6, 684);
     			attr_dev(span1, "class", "small-font font-weight-bold");
-    			add_location(span1, file$2, 27, 16, 873);
+    			add_location(span1, file$2, 25, 8, 802);
     			attr_dev(button1, "class", "minus-button disable_button_bacground");
-    			add_location(button1, file$2, 31, 20, 1081);
+    			add_location(button1, file$2, 29, 10, 974);
     			attr_dev(input, "class", "cart-product-quantity-amount disable_button_bacground text-center");
     			input.value = input_value_value = /*product*/ ctx[0].count;
-    			add_location(input, file$2, 35, 20, 1253);
+    			add_location(input, file$2, 33, 10, 1102);
     			attr_dev(button2, "class", "plus-button disable_button_bacground");
-    			add_location(button2, file$2, 39, 20, 1447);
+    			add_location(button2, file$2, 37, 10, 1252);
     			attr_dev(div1, "class", "cart-product-quantity");
-    			add_location(div1, file$2, 30, 16, 1025);
+    			add_location(div1, file$2, 28, 8, 928);
     			attr_dev(div2, "class", "cart-product-card-bottom");
-    			add_location(div2, file$2, 26, 12, 818);
+    			add_location(div2, file$2, 24, 6, 755);
     			attr_dev(div3, "class", "cart-product-description");
-    			add_location(div3, file$2, 24, 8, 726);
+    			add_location(div3, file$2, 22, 4, 639);
     			attr_dev(div4, "class", "cart-product-card-content d-flex flex-row");
-    			add_location(div4, file$2, 22, 4, 592);
+    			add_location(div4, file$2, 20, 2, 513);
     			attr_dev(div5, "class", "cart-product-card");
-    			add_location(div5, file$2, 7, 0, 131);
+    			add_location(div5, file$2, 7, 0, 123);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -616,17 +617,17 @@ var app = (function () {
     			append_dev(div4, t4);
     			append_dev(div4, div3);
     			append_dev(div3, p);
-    			append_dev(p, t5);
-    			append_dev(div3, t6);
+    			p.innerHTML = raw_value;
+    			append_dev(div3, t5);
     			append_dev(div3, div2);
     			append_dev(div2, span1);
-    			append_dev(span1, t7);
-    			append_dev(div2, t8);
+    			append_dev(span1, t6);
+    			append_dev(div2, t7);
     			append_dev(div2, div1);
     			append_dev(div1, button1);
-    			append_dev(div1, t9);
+    			append_dev(div1, t8);
     			append_dev(div1, input);
-    			append_dev(div1, t10);
+    			append_dev(div1, t9);
     			append_dev(div1, button2);
 
     			if (!mounted) {
@@ -674,8 +675,7 @@ var app = (function () {
     				attr_dev(img, "src", img_src_value);
     			}
 
-    			if (dirty & /*product*/ 1 && t5_value !== (t5_value = /*product*/ ctx[0].description + "")) set_data_dev(t5, t5_value);
-    			if (dirty & /*product*/ 1 && t7_value !== (t7_value = `$${(/*product*/ ctx[0].fee * /*product*/ ctx[0].count).toFixed(2)}` + "")) set_data_dev(t7, t7_value);
+    			if (dirty & /*product*/ 1 && raw_value !== (raw_value = `${/*product*/ ctx[0].attributes}<br>${/*product*/ ctx[0].description}` + "")) p.innerHTML = raw_value;			if (dirty & /*product*/ 1 && t6_value !== (t6_value = `$${(/*product*/ ctx[0].fee * /*product*/ ctx[0].count).toFixed(2)}` + "")) set_data_dev(t6, t6_value);
 
     			if (dirty & /*product*/ 1 && input_value_value !== (input_value_value = /*product*/ ctx[0].count) && input.value !== input_value_value) {
     				prop_dev(input, "value", input_value_value);
@@ -820,27 +820,27 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[13] = list[i];
+    	child_ctx[12] = list[i];
     	return child_ctx;
     }
 
-    // (165:4) {#each Products.list as product (product.id)}
+    // (153:4) {#each Products.list as product (product.id)}
     function create_each_block(key_1, ctx) {
     	let first;
     	let cartproduct;
     	let current;
 
     	function func() {
-    		return /*func*/ ctx[7](/*product*/ ctx[13]);
+    		return /*func*/ ctx[7](/*product*/ ctx[12]);
     	}
 
     	function func_1() {
-    		return /*func_1*/ ctx[8](/*product*/ ctx[13]);
+    		return /*func_1*/ ctx[8](/*product*/ ctx[12]);
     	}
 
     	cartproduct = new CartProductCard({
     			props: {
-    				product: /*product*/ ctx[13],
+    				product: /*product*/ ctx[12],
     				incrementItem: func,
     				decrementItem: func_1,
     				removeItem: /*removeItem*/ ctx[6]
@@ -864,7 +864,7 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
     			const cartproduct_changes = {};
-    			if (dirty & /*Products*/ 1) cartproduct_changes.product = /*product*/ ctx[13];
+    			if (dirty & /*Products*/ 1) cartproduct_changes.product = /*product*/ ctx[12];
     			if (dirty & /*Products*/ 1) cartproduct_changes.incrementItem = func;
     			if (dirty & /*Products*/ 1) cartproduct_changes.decrementItem = func_1;
     			cartproduct.$set(cartproduct_changes);
@@ -888,7 +888,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(165:4) {#each Products.list as product (product.id)}",
+    		source: "(153:4) {#each Products.list as product (product.id)}",
     		ctx
     	});
 
@@ -939,7 +939,7 @@ var app = (function () {
     	let dispose;
     	let each_value = /*Products*/ ctx[0].list;
     	validate_each_argument(each_value);
-    	const get_key = ctx => /*product*/ ctx[13].id;
+    	const get_key = ctx => /*product*/ ctx[12].id;
     	validate_each_keys(ctx, each_value, get_each_context, get_key);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -995,49 +995,50 @@ var app = (function () {
     			span5 = element("span");
     			span5.textContent = "We accept Debit cards and Paypal.";
     			attr_dev(h2, "class", "h3");
-    			add_location(h2, file$1, 150, 4, 4965);
+    			add_location(h2, file$1, 138, 4, 4585);
     			attr_dev(label, "for", "cart-drawer");
     			attr_dev(label, "class", "small-font");
-    			add_location(label, file$1, 151, 4, 5003);
+    			add_location(label, file$1, 139, 4, 4623);
     			attr_dev(div0, "class", "cart-header-main");
-    			add_location(div0, file$1, 149, 2, 4930);
+    			add_location(div0, file$1, 137, 2, 4550);
     			attr_dev(span0, "aria-hidden", "true");
-    			add_location(span0, file$1, 159, 4, 5196);
+    			add_location(span0, file$1, 147, 4, 4816);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "close");
     			attr_dev(button0, "aria-label", "Close Cart");
-    			add_location(button0, file$1, 153, 2, 5089);
+    			add_location(button0, file$1, 141, 2, 4709);
     			attr_dev(div1, "class", "cart-header");
-    			add_location(div1, file$1, 148, 0, 4902);
+    			add_location(div1, file$1, 136, 0, 4522);
     			attr_dev(div2, "class", "cart-body");
-    			add_location(div2, file$1, 163, 2, 5289);
+    			add_location(div2, file$1, 151, 2, 4909);
     			attr_dev(span1, "class", "font-weight-bold text-uppercase");
-    			add_location(span1, file$1, 178, 8, 5755);
+    			add_location(span1, file$1, 166, 8, 5422);
     			attr_dev(span2, "class", "font-weight-bold");
-    			add_location(span2, file$1, 179, 8, 5826);
+    			add_location(span2, file$1, 167, 8, 5493);
     			attr_dev(div3, "class", "cart-checkout-subtotals d-flex flex-row justify-content-between small-font");
-    			add_location(div3, file$1, 175, 6, 5643);
+    			add_location(div3, file$1, 163, 6, 5310);
     			attr_dev(div4, "class", "horizontal-divider");
     			set_style(div4, "margin", "0.5rem 0");
-    			add_location(div4, file$1, 181, 6, 5911);
+    			add_location(div4, file$1, 169, 6, 5578);
     			attr_dev(span3, "class", "font-weight-bold text-uppercase");
-    			add_location(span3, file$1, 185, 8, 6085);
+    			add_location(span3, file$1, 173, 8, 5752);
     			attr_dev(span4, "class", "font-weight-bold");
-    			add_location(span4, file$1, 186, 8, 6153);
+    			add_location(span4, file$1, 174, 8, 5820);
     			attr_dev(div5, "class", "cart-checkout-estimated-totals d-flex flex-row justify-content-between");
-    			add_location(div5, file$1, 182, 6, 5977);
+    			add_location(div5, file$1, 170, 6, 5644);
     			attr_dev(div6, "class", "cart-checkout-totals mb-3");
-    			add_location(div6, file$1, 174, 4, 5597);
+    			add_location(div6, file$1, 162, 4, 5264);
     			attr_dev(button1, "class", "btn btn-primary text-uppercase mb-2");
-    			add_location(button1, file$1, 190, 6, 6324);
+    			add_location(button1, file$1, 178, 6, 5991);
     			attr_dev(span5, "class", "cart-checkout-info");
-    			add_location(span5, file$1, 193, 6, 6427);
+    			add_location(span5, file$1, 181, 6, 6094);
     			attr_dev(div7, "class", "cart-checkout-proceed d-flex flex-column align-items-center");
-    			add_location(div7, file$1, 189, 4, 6244);
-    			attr_dev(div8, "class", "cart-checkout");
-    			add_location(div8, file$1, 173, 2, 5565);
+    			add_location(div7, file$1, 177, 4, 5911);
+    			attr_dev(div8, "class", "cart-checkout svelte-i88o4s");
+    			toggle_class(div8, "displayHide", /*Products*/ ctx[0].list.length === 0);
+    			add_location(div8, file$1, 161, 2, 5185);
     			attr_dev(div9, "class", "cart-body-wrapper");
-    			add_location(div9, file$1, 162, 0, 5255);
+    			add_location(div9, file$1, 150, 0, 4875);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1102,6 +1103,10 @@ var app = (function () {
 
     			if ((!current || dirty & /*subTotal*/ 2) && t9_value !== (t9_value = `$${/*subTotal*/ ctx[1].toFixed(2)}` + "")) set_data_dev(t9, t9_value);
     			if ((!current || dirty & /*total*/ 4) && t14_value !== (t14_value = `$${/*total*/ ctx[2].toFixed(2)}` + "")) set_data_dev(t14, t14_value);
+
+    			if (dirty & /*Products*/ 1) {
+    				toggle_class(div8, "displayHide", /*Products*/ ctx[0].list.length === 0);
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -1177,6 +1182,7 @@ var app = (function () {
     				query: `query GetProduct($id: ID!) { getProduct(id:$id) {
           id
           name
+          attributes
           description
           image
           fee
@@ -1206,6 +1212,12 @@ var app = (function () {
     		});
     	};
 
+    	document.querySelectorAll(".session-product-container .content-actions .btn").forEach(closer => {
+    		closer.addEventListener("click", e => {
+    			getProduct(e.target.getAttribute("data-id"));
+    		});
+    	});
+
     	const backdrop = document.getElementById("cart-drawer").children[0];
 
     	backdrop.addEventListener("click", () => {
@@ -1216,10 +1228,7 @@ var app = (function () {
     		openDrawer();
     	});
 
-    	document.getElementById("addProduct").addEventListener("click", e => {
-    		getProduct(e.target.attributes.value.value);
-    	});
-
+    	//Add all these 3 functions to Product Object
     	const incrementItem = id => {
     		const index = Products.list.findIndex(product => product.id === id); //Find where the product with corresponding ID is
     		$$invalidate(0, Products.list[index].count += 1, Products);
@@ -1239,40 +1248,22 @@ var app = (function () {
     		$$invalidate(0, Products.list = Products.list.filter(product => product.id !== id), Products);
     	};
 
-    	let PRODUCTS = [
-    		{
-    			id: "11",
-    			name: "Sprint Training (Holiday Program)",
-    			description: "Improve your top speed over the holidays. Better than spending time in front of Netflix.",
-    			fee: 99.99,
-    			image: "https://lapt.localhost/media/dec/1.jpg",
-    			count: 1
-    		},
-    		{
-    			id: "2",
-    			name: "SAT Training (Holiday Program)",
-    			description: "Improve your top speed over the holidays. Better than spending time in front of Netflix.",
-    			fee: 199.99,
-    			image: "https://lapt.localhost/media/dec/2.jpg",
-    			count: 1
-    		},
-    		{
-    			id: "3",
-    			name: "SAT Training (Holiday Program)",
-    			description: "Improve your top speed over the holidays. Better than spending time in front of Netflix.",
-    			fee: 199.99,
-    			image: "https://lapt.localhost/media/dec/2.jpg",
-    			count: 1
-    		}
-    	];
-
     	const Products = {
     		__addFlag: false,
-    		list: PRODUCTS,
+    		list: [],
     		//It is assumed that a single product is added
     		//The list keeps no duplicate products and rather uses count to keep track of how many of each product
-    		//This function covers an edge case really as there is an incrementing button on cart.
+    		//This function might be covering an edge case really as there is an incrementing button on cart.
     		add: product => {
+    			if (Products.list.length === 0) {
+    				//Adding first product
+    				product.count = 1;
+
+    				Products.push(product);
+    				console.log("product added to cart", product);
+    				return;
+    			}
+
     			Products.list.map((cartProduct, index) => {
     				console.log("add() considering Cart Product: ", cartProduct);
 
@@ -1284,14 +1275,18 @@ var app = (function () {
 
     				if (Products.list.length === index + 1 && !Products.__addFlag) {
     					product.count = 1;
-    					Products.list.push(product);
-    					$$invalidate(0, Products);
+    					Products.push(product);
     					$$invalidate(0, Products.__addFlag = false, Products);
     					console.log("product added to cart", product);
     				}
     			});
 
     			console.log("add() processed product: ", product);
+    		},
+    		//Replicates push behavior for svelte reactivity
+    		push: product => {
+    			Products.list.push(product);
+    			$$invalidate(0, Products);
     		}
     	};
 
@@ -1314,14 +1309,12 @@ var app = (function () {
     		incrementItem,
     		decrementItem,
     		removeItem,
-    		PRODUCTS,
     		Products,
     		subTotal,
     		total
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('PRODUCTS' in $$props) PRODUCTS = $$props.PRODUCTS;
     		if ('subTotal' in $$props) $$invalidate(1, subTotal = $$props.subTotal);
     		if ('total' in $$props) $$invalidate(2, total = $$props.total);
     	};

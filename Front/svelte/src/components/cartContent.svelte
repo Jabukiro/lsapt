@@ -27,6 +27,7 @@
         query: `query GetProduct($id: ID!) { getProduct(id:$id) {
           id
           name
+          attributes
           description
           image
           fee
@@ -60,6 +61,13 @@
         return;
       });
   };
+  document
+    .querySelectorAll(".session-product-container .content-actions .btn")
+    .forEach((closer) => {
+      closer.addEventListener("click", (e) => {
+        getProduct(e.target.getAttribute("data-id"));
+      });
+    });
   const backdrop = document.getElementById("cart-drawer").children[0];
   backdrop.addEventListener("click", () => {
     closeDrawer();
@@ -67,9 +75,7 @@
   document.getElementById("cartIcon").addEventListener("click", () => {
     openDrawer();
   });
-  document.getElementById("addProduct").addEventListener("click", (e) => {
-    getProduct(e.target.attributes.value.value);
-  });
+  //Add all these 3 functions to Product Object
   const incrementItem = (id) => {
     const index = Products.list.findIndex((product) => product.id === id); //Find where the product with corresponding ID is
     Products.list[index].count += 1;
@@ -85,42 +91,20 @@
     Products.list = Products.list.filter((product) => product.id !== id);
   };
 
-  let PRODUCTS = [
-    {
-      id: "11",
-      name: "Sprint Training (Holiday Program)",
-      description:
-        "Improve your top speed over the holidays. Better than spending time in front of Netflix.",
-      fee: 99.99,
-      image: "https://lapt.localhost/media/dec/1.jpg",
-      count: 1,
-    },
-    {
-      id: "2",
-      name: "SAT Training (Holiday Program)",
-      description:
-        "Improve your top speed over the holidays. Better than spending time in front of Netflix.",
-      fee: 199.99,
-      image: "https://lapt.localhost/media/dec/2.jpg",
-      count: 1,
-    },
-    {
-      id: "3",
-      name: "SAT Training (Holiday Program)",
-      description:
-        "Improve your top speed over the holidays. Better than spending time in front of Netflix.",
-      fee: 199.99,
-      image: "https://lapt.localhost/media/dec/2.jpg",
-      count: 1,
-    },
-  ];
   const Products = {
     __addFlag: false,
-    list: PRODUCTS,
+    list: [],
     //It is assumed that a single product is added
     //The list keeps no duplicate products and rather uses count to keep track of how many of each product
-    //This function covers an edge case really as there is an incrementing button on cart.
+    //This function might be covering an edge case really as there is an incrementing button on cart.
     add: (product) => {
+      if (Products.list.length === 0) {
+        //Adding first product
+        product.count = 1;
+        Products.push(product);
+        console.log("product added to cart", product);
+        return;
+      }
       Products.list.map((cartProduct, index) => {
         console.log("add() considering Cart Product: ", cartProduct);
         if (product.id === cartProduct.id) {
@@ -130,13 +114,17 @@
         }
         if (Products.list.length === index + 1 && !Products.__addFlag) {
           product.count = 1;
-          Products.list.push(product);
-          Products.list = Products.list;
+          Products.push(product);
           Products.__addFlag = false;
           console.log("product added to cart", product);
         }
       });
       console.log("add() processed product: ", product);
+    },
+    //Replicates push behavior for svelte reactivity
+    push: (product) => {
+      Products.list.push(product);
+      Products.list = Products.list;
     },
   };
   $: subTotal = Products.list.reduce((previous, current) => {
@@ -171,7 +159,7 @@
       />
     {/each}
   </div>
-  <div class="cart-checkout">
+  <div class="cart-checkout" class:displayHide={Products.list.length === 0}>
     <div class="cart-checkout-totals mb-3">
       <div
         class="cart-checkout-subtotals d-flex flex-row justify-content-between small-font"
@@ -195,3 +183,9 @@
     </div>
   </div>
 </div>
+
+<style>
+  .displayHide {
+    display: none;
+  }
+</style>
