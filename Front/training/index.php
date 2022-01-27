@@ -1,30 +1,27 @@
 <?php
 //Required variables by _openHead.php
 $webroot = $_SERVER['DOCUMENT_ROOT'];
-$HEAD = parse_ini_file( "$webroot/head.ini" );
-$title="Training Sessions | LineSpeedAPT | Perth Speed Training";
-$description=$HEAD["DESCRIPTION"];
-$keywords = $HEAD["KEYWORDS"].", Training Sessions";
+$HEAD = parse_ini_file("$webroot/head.ini");
+$title = "Training Sessions | LineSpeedAPT | Perth Speed Training";
+$description = $HEAD["DESCRIPTION"];
+$keywords = $HEAD["KEYWORDS"] . ", Training Sessions";
 $image = $HEAD["IMAGE"];
 $SITE_NAME = $HEAD["SITE_NAME"];
 require "$webroot/_openHead.php"
 ?>
 <link rel="stylesheet" href="/css/quickAction.css">
-<link rel="stylesheet" href="/css/style_v1.0.1.css">
+<link rel="stylesheet" href="/css/style_v1.0.5.css">
 <link rel="stylesheet" href="css/style_v1.0.1.css">
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQSKV8X" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQSKV8X" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="topNavBar" class="container top-nav-wrapper top-nav-collapse">
         <nav class="navbar navbar-expand-sm navbar-dark">
-            <a class="navbar-brand mr-auto" href="/"><img id="logo" src="/media/logo.svg" alt="Linespeed Logo"
-                    srcset=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03"
-                aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand mr-auto" href="/"><img id="logo" src="/media/logo.svg" alt="Linespeed Logo" srcset=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -34,8 +31,7 @@ require "$webroot/_openHead.php"
                         <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown dis-block">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">About</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
                             <a class="dropdown-item" href="/about">My Story</a>
                             <a class="dropdown-item" href="/about/linespeed/">LineSpeedAPT</a>
@@ -52,8 +48,7 @@ require "$webroot/_openHead.php"
                         <a class="nav-link" href="/training">Sessions</a>
                     </li>
                     <li class="nav-item dropdown dis-block">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Sessions</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sessions</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
                             <a class="dropdown-item" href="/training/team-speed/">Team Speed</a>
                             <a class="dropdown-item" href="/training/linear-speed/">Linear Speed</a>
@@ -88,16 +83,15 @@ require "$webroot/_openHead.php"
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Training</li>
+                <li class="breadcrumb-item active" aria-current="page">Shop | Training Sessions</li>
             </ol>
         </nav>
-        <div class="container parent">
+        <div style="display: none;" class="container parent">
             <div class="big-bullet-wrapper">
                 <div class="big-bullet-parent">
                     <div class="big-bullet-icon pop-scroll">
                         <a href="/training/speed-agility/">
-                            <img src="/media/speed_agility_bullet_icon.jpg" alt="Speed and Agility Training"
-                                class="big-bullet-icon-img" href="/training/speed-agility/">
+                            <img src="/media/speed_agility_bullet_icon.jpg" alt="Speed and Agility Training" class="big-bullet-icon-img" href="/training/speed-agility/">
                         </a>
                     </div>
                     <div class="big-bullet-content-wrapper">
@@ -110,9 +104,7 @@ require "$webroot/_openHead.php"
                 <div class="big-bullet-parent">
                     <div class="big-bullet-icon pop-scroll">
                         <a href="/training/team-speed/">
-                            <img style="position: absolute; height: 200px; top: 0px; left: -25px; width: unset;"
-                                src="/media/team_bullet_icon_1.jpg" alt="Sports Team Training"
-                                class="big-bullet-icon-img">
+                            <img style="position: absolute; height: 200px; top: 0px; left: -25px; width: unset;" src="/media/team_bullet_icon_1.jpg" alt="Sports Team Training" class="big-bullet-icon-img">
                         </a>
                     </div>
                     <div class="big-bullet-content-wrapper">
@@ -125,8 +117,7 @@ require "$webroot/_openHead.php"
                 <div class="big-bullet-parent">
                     <div class="big-bullet-icon pop-scroll">
                         <a href="/training/linear-speed/">
-                            <img src="/media/sprint_bullet_icon_1.jpg" alt="Linear Speed Training"
-                                class="big-bullet-icon-img">
+                            <img src="/media/sprint_bullet_icon_1.jpg" alt="Linear Speed Training" class="big-bullet-icon-img">
                         </a>
                     </div>
                     <div class="big-bullet-content-wrapper">
@@ -139,8 +130,7 @@ require "$webroot/_openHead.php"
                 <div class="big-bullet-parent">
                     <div class="big-bullet-icon pop-scroll">
                         <a href="/training/holiday-program/">
-                            <img style="height: 200px; width: unset;" src="/media/holiday_bullet_icon.jpg"
-                                alt="Holiday Program" class="big-bullet-icon-img">
+                            <img style="height: 200px; width: unset;" src="/media/holiday_bullet_icon.jpg" alt="Holiday Program" class="big-bullet-icon-img">
                         </a>
                     </div>
                     <div class="big-bullet-content-wrapper">
@@ -152,6 +142,9 @@ require "$webroot/_openHead.php"
                 </div>
             </div>
         </div>
+        <!--Add automated product List-->
+        <?php require "$webroot/modules/products/products.php" ?>
+        <!--End automated product List-->
     </div>
     <footer class="footer text-center">
         <div class="footer-links">
@@ -179,15 +172,12 @@ require "$webroot/_openHead.php"
                     <img src="/media/phone.svg" alt="Phone Contact" srcset="">
                 </div>
             </a>
-            <a href="mailto:info@linespeedapt.com" target="_self" data-content="info@linespeedapt.com"
-                aria-label="Email" data-quick-action="action">
+            <a href="mailto:info@linespeedapt.com" target="_self" data-content="info@linespeedapt.com" aria-label="Email" data-quick-action="action">
                 <div>
                     <img src="/media/email.svg" alt="Mail Contact" srcset="">
                 </div>
             </a>
-            <a href="https://www.instagram.com/linespeedapt/?hl=en" target="_blank"
-                data-content="https://www.instagram.com/linespeedapt/?hl=en" data-type="external" rel="noopener"
-                aria-label="Instagram" data-quick-action="action">
+            <a href="https://www.instagram.com/linespeedapt/?hl=en" target="_blank" data-content="https://www.instagram.com/linespeedapt/?hl=en" data-type="external" rel="noopener" aria-label="Instagram" data-quick-action="action">
                 <div style="fill:#fff">
                     <div>
                         <img src="/media/insta.svg" alt="Instagram Link" srcset="">
@@ -195,9 +185,7 @@ require "$webroot/_openHead.php"
                 </div>
             </a>
             <div data-quick-action="separator"></div>
-            <a href="https://www.facebook.com/LinespeedAPT/" target="_blank"
-                data-content="https://www.facebook.com/LinespeedAPT/" data-type="external" rel="noopener"
-                aria-label="Facebook" data-quick-action="action">
+            <a href="https://www.facebook.com/LinespeedAPT/" target="_blank" data-content="https://www.facebook.com/LinespeedAPT/" data-type="external" rel="noopener" aria-label="Facebook" data-quick-action="action">
                 <div>
                     <img src="/media/facebook.svg" alt="Facebook Link" srcset="">
                 </div>
@@ -205,15 +193,9 @@ require "$webroot/_openHead.php"
         </div>
     </div>
     <!--End Quick Action PopUp-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="/js/base.js"></script>
 </body>
 
