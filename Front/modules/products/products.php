@@ -2,7 +2,7 @@
 $webroot = $_SERVER['DOCUMENT_ROOT'];
 $currentDir = $webroot . "/modules/products";
 $ENV = parse_ini_file("$webroot/env.ini");
-$endpoint = "https://lapt.localhost:4000/graphql";
+$endpoint = "https://localhost:4000/graphql";
 
 $query = array(
     "query" => "query GetProduct{
@@ -70,7 +70,6 @@ function buildProductsHtml($productsList, $productHtml)
 }
 ?>
 <div class="sessions-wrapper container parent offWhiteSurface text-center">
-    <h2 class="heading">Trainning Sessions</h2>
     <div class="sessions">
         <?php echo buildProductsHTML($productsList, $productTemplate) ?>
     </div>
