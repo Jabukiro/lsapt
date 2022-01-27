@@ -26,18 +26,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
-                <!--To display on mobile only-->
-                <li id="training-link" class="nav-item dis-none">
+                <li id="training-link" class="nav-item">
                     <a class="nav-link" href="/training">Sessions</a>
-                </li>
-                <li class="nav-item dropdown dis-block">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sessions</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown03">
-                        <a class="dropdown-item" href="/training/team-speed/">Team Speed</a>
-                        <a class="dropdown-item" href="/training/linear-speed/">Linear Speed</a>
-                        <a class="dropdown-item" href="/training/speed-agility/">Speed & Agility</a>
-                        <a class="dropdown-item" href="/training/holiday-program/">Holiday Program</a>
-                    </div>
                 </li>
             </ul>
         </div>
