@@ -25,8 +25,8 @@ require "$webroot/_openHead.php"
         <!-- Populate Navbar -->
         <?php require "$webroot/_navBar.php" ?>
         <div class="container landing">
-            <div class="content-wrapper">
-                <div id="load1" class="landing-content" style="opacity: 0; padding-top: 100vh;">
+            <div class="content-wrapper" style="justify-content: flex-end; align-items: flex-end;">
+                <div id="load1" class="landing-content">
                     <!--
                 <h1 class="on-dark">
                     Start <span style="color: #ED0012">FAST</span> <br>Finish <span style="color: #ED0012">STRONG</span>
@@ -38,12 +38,12 @@ require "$webroot/_openHead.php"
                 </p>
                 -->
                     <div class="content-link-wrapper">
-                        <label for="name_input" class="content-link">
+                        <a href="#training-sessions-wrapper" class="content-link">
                             <div class="content-link-text">
-                                Start your LineSpeed Journey
+                                Register for a session
                             </div>
                             <img src="/media/arrow.svg" alt="" class="content-link-arrow">
-                        </label>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -62,8 +62,7 @@ require "$webroot/_openHead.php"
                 Based In Perth, WA, I created LineSpeed to help young atheletes reach their full potential. Over the years LineSpeed has developped into a close-knit community and a lot of the atheletes I've trained have gone on to win trophies in their respective sports. Here at LineSpeed Athletic Performance Training we are committed to creating a CULTURE that allows our athletes to strive for EXCELLENCE in sport, and in LIFE. Speed is a core aspect to many sports as well as the general athletic performance of a person; for this reason, LineSpeed speed training focuses on improving running mechanics and movement efficiency.<br>We see every youth as an athlete; whether you see your child as a serious athlete looking to get better or just wanting to get fit and have fun doing it, the LineSpeed Training System has a corresponding program.<br><br><span class="about-quote text-center">"Good is not enough when BETTER is expected."</span>
                 <br><span class="d-flex"><a href="/about" class="mx-auto btn btn-success" role="button" aria-pressed="true">More&nbsp;Info</a></span>
                 
-            </p>
-        -->
+            </p>-->
                 <p class="p-med">
                     SPEED is a skill that can be improved in any athlete with the correct training and education towards preparation, technique and intensity.
                 </p>
@@ -82,7 +81,6 @@ require "$webroot/_openHead.php"
                     From 8yrs old to adults, different range of capabilities and experience, multiple sports codes, Linespeed APT strives to assist athletes to reach their full athletic potential.
                     <br>Its not where you START, its where you FINISH.<br><br>
                     <br><a href="#contact" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact&nbsp;Us</a> to start your journey.
-                    <br><a id="addProduct" class="mx-auto btn btn-success" role="button" aria-pressed="true" value="1">Add Product</a>
                 </p>
             </div>
         </div>
@@ -292,7 +290,10 @@ require "$webroot/_openHead.php"
             </div>
         </div>
         <!--Add automated product List-->
-        <?php require "$webroot/modules/products/products.php" ?>
+        <div id="training-sessions-wrapper" class="off-white-surface" style="padding-top: 20px; text-align: center;">
+            <h2 class="heading">Shop | Training Sessions</h2>
+            <?php require "$webroot/modules/products/products.php" ?>
+        </div>
         <!--End automated product List-->
         <div class="container reviews">
             <h2 class="heading">Parents are saying</h2>
@@ -435,10 +436,8 @@ require "$webroot/_openHead.php"
                 </div>
             </div>
         </div>
-        <!--Svelte content. Drawer for the cart from right only.-->
-        <div id="cart-drawer">
-            <div class="backdrop"></div>
-        </div>
+        <!--Svelte content target. Drawer for the cart from right only.-->
+        <?php require "$webroot/_cartTarget.php" ?>
         <!-- End Drawer -->
         <!-- Modal for viewing flyers-->
         <div id="image-viewer">
