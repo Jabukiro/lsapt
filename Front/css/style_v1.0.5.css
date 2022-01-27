@@ -51,6 +51,9 @@ a:hover {
 .text-md{
     font-size: 1rem;
 }
+.off-white-surface{
+    background-color: #f7f7f7;
+}
 .top-nav-wrapper{
     position: fixed;
     padding: 30px;
@@ -874,6 +877,9 @@ line-height: 1.8;
 
     h1 {
         font-size: 45px;
+    }
+    .heading{
+        font-size: 1.75rem;
     }
     .content-wrapper {
         margin-top: 0px;
