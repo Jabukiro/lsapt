@@ -48,8 +48,17 @@ Issues:
         Solved by not checking certificate validity when environement is set to "development" in env.ini!!!!
         Huge security hole so make sure env is set properly.
 
-Loading of products on the front page is automated (populated server-side)!!!!
+Loading of products on the front page is automated (populated server-side)
 svelte cart currently adds an event listener on the "Add to cart" btn of the products
     the button is populated,by php server side, with the product id on its 'data-id' attr.
 
 Good Productive day/week.
+
+
+Friday 28/01/2022 - Week resume (Not that productive)
+Cookies have been enabled
+cart is saved on DataServer using Cookies. Front side now asks DataServer to add product id to cart
+work on adding loaders on product/cartproducts has been started
+    loaders on products has bee completed
+cartContent.svelte now deals strictly with logic that happens in the physical shopping cart
+everthing else (Like adding a new product to cart) has been moved to cartDrawer.svelte
