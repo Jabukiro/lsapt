@@ -10,6 +10,7 @@ const http = require('http');
 const fs = require('fs');
 const { schema } = require('./schema');
 const { DatabaseManager } = require('./databaseManager');
+const Cart = require('./cartProduct');
 const { NONAME } = require('dns');
 
 
@@ -72,7 +73,7 @@ function createField(tableName, input) {
  * @param {object} req Request to server
  */
 const context = async ({ req, res }) => {
-    return { req, res, DBMan, getTable, createField };
+    return { req, res, DBMan, getTable, createField, Cart };
 };
 
 const app = express();
