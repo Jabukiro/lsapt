@@ -1,4 +1,4 @@
-<div class="session-product-container">
+<div data-id="{{product_id}}" class="session-product-container">
     <div data-image-src="{{product_image_full}}" class="image-box" tabindex="0">
         <img src="{{product_image}}" alt="" srcset="">
         <div class="image-viewer-btn"><button class="btn btn-link">View Flyer</button></div>
@@ -12,5 +12,10 @@
         <div class="content-actions">
             <button data-id="{{product_id}}" class="btn btn-primary">Add To Cart</button>
         </div>
+    </div>
+    <div id="storeCreationLoading" class="angel-linear-loading">
+        <div class="line"></div>
+        <div class="subline inc"></div>
+        <div class="subline dec"></div>
     </div>
 </div>
