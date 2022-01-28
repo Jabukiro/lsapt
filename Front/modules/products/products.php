@@ -2,7 +2,7 @@
 $webroot = $_SERVER['DOCUMENT_ROOT'];
 $currentDir = $webroot . "/modules/products";
 $ENV = parse_ini_file("$webroot/env.ini");
-$endpoint = "https://localhost:4000/graphql";
+$endpoint = $ENV["GQLENDPOINT"];
 
 $query = array(
     "query" => "query GetProduct{
