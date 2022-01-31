@@ -119,6 +119,8 @@ require "$webroot/_openHead.php"
         <span class="d-flex"><a href="/about/linespeed/" class="mx-auto btn btn-success" role="button" aria-pressed="true">Learn&nbsp;More</a></span>
         <div class="short-horizontal-divider"></div>
     </div>
+    <!--Svelte content target. Drawer for the cart from right only.-->
+    <?php require "$webroot/_cartTarget.php" ?>
     <footer class="footer text-center">
         <div class="footer-links">
             <a href="https://www.facebook.com/pg/LinespeedAPT/"><i class="fab fa-facebook fa-2x pr-2"></i></a>

@@ -105,6 +105,8 @@ require "$webroot/_openHead.php"
         <!--Add automated product List-->
         <?php require "$webroot/modules/products/products.php" ?>
         <!--End automated product List-->
+        <!--Svelte content target. Drawer for the cart from right only.-->
+        <?php require "$webroot/_cartTarget.php" ?>
     </div>
     <footer class="footer text-center">
         <div class="footer-links">
