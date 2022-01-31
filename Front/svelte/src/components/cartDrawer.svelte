@@ -4,7 +4,7 @@
   const PRODUCTSLOCATION = [
     "/",
     "/index.php",
-    "/training",
+    "/training/",
     "/training/index.php",
   ];
   const pageUrl = new URL(window.location.href);
