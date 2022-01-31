@@ -1,73 +1,27 @@
 <?php
 //Required variables by _openHead.php
 $webroot = $_SERVER['DOCUMENT_ROOT'];
-$HEAD = parse_ini_file( "$webroot/head.ini" );
-$title="Events | LineSpeedAPT | Perth Speed Training";
-$description=$HEAD["DESCRIPTION"];
-$keywords = $HEAD["KEYWORDS"]."Programs, Speed Training Programs";
+$HEAD = parse_ini_file("$webroot/head.ini");
+$title = "Events | LineSpeedAPT | Perth Speed Training";
+$description = $HEAD["DESCRIPTION"];
+$keywords = $HEAD["KEYWORDS"] . "Programs, Speed Training Programs";
 
 $image = $HEAD["IMAGE"];
 $SITE_NAME = $HEAD["SITE_NAME"];
 require "$webroot/_openHead.php"
 ?>
-    <link rel="stylesheet" href="/css/quickAction.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/training/css/style.css">
-    <link rel="stylesheet" href="/css/events.css">
-    <link rel="stylesheet" href="css/style_v1.0.0.css">
+<link rel="stylesheet" href="/css/quickAction.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/training/css/style.css">
+<link rel="stylesheet" href="/css/events.css">
+<link rel="stylesheet" href="css/style_v1.0.0.css">
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQSKV8X" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div id="topNavBar" class="container top-nav-wrapper top-nav-collapse">
-        <nav class="navbar navbar-expand-sm navbar-dark">
-            <a class="navbar-brand mr-auto" href="/"><img id="logo" src="/media/logo.svg" alt="Linespeed Logo"
-                    srcset=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03"
-                aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarsExample03">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active dis-none">
-                        <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown dis-block">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">About</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="/about">My Story</a>
-                            <a class="dropdown-item" href="/about/linespeed/">LineSpeedAPT</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/events">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                    <!--To display on mobile only-->
-                    <li id="training-link" class="nav-item dis-none">
-                        <a class="nav-link" href="/training">Sessions</a>
-                    </li>
-                    <li class="nav-item dropdown dis-block">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Sessions</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="/training/team-speed/">Team Speed</a>
-                            <a class="dropdown-item" href="/training/linear-speed/">Linear Speed</a>
-                            <a class="dropdown-item" href="/training/speed-agility/">Speed & Agility</a>
-                            <a class="dropdown-item" href="/training/holiday-program/">Holiday Program</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQSKV8X" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Populate Navbar -->
+    <?php require "$webroot/_navBar.php" ?>
     <div class="container landing training-sessions">
         <div class="content-wrapper">
             <div class="landing-content">
@@ -110,7 +64,8 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">Speed Training | Holiday Program</h5>
-                    </div><div class="events-toggle-content">
+                    </div>
+                    <div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/1.jpg" target="_blank">
                                 <img src="/media/dec/1.jpg" alt="" srcset="">
@@ -126,7 +81,8 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">SAQ Training | Holiday Program</h5>
-                    </div><div class="events-toggle-content">
+                    </div>
+                    <div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/2.jpg" target="_blank">
                                 <img src="/media/dec/2.jpg" alt="" srcset="">
@@ -146,7 +102,8 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">Agility Training | Holiday Program</h5>
-                    </div><div class="events-toggle-content">
+                    </div>
+                    <div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/3.jpg" target="_blank">
                                 <img src="/media/dec/3.jpg" alt="" srcset="">
@@ -166,7 +123,8 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">Basketball SAQ | Holiday Program</h5>
-                    </div><div class="events-toggle-content">
+                    </div>
+                    <div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/4.jpg" target="_blank">
                                 <img src="/media/dec/4.jpg" alt="" srcset="">
@@ -186,7 +144,8 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">Netball SAQ | Holiday Program</h5>
-                    </div><div class="events-toggle-content">
+                    </div>
+                    <div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/5.jpg" target="_blank">
                                 <img src="/media/dec/5.jpg" alt="" srcset="">
@@ -206,7 +165,8 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">Field Agility | Holiday Program</h5>
-                    </div><div class="events-toggle-content">
+                    </div>
+                    <div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/6.jpg" target="_blank">
                                 <img src="/media/dec/6.jpg" alt="" srcset="">
@@ -226,7 +186,8 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">Senior Speed Training | Holiday Program</h5>
-                    </div><div class="events-toggle-content">
+                    </div>
+                    <div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/7.jpg" target="_blank">
                                 <img src="/media/dec/7.jpg" alt="" srcset="">
@@ -279,15 +240,12 @@ require "$webroot/_openHead.php"
                     <img src="/media/phone.svg" alt="Phone Contact" srcset="">
                 </div>
             </a>
-            <a href="mailto:info@linespeedapt.com" target="_self" data-content="info@linespeedapt.com"
-                aria-label="Email" data-quick-action="action">
+            <a href="mailto:info@linespeedapt.com" target="_self" data-content="info@linespeedapt.com" aria-label="Email" data-quick-action="action">
                 <div>
                     <img src="/media/email.svg" alt="Mail Contact" srcset="">
                 </div>
             </a>
-            <a href="https://www.instagram.com/linespeedapt/?hl=en" target="_blank"
-                data-content="https://www.instagram.com/linespeedapt/?hl=en" data-type="external" rel="noopener"
-                aria-label="Instagram" data-quick-action="action">
+            <a href="https://www.instagram.com/linespeedapt/?hl=en" target="_blank" data-content="https://www.instagram.com/linespeedapt/?hl=en" data-type="external" rel="noopener" aria-label="Instagram" data-quick-action="action">
                 <div style="fill:#fff">
                     <div>
                         <img src="/media/insta.svg" alt="Instagram Link" srcset="">
@@ -295,9 +253,7 @@ require "$webroot/_openHead.php"
                 </div>
             </a>
             <div data-quick-action="separator"></div>
-            <a href="https://www.facebook.com/LinespeedAPT/" target="_blank"
-                data-content="https://www.facebook.com/LinespeedAPT/" data-type="external" rel="noopener"
-                aria-label="Facebook" data-quick-action="action">
+            <a href="https://www.facebook.com/LinespeedAPT/" target="_blank" data-content="https://www.facebook.com/LinespeedAPT/" data-type="external" rel="noopener" aria-label="Facebook" data-quick-action="action">
                 <div>
                     <img src="/media/facebook.svg" alt="Facebook Link" srcset="">
                 </div>
@@ -305,15 +261,9 @@ require "$webroot/_openHead.php"
         </div>
     </div>
     <!--End Quick Action PopUp-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="/js/base.js"></script>
     <script src="/js/events.js"></script>
 </body>

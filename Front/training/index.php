@@ -18,48 +18,8 @@ require "$webroot/_openHead.php"
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQSKV8X" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div id="topNavBar" class="container top-nav-wrapper top-nav-collapse">
-        <nav class="navbar navbar-expand-sm navbar-dark">
-            <a class="navbar-brand mr-auto" href="/"><img id="logo" src="/media/logo.svg" alt="Linespeed Logo" srcset=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarsExample03">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active dis-none">
-                        <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown dis-block">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="/about">My Story</a>
-                            <a class="dropdown-item" href="/about/linespeed/">LineSpeedAPT</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/events">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                    <!--To display on mobile only-->
-                    <li id="training-link" class="nav-item dis-none">
-                        <a class="nav-link" href="/training">Sessions</a>
-                    </li>
-                    <li class="nav-item dropdown dis-block">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sessions</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="/training/team-speed/">Team Speed</a>
-                            <a class="dropdown-item" href="/training/linear-speed/">Linear Speed</a>
-                            <a class="dropdown-item" href="/training/speed-agility/">Speed & Agility</a>
-                            <a class="dropdown-item" href="/training/holiday-program/">Holiday Program</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+    <!--Navbar-->
+    <?php require "$webroot/_navBar.php" ?>
     <div class="container landing training-list">
         <div class="content-wrapper">
             <div class="landing-content">
