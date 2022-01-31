@@ -13,7 +13,6 @@ require "$webroot/_openHead.php"
 <link rel="preload" href="media/loader_min.mp4" as="video">
 <link rel="stylesheet" href="css/quickAction.css">
 <link rel="stylesheet" href="css/events.css">
-<link href="/js/svelte-bundle.css" rel="stylesheet" />
 <link rel="stylesheet" href="css/style_v1.0.5.css">
 </head>
 
