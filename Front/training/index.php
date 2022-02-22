@@ -46,7 +46,7 @@ require "$webroot/_openHead.php"
                 <li class="breadcrumb-item active" aria-current="page">Shop | Training Sessions</li>
             </ol>
         </nav>
-        <div style="display: none;" class="container parent">
+        <div class="container parent">
             <div class="big-bullet-wrapper">
                 <div class="big-bullet-parent">
                     <div class="big-bullet-icon pop-scroll">
@@ -102,20 +102,8 @@ require "$webroot/_openHead.php"
                 </div>
             </div>
         </div>
-        <!--Add automated product List-->
-        <?php require "$webroot/modules/products/products.php" ?>
-        <!--End automated product List-->
         <!--Svelte content target. Drawer for the cart from right only.-->
         <?php require "$webroot/_cartTarget.php" ?>
-        <!-- Modal for viewing flyers-->
-        <div id="image-viewer">
-            <div class="backdrop closeImageViewer"></div>
-            <img class="image-content" id="full-image">
-            <button type="button" class="close closeImageViewer" aria-label="Close Image Viewer">
-                <span>&times;</span>
-            </button>
-        </div>
-        <!--End Modal-->
     </div>
     <footer class="footer text-center">
         <div class="footer-links">

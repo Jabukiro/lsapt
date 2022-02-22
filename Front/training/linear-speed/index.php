@@ -1,73 +1,32 @@
 <?php
 //Required variables by _openHead.php
 $webroot = $_SERVER['DOCUMENT_ROOT'];
-$HEAD = parse_ini_file( "$webroot/head.ini" );
-$title="Linear Speed Training | Perth Speed Training";
-$description=$HEAD["DESCRIPTION"];
-$keywords = $HEAD["KEYWORDS"].", Top-Speed Training";
+$HEAD = parse_ini_file("$webroot/head.ini");
+$title = "Linear Speed Training | Perth Speed Training";
+$description = $HEAD["DESCRIPTION"];
+$keywords = $HEAD["KEYWORDS"] . ", Top-Speed Training";
 
 $image = $HEAD["IMAGE"];
 $SITE_NAME = $HEAD["SITE_NAME"];
 require "$webroot/_openHead.php"
 ?>
-    <link rel="stylesheet" href="/css/quickAction.css">
-    <link rel="stylesheet" href="/css/style_v1.0.1.css">
-    <link rel="stylesheet" href="../css/style_v1.0.1.css">
+<link rel="stylesheet" href="/css/quickAction.css">
+<link rel="stylesheet" href="/css/style_v1.0.1.css">
+<link rel="stylesheet" href="../css/style_v1.0.1.css">
 </head>
+
 <body style="min-width: 315px;" class="text-md">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQSKV8X"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQSKV8X" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div id="topNavBar" class="container top-nav-wrapper top-nav-collapse">
-        <nav class="navbar navbar-expand-sm navbar-dark">
-            <a class="navbar-brand mr-auto" href="/"><img id="logo" src="/media/logo.svg" alt="Linespeed Logo" srcset=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-      
-            <div class="collapse navbar-collapse" id="navbarsExample03">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active dis-none">
-                    <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown dis-block">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="/about">My Story</a>
-                            <a class="dropdown-item" href="/about/linespeed/">LineSpeedAPT</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/events">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                    <!--To display on mobile only-->
-                    <li id="training-link" class="nav-item dis-none">
-                        <a class="nav-link" href="/training">Sessions</a>
-                    </li>
-                    <li class="nav-item dropdown dis-block">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sessions</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown03">
-                            <a class="dropdown-item" href="/training/team-speed/">Team Speed</a>
-                            <a class="dropdown-item" href="/training/linear-speed/">Linear Speed</a>
-                            <a class="dropdown-item" href="/training/speed-agility/">Speed & Agility</a>
-                            <a class="dropdown-item" href="/training/holiday-program/">Holiday Program</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="top-nav-gradient"></div>
-    </div>
+    <!-- Populate Navbar -->
+    <?php require "$webroot/_navBar.php" ?>
     <div class="container landing training-sessions">
         <div class="content-wrapper">
             <div class="landing-content">
                 <h1 class="on-dark">
                     Linear <span style="color: #ED0012">Speed</span>
-                   <!--Improve Linear Speed and Athletic Performance-->
+                    <!--Improve Linear Speed and Athletic Performance-->
                 </h1>
                 <!-- <p class="on-dark p-large">
                     Ages 6-16 are crucial for a child to reach their full atheltic performance. Discover how Linespeed's speed training method can help your child reach their full potential!
@@ -90,15 +49,15 @@ require "$webroot/_openHead.php"
     <div class="main">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item"><a href="..">Training</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Linear-Speed</li>
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="..">Training</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Linear-Speed</li>
             </ol>
         </nav>
         <div class="container training-content">
             <h1><strong>Linear Speed</strong></h1>
             <p>
-                <strong>Duration:   </strong>90 minutes
+                <strong>Duration: </strong>90 minutes
             </p>
             <strong>Focus:</strong>
             <ul>
@@ -127,11 +86,18 @@ require "$webroot/_openHead.php"
                 <li>Alternate&nbsp;Starts</li>
                 <li>Cooldown</li>
             </ul>
+            <div class="d-flex justify-content-center">
+                <button data-id="5" class="btn btn-dark btn-accent" style="min-width: 250px;">Add To Cart</button>
+            </div>
+            <!--
             <p>
                 <a href="/contact" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact&nbsp;Us</a> to begin your journey towards increasing your linear speed with linespeed.
             </p>
+    -->
         </div>
     </div>
+    <!--Svelte content target. Drawer for the cart from right only.-->
+    <?php require "$webroot/_cartTarget.php" ?>
     <footer class="footer text-center">
         <div class="footer-links">
             <a href="https://www.facebook.com/pg/LinespeedAPT/"><i class="fab fa-facebook fa-2x pr-2"></i></a>
@@ -185,4 +151,5 @@ require "$webroot/_openHead.php"
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="/js/base.js"></script>
 </body>
+
 </html>
