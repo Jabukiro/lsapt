@@ -7,6 +7,6 @@ index_no_loader.html
 backup_media/
 media_orig/
 testReCaptcha.sh
-vendor/
 D2G/
 svelte/
+vendor/
