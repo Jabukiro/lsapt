@@ -48,5 +48,6 @@ function get_file_url()
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link href="/js/svelte-bundle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style_v1.0.5.css">
     <link rel="stylesheet" href="/css/cart.css">
     <!--Head not closed to leave individual pages to add aditional headers up themselves-->
