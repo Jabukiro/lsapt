@@ -19,7 +19,12 @@
     </button>
   </div>
   <div class="cart-product-card-content d-flex flex-row">
-    <img src={product.image} alt="" class="cart-product-image" />
+    <img
+      src={product.image}
+      alt="Product"
+      class="cart-product-image"
+      style="margin-top: auto; margin-bottom: auto;"
+    />
     <div class="cart-product-description">
       <p>{@html `${product.attributes}<br>${product.description}`}</p>
       <div class="cart-product-card-bottom">
