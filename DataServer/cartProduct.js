@@ -7,7 +7,6 @@ exports.add = (newProduct, productList) => {
         return productList;
     }
     productList.map((cartProduct, index) => {
-        console.log("add() considering Cart Product: ", cartProduct);
         if (newProduct.id == cartProduct.id) {
             cartProduct.count += 1;
             addFlag = true;
@@ -18,7 +17,6 @@ exports.add = (newProduct, productList) => {
             addFlag = false;
         }
     });
-    console.log("add() newCart: ", productList);
     return productList;
 }
 exports.decrementItem = (id, productList) => {
