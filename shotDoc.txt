@@ -62,3 +62,14 @@ work on adding loaders on product/cartproducts has been started
     loaders on products has bee completed
 cartContent.svelte now deals strictly with logic that happens in the physical shopping cart
 everthing else (Like adding a new product to cart) has been moved to cartDrawer.svelte
+
+Monday 31/01/2022
+cartDrawer.svelte contains logic that depends on whic pages contains products that are to be added to cart
+    So that we don't need to look for cartproducts on EVERY page.
+
+Tuesday 22/02/2022
+After converstation with Joseph, it was decided that sessions products should have the same old look
+---- Not a flyer but still a bullet image with a description of the session
+---- Still with a link to the page that gives more information
+---- Be able to register as well as pay
+-------- Means input informationabout the athelte as well as their Parent/Guardian information
