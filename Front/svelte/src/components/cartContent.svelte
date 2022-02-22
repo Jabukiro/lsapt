@@ -5,7 +5,7 @@
   export let cartList;
   export let cartOps;
   import CartProduct from "./cartProductCard.svelte";
-  const HOSTNAME = "https://live.linespeedapt.com";
+  const HOSTNAME = "https://lapt.localhost";
 
   function toggleLoading(id, state) {
     const domEls = Array.from(document.querySelectorAll(".cart-product-card"));

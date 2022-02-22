@@ -168,6 +168,11 @@ line-height: 1.8;
 .loading.cart-product-card{
     pointer-events: none; /*Globaly disable any action on products*/
 }
+.loading.session-button-container .btn{
+    /*harmonize the look of the button with the linear-loading below*/
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
 .angel-linear-loading .line{
     position:absolute;
     opacity: 0.4;

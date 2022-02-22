@@ -76,8 +76,15 @@ require "$webroot/_openHead.php"
                 <li>Alternate&nbsp;drills</li>
                 <li>Cooldown - Static&nbsp;stretches</li>
             </ul>
-            <div class="d-flex justify-content-center">
-                <button data-id="3" class="btn btn-dark btn-accent" style="min-width: 250px;">Add To Cart</button>
+            <div class="d-flex session-button-container">
+                <div class="ml-auto mr-auto">
+                    <button data-id="3" class="btn btn-dark btn-accent" style="min-width: 250px;">Add To Cart</button>
+                    <div id="storeCreationLoading" class="angel-linear-loading">
+                        <div class="line"></div>
+                        <div class="subline inc"></div>
+                        <div class="subline dec"></div>
+                    </div>
+                </div>
             </div>
             <!--
             <p>

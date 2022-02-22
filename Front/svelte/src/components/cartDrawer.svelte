@@ -1,14 +1,18 @@
 <script>
   import CartContent from "./cartContent.svelte";
-  const HOSTNAME = "https://live.linespeedapt.com";
+  const HOSTNAME = "https://lapt.localhost";
   let isOpen = false;
-  const PRODUCTSLOCATION = [
-    "/",
-    "/index.php",
-    "/training/",
-    "/training/index.php",
-  ];
+
+  //Represent the location of flyer like products
+  //Will be used for merch
+  const PRODUCTSLOCATION = [];
+
+  //Represent the location of session products. Differet UI as flyer products
+  //The different UI means different targeting and loading state appearance
+  //The cart itself represents all cart products in the same vein.
+  const SESSIONLOCATION = [/^\/training\/.*$/];
   const pageUrl = new URL(window.location.href);
+
   const serverLog = (message) => {
     fetch(`${HOSTNAME}:4000/graphql`, {
       method: "POST",
@@ -23,6 +27,7 @@
       }),
     });
   };
+
   let cartList = [];
   const cartQuery = ({ onCompletion = null } = {}) => {
     const start = new Date().getTime();
@@ -84,6 +89,7 @@
       });
   };
   cartQuery(); //Fetch cart saved on server if there is any
+
   const cartOps = ({
     id,
     type,
@@ -152,15 +158,22 @@
         }
       });
   };
+
   const openDrawer = () => {
     document.getElementById("cart-drawer").classList.add("open");
   };
+
   const closeDrawer = () => {
     document.getElementById("cart-drawer").classList.remove("open");
   };
+
   document.getElementById("cartIcon").addEventListener("click", () => {
     openDrawer();
   });
+
+  //Expects two dom elements
+  //An element onto which a 'loading' class is added/removed depending on state
+  //A button that is disabled/enabled depending on state
   const loadingCart = (id, state, productEl, productBtn) => {
     switch (state) {
       case "start":
@@ -179,7 +192,9 @@
         break;
     }
   };
-  if (PRODUCTSLOCATION.some((location) => location === pageUrl.pathname)) {
+
+  //put loaders onto products
+  if (PRODUCTSLOCATION.some((location) => pageUrl.pathname.match(location))) {
     //Lets load the products that are displayed on the page
     //Needed so that they can be target by loading indicators
     const domProducts = Array.from(
@@ -189,6 +204,30 @@
     domProducts.forEach((productEl) => {
       const productBtn = productEl
         .querySelector(".content-actions .btn") //the Add To Cart button
+        .addEventListener("click", (e) => {
+          const id = e.target.getAttribute("data-id");
+          loadingCart(id, "start", productEl, e.target);
+          cartOps({
+            id,
+            type: "add",
+            onCompletion: () => {
+              loadingCart(id, "stop", productEl, e.target);
+              openDrawer();
+            },
+          });
+        });
+    });
+  }
+
+  //Put loaders onto action buttons for sessions
+  if (SESSIONLOCATION.some((location) => pageUrl.pathname.match(location))) {
+    console.log("Page pathname matches target pages with sessions");
+    const domProducts = Array.from(
+      document.querySelectorAll(".session-button-container")
+    );
+    domProducts.forEach((productEl) => {
+      productEl
+        .querySelector(".btn") //the Add To Cart button
         .addEventListener("click", (e) => {
           const id = e.target.getAttribute("data-id");
           loadingCart(id, "start", productEl, e.target);
