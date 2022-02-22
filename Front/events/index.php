@@ -64,8 +64,7 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">Speed Training | Holiday Program</h5>
-                    </div>
-                    <div class="events-toggle-content">
+                    </div><div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/1.jpg" target="_blank">
                                 <img src="/media/dec/1.jpg" alt="" srcset="">
@@ -81,8 +80,7 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">SAQ Training | Holiday Program</h5>
-                    </div>
-                    <div class="events-toggle-content">
+                    </div><div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/2.jpg" target="_blank">
                                 <img src="/media/dec/2.jpg" alt="" srcset="">
@@ -102,8 +100,7 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">Agility Training | Holiday Program</h5>
-                    </div>
-                    <div class="events-toggle-content">
+                    </div><div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/3.jpg" target="_blank">
                                 <img src="/media/dec/3.jpg" alt="" srcset="">
@@ -123,8 +120,7 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">Basketball SAQ | Holiday Program</h5>
-                    </div>
-                    <div class="events-toggle-content">
+                    </div><div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/4.jpg" target="_blank">
                                 <img src="/media/dec/4.jpg" alt="" srcset="">
@@ -144,8 +140,7 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">Netball SAQ | Holiday Program</h5>
-                    </div>
-                    <div class="events-toggle-content">
+                    </div><div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/5.jpg" target="_blank">
                                 <img src="/media/dec/5.jpg" alt="" srcset="">
@@ -165,8 +160,7 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">Field Agility | Holiday Program</h5>
-                    </div>
-                    <div class="events-toggle-content">
+                    </div><div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/6.jpg" target="_blank">
                                 <img src="/media/dec/6.jpg" alt="" srcset="">
@@ -186,8 +180,7 @@ require "$webroot/_openHead.php"
                             <span class="slider round"></span>
                         </label>
                         <h5 class="events-toggle-accordion-title align-middle">Senior Speed Training | Holiday Program</h5>
-                    </div>
-                    <div class="events-toggle-content">
+                    </div><div class="events-toggle-content">
                         <div class="block">
                             <a href="/media/dec/7.jpg" target="_blank">
                                 <img src="/media/dec/7.jpg" alt="" srcset="">
