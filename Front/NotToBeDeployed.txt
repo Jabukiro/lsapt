@@ -10,3 +10,4 @@ testReCaptcha.sh
 D2G/
 svelte/
 vendor/
+env.ini

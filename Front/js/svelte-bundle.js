@@ -584,36 +584,38 @@ var app = (function () {
     			attr_dev(div0, "class", "cart-product-card-header d-flex flex-row justify-content-between");
     			add_location(div0, file$2, 8, 2, 186);
     			if (!src_url_equal(img.src, img_src_value = /*product*/ ctx[0].image)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", "");
+    			attr_dev(img, "alt", "Product");
     			attr_dev(img, "class", "cart-product-image");
+    			set_style(img, "margin-top", "auto");
+    			set_style(img, "margin-bottom", "auto");
     			add_location(img, file$2, 21, 4, 602);
-    			add_location(p, file$2, 23, 6, 713);
+    			add_location(p, file$2, 28, 6, 795);
     			attr_dev(span1, "class", "small-font font-weight-bold");
-    			add_location(span1, file$2, 25, 8, 831);
+    			add_location(span1, file$2, 30, 8, 913);
     			attr_dev(button1, "class", "minus-button disable_button_bacground");
-    			add_location(button1, file$2, 29, 10, 1003);
+    			add_location(button1, file$2, 34, 10, 1085);
     			attr_dev(input, "class", "cart-product-quantity-amount disable_button_bacground text-center");
     			input.value = input_value_value = /*product*/ ctx[0].count;
-    			add_location(input, file$2, 33, 10, 1131);
+    			add_location(input, file$2, 38, 10, 1213);
     			attr_dev(button2, "class", "plus-button disable_button_bacground");
-    			add_location(button2, file$2, 37, 10, 1281);
+    			add_location(button2, file$2, 42, 10, 1363);
     			attr_dev(div1, "class", "cart-product-quantity");
-    			add_location(div1, file$2, 28, 8, 957);
+    			add_location(div1, file$2, 33, 8, 1039);
     			attr_dev(div2, "class", "cart-product-card-bottom");
-    			add_location(div2, file$2, 24, 6, 784);
+    			add_location(div2, file$2, 29, 6, 866);
     			attr_dev(div3, "class", "cart-product-description");
-    			add_location(div3, file$2, 22, 4, 668);
+    			add_location(div3, file$2, 27, 4, 750);
     			attr_dev(div4, "class", "cart-product-card-content d-flex flex-row");
     			add_location(div4, file$2, 20, 2, 542);
     			attr_dev(div5, "class", "line");
-    			add_location(div5, file$2, 46, 4, 1513);
+    			add_location(div5, file$2, 51, 4, 1595);
     			attr_dev(div6, "class", "subline inc");
-    			add_location(div6, file$2, 47, 4, 1538);
+    			add_location(div6, file$2, 52, 4, 1620);
     			attr_dev(div7, "class", "subline dec");
-    			add_location(div7, file$2, 48, 4, 1570);
+    			add_location(div7, file$2, 53, 4, 1652);
     			attr_dev(div8, "id", "storeCreationLoading");
     			attr_dev(div8, "class", "angel-linear-loading");
-    			add_location(div8, file$2, 45, 2, 1448);
+    			add_location(div8, file$2, 50, 2, 1530);
     			attr_dev(div9, "class", "cart-product-card");
     			attr_dev(div9, "data-loading-id", div9_data_loading_id_value = /*product*/ ctx[0].id);
     			add_location(div9, file$2, 7, 0, 123);
@@ -1022,52 +1024,52 @@ var app = (function () {
     			span5 = element("span");
     			span5.textContent = "We accept Debit cards.";
     			attr_dev(h2, "class", "h3");
-    			add_location(h2, file$1, 90, 4, 2400);
+    			add_location(h2, file$1, 90, 4, 2407);
     			attr_dev(label, "for", "cart-drawer");
     			attr_dev(label, "class", "small-font");
-    			add_location(label, file$1, 91, 4, 2438);
+    			add_location(label, file$1, 91, 4, 2445);
     			attr_dev(div0, "class", "cart-header-main");
-    			add_location(div0, file$1, 89, 2, 2365);
+    			add_location(div0, file$1, 89, 2, 2372);
     			attr_dev(span0, "aria-hidden", "true");
-    			add_location(span0, file$1, 99, 4, 2626);
+    			add_location(span0, file$1, 99, 4, 2633);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "close");
     			attr_dev(button0, "aria-label", "Close Cart");
-    			add_location(button0, file$1, 93, 2, 2519);
+    			add_location(button0, file$1, 93, 2, 2526);
     			attr_dev(div1, "class", "cart-header");
-    			add_location(div1, file$1, 88, 0, 2337);
+    			add_location(div1, file$1, 88, 0, 2344);
     			attr_dev(div2, "class", "mb-5 cart-body");
-    			add_location(div2, file$1, 103, 2, 2719);
+    			add_location(div2, file$1, 103, 2, 2726);
     			attr_dev(span1, "class", "font-weight-bold text-uppercase");
-    			add_location(span1, file$1, 118, 8, 3227);
+    			add_location(span1, file$1, 118, 8, 3234);
     			attr_dev(span2, "class", "font-weight-bold");
-    			add_location(span2, file$1, 119, 8, 3298);
+    			add_location(span2, file$1, 119, 8, 3305);
     			attr_dev(div3, "class", "cart-checkout-subtotals d-flex flex-row justify-content-between small-font");
-    			add_location(div3, file$1, 115, 6, 3115);
+    			add_location(div3, file$1, 115, 6, 3122);
     			attr_dev(div4, "class", "horizontal-divider");
     			set_style(div4, "margin", "0.5rem 0");
-    			add_location(div4, file$1, 121, 6, 3383);
+    			add_location(div4, file$1, 121, 6, 3390);
     			attr_dev(span3, "class", "font-weight-bold text-uppercase");
-    			add_location(span3, file$1, 125, 8, 3557);
+    			add_location(span3, file$1, 125, 8, 3564);
     			attr_dev(span4, "class", "font-weight-bold");
-    			add_location(span4, file$1, 126, 8, 3625);
+    			add_location(span4, file$1, 126, 8, 3632);
     			attr_dev(div5, "class", "cart-checkout-estimated-totals d-flex flex-row justify-content-between");
-    			add_location(div5, file$1, 122, 6, 3449);
+    			add_location(div5, file$1, 122, 6, 3456);
     			attr_dev(div6, "class", "cart-checkout-totals mb-3");
-    			add_location(div6, file$1, 114, 4, 3069);
+    			add_location(div6, file$1, 114, 4, 3076);
     			attr_dev(button1, "type", "submit");
     			attr_dev(button1, "class", "btn btn-dark btn-accent mb-2");
-    			add_location(button1, file$1, 134, 6, 3864);
+    			add_location(button1, file$1, 134, 6, 3871);
     			attr_dev(span5, "class", "cart-checkout-info");
-    			add_location(span5, file$1, 137, 6, 3974);
+    			add_location(span5, file$1, 137, 6, 3981);
     			attr_dev(form, "action", "/checkout");
     			attr_dev(form, "class", "cart-checkout-proceed d-flex flex-column align-items-center");
-    			add_location(form, file$1, 129, 4, 3716);
+    			add_location(form, file$1, 129, 4, 3723);
     			attr_dev(div7, "class", "cart-checkout svelte-i88o4s");
     			toggle_class(div7, "displayHide", /*cartList*/ ctx[1].length === 0);
-    			add_location(div7, file$1, 113, 2, 2995);
+    			add_location(div7, file$1, 113, 2, 3002);
     			attr_dev(div8, "class", "cart-body-wrapper");
-    			add_location(div8, file$1, 102, 0, 2685);
+    			add_location(div8, file$1, 102, 0, 2692);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1192,7 +1194,7 @@ var app = (function () {
     	return block;
     }
 
-    const HOSTNAME$1 = "https://lapt.localhost";
+    const HOSTNAME$1 = "https://live.linespeedapt.com";
 
     function toggleLoading(id, state) {
     	const domEls = Array.from(document.querySelectorAll(".cart-product-card"));
@@ -1439,7 +1441,7 @@ var app = (function () {
     			create_component(cartcontent.$$.fragment);
     			attr_dev(div, "class", "cart-paper svelte-gevnv0");
     			toggle_class(div, "open", /*isOpen*/ ctx[1] === true);
-    			add_location(div, file, 246, 0, 7054);
+    			add_location(div, file, 246, 0, 7061);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1480,7 +1482,7 @@ var app = (function () {
     	return block;
     }
 
-    const HOSTNAME = "https://lapt.localhost";
+    const HOSTNAME = "https://live.linespeedapt.com";
 
     function instance$1($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;

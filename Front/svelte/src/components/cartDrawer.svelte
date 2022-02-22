@@ -1,6 +1,6 @@
 <script>
   import CartContent from "./cartContent.svelte";
-  const HOSTNAME = "https://lapt.localhost";
+  const HOSTNAME = "https://live.linespeedapt.com";
   let isOpen = false;
 
   //Represent the location of flyer like products
