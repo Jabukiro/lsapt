@@ -1,0 +1,15 @@
+NotToBeDeployed.txt
+README.md
+deploy.sh
+index_loader.html
+index_no_loader.html
+.*
+backup_media/
+media_orig/
+testReCaptcha.sh
+D2G/
+svelte/
+vendor/
+node_modules
+package-lock.json
+logs
