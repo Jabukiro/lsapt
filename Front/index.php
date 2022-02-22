@@ -296,17 +296,6 @@ require "$webroot/_openHead.php"
         <!--End automated product List-->
         <div class="container reviews">
             <h2 class="heading">Parents are saying</h2>
-            <!--<div class="quote-wrapper">
-            <p class="quote">
-                SPEED is a SKILL, and like any skill, it must be practised correctly, and honed with consistency to achieve greater results.
-            </p>
-        </div>-->
-            <!--
-        <div class="insta-embed" id="instaFrameContainer">
-            <div class="instaFrameWrapper">
-                <iframe id = "instaFrame" src="insta.html" frameborder="0" scrolling="no" class="instaFrame"></iframe>
-            </div>
-        </div>-->
             <div class="container slides">
                 <!--<div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">-->
                 <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
@@ -353,29 +342,6 @@ require "$webroot/_openHead.php"
                 </div>
             </div>
         </div>
-        <!--
-    <div class="container d-flex offWhiteSurface">
-        <div class="big-bullet-icon">
-            <a href="/training/speed-agility/">
-                <img src="media/agility_bullet_icon.jpg" alt="Speed and Agility Training" class="big-bullet-icon-img">
-            </a>
-        </div>
-        <div class="big-bullet-icon">
-            <a href="/training/speed-agility/">
-                <img src="media/team_bullet_icon.jpg" alt="Speed and Agility Training" class="big-bullet-icon-img">
-            </a>
-        </div>
-        <div class="big-bullet-icon">
-            <a href="/training/speed-agility/">
-                <img src="media/sprint_bullet_icon.jpg" alt="Speed and Agility Training" class="big-bullet-icon-img">
-            </a>
-        </div>
-        <div class="big-bullet-icon">
-            <a href="/training/speed-agility/">
-                <img src="media/holiday_bullet_icon.jpg" alt="Speed and Agility Training" class="big-bullet-icon-img">
-            </a>
-        </div>
-    </div>-->
         <div id="contact" class="row">
             <div class="container mt-5">
                 <div class="row" style="height:550px;">
@@ -493,9 +459,10 @@ require "$webroot/_openHead.php"
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <script src="js/style_no_loader_v1.0.1.js"></script>
-        <script src="js/events.js"></script>
-        <script src="js/base.js"></script>
+        <script src="/js/style_no_loader_v1.0.1.js"></script>
+        <script src="/js/events.js"></script>
+        <script src="/js/base.js"></script>
+        <script src="/js/imageViewer.js"></script>
     </div>
 </body>
 
