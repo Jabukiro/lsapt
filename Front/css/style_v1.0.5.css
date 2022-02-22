@@ -1,6 +1,7 @@
 :root{
-    --grey-redish: #634f50;;
-    --main-color: #ED0012;
+    --grey-redish: #634f50;
+    --main-color: #ed1c24;
+    --main-accent: #000;
 }
 body {
     color: #2c2e38;
@@ -31,6 +32,9 @@ a:hover {
 }
 .subtext-redish{
     color: var(--grey-redish);
+}
+.accentuate{
+    color: var(--main-accent);
 }
 .loaderBackground{
     position: fixed;
@@ -626,7 +630,19 @@ a:hover {
     background: none;
     border: none;
 }
-
+.btn-main{
+    color: #fff;
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+.btn-accent{
+    color: #fff;
+    background-color: var(--main-accent);
+    border-color: var(--main-accent);
+}
+.inputError{
+    box-shadow: 0 0 0 .1rem rgb(220,53,69);
+}
 /* Italian COntact Form*/
 #contact{
     background-color: #ED0012;
@@ -838,13 +854,13 @@ a:hover {
 }
 @media screen and ( max-width: 576px ) {
     .top-nav-wrapper{
-        padding: 10px 15px;
+        padding: 10px 0;
     }
     .top-nav-collapse{
         padding: 0;
     }
     .navbar-brand img{
-        max-width: 250px;
+        max-width: 200px;
     }
     .container.landing{
         padding: 0;
