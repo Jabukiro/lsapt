@@ -5,21 +5,78 @@
   export let cartList;
   export let cartOps;
   import CartProduct from "./cartProductCard.svelte";
+  const HOSTNAME = "https://live.linespeedapt.com";
 
-  const loadingIncrement = () => {};
+  function toggleLoading(id, state) {
+    const domEls = Array.from(document.querySelectorAll(".cart-product-card"));
+    for (let i = 0; i < domEls.length; i++) {
+      if (domEls[i].getAttribute("data-loading-id") === String(id)) {
+        if (state === "start") {
+          domEls[i].classList.add("loading");
+          return;
+        }
+        domEls[i].classList.remove("loading");
+        return;
+      }
+    }
+  }
+
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(";");
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function goToCheckout(e) {
+    e.preventDefault();
+    const c = encodeURIComponent(getCookie("angel"));
+    window.location.href = `${HOSTNAME}/checkout/?s=${c}`;
+  }
+
   const backdrop = document.getElementById("cart-drawer").children[0];
   backdrop.addEventListener("click", () => {
     closeDrawer();
   });
   //Add all these 3 functions to Product Object
   const incrementItem = (id) => {
-    cartOps({ id, type: "add" }); //Server side logic will increment if product already in cart.
+    toggleLoading(id, "start");
+    cartOps({
+      id,
+      type: "add",
+      onCompletion: () => {
+        toggleLoading(id, "stop");
+      },
+    }); //Server side logic will increment if product already in cart.
   };
   const decrementItem = (id) => {
-    cartOps({ id, type: "decrement" });
+    toggleLoading(id, "start");
+    cartOps({
+      id,
+      type: "decrement",
+      onCompletion: () => {
+        toggleLoading(id, "stop");
+      },
+    });
   };
   const removeItem = (id) => {
-    cartOps({ id, type: "remove" });
+    toggleLoading(id, "start");
+    cartOps({
+      id,
+      type: "remove",
+      onCompletion: () => {
+        toggleLoading(id, "stop");
+      },
+    });
   };
 
   $: subTotal = cartList.reduce((previous, current) => {
@@ -44,7 +101,7 @@
   </button>
 </div>
 <div class="cart-body-wrapper">
-  <div class="cart-body">
+  <div class="mb-5 cart-body">
     {#each cartList as product (product.id)}
       <CartProduct
         {product}
@@ -70,12 +127,16 @@
         <span class="font-weight-bold">{`$${total.toFixed(2)}`}</span>
       </div>
     </div>
-    <div class="cart-checkout-proceed d-flex flex-column align-items-center">
-      <button class="btn btn-primary text-uppercase mb-2"
+    <form
+      action="/checkout"
+      class="cart-checkout-proceed d-flex flex-column align-items-center"
+      on:submit={goToCheckout}
+    >
+      <button type="submit" class="btn btn-dark btn-accent mb-2"
         >Proceed to Checkout</button
       >
-      <span class="cart-checkout-info">We accept Debit cards and Paypal.</span>
-    </div>
+      <span class="cart-checkout-info">We accept Debit cards.</span>
+    </form>
   </div>
 </div>
 

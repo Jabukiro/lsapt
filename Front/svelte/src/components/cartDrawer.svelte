@@ -1,5 +1,6 @@
 <script>
   import CartContent from "./cartContent.svelte";
+  const HOSTNAME = "https://live.linespeedapt.com";
   let isOpen = false;
   const PRODUCTSLOCATION = [
     "/",
@@ -8,9 +9,24 @@
     "/training/index.php",
   ];
   const pageUrl = new URL(window.location.href);
+  const serverLog = (message) => {
+    fetch(`${HOSTNAME}:4000/graphql`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        query: `mutation Log($message: String!){ log(message:$message)}`,
+        variables: { message },
+      }),
+    });
+  };
   let cartList = [];
   const cartQuery = ({ onCompletion = null } = {}) => {
-    fetch("https://lapt.localhost:4000/graphql", {
+    const start = new Date().getTime();
+    fetch(`${HOSTNAME}:4000/graphql`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +47,13 @@
         }}`,
       }),
     })
-      .then((r) => r.json())
+      .then((r) => {
+        const elapsed = new Date().getTime() - start;
+        serverLog(
+          `Network Request to DataServer from CLient Side took: ${elapsed}ms`
+        );
+        return r.json();
+      })
       .then((data) => {
         if (
           data &&
@@ -40,7 +62,6 @@
           typeof data.data.cart.list === "object"
         ) {
           cartList = data.data.cart.list;
-          console.log(cartList);
           return;
         }
         if (data && data.data && typeof data.data.cart === "object") {
@@ -71,7 +92,8 @@
     onCompletion = null,
     signal = null,
   }) => {
-    fetch("https://lapt.localhost:4000/graphql", {
+    const start = new Date().getTime();
+    fetch(`${HOSTNAME}:4000/graphql`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -94,7 +116,13 @@
       }),
       signal,
     })
-      .then((r) => r.json())
+      .then((r) => {
+        const elapsed = new Date().getTime() - start;
+        serverLog(
+          `Network Request to DataServer from CLient Side took: ${elapsed}ms`
+        );
+        return r.json();
+      })
       .then((data) => {
         if (
           data &&
@@ -103,7 +131,6 @@
           typeof data.data.cartOperations.list === "object"
         ) {
           cartList = data.data.cartOperations.list;
-          console.log(cartList);
           return;
         }
         if (data && data.data && typeof data.data.cartOperations === "object") {
@@ -134,13 +161,15 @@
   document.getElementById("cartIcon").addEventListener("click", () => {
     openDrawer();
   });
-  const loadingCart = (id, state, productEl) => {
+  const loadingCart = (id, state, productEl, productBtn) => {
     switch (state) {
       case "start":
         productEl.classList.add("loading");
+        productBtn.setAttribute("disabled", "true");
         return;
       case "stop":
         productEl.classList.remove("loading");
+        productBtn.removeAttribute("disabled");
         return;
       default:
         console.log(
@@ -158,16 +187,16 @@
     );
 
     domProducts.forEach((productEl) => {
-      productEl
+      const productBtn = productEl
         .querySelector(".content-actions .btn") //the Add To Cart button
         .addEventListener("click", (e) => {
           const id = e.target.getAttribute("data-id");
-          loadingCart(id, "start", productEl);
+          loadingCart(id, "start", productEl, e.target);
           cartOps({
             id,
             type: "add",
             onCompletion: () => {
-              loadingCart(id, "stop", productEl);
+              loadingCart(id, "stop", productEl, e.target);
               openDrawer();
             },
           });

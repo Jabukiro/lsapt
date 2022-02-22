@@ -5,7 +5,7 @@
   export let removeItem;
 </script>
 
-<div class="cart-product-card">
+<div class="cart-product-card" data-loading-id={product.id}>
   <div class="cart-product-card-header d-flex flex-row justify-content-between">
     <h4 class="h5">{product.name}</h4>
     <button
@@ -42,5 +42,10 @@
         </div>
       </div>
     </div>
+  </div>
+  <div id="storeCreationLoading" class="angel-linear-loading">
+    <div class="line" />
+    <div class="subline inc" />
+    <div class="subline dec" />
   </div>
 </div>
