@@ -1,4 +1,5 @@
 const { makeExecutableSchema } = require('@graphql-tools/schema');
+const { clear } = require('winston');
 const { logger } = require("./logger");
 
 var typeDefs = `
@@ -50,6 +51,7 @@ var typeDefs = `
 
   type Query{
     cart: CartList!
+    specificCart(s: String!): CartList!
     getProduct(id: ID!): Product
     getProductList: [Product]!
   }
@@ -57,16 +59,14 @@ var typeDefs = `
   type Mutation{
     cartOperations(input: CartOperationsInput!): CartList!
     saveCart(input: [CartProductInput!]!): String!
+    clearCart: CartList!
+    log(message: String!): String!
   }
 `;
 
 function addCart(id, context) {
   return context.getTable({ tableName: "product", term: id }, true).then((result) => {
     //Add to Cart
-    logger.log({
-      level: "info",
-      message: `addCart(): request session id ${context.req.sessionID}`
-    });
     const oldCart = typeof context.req.session.value === 'object' ? context.req.session.value : [];
     const list = context.Cart.add(result, oldCart);
     context.req.session.value = list;
@@ -109,13 +109,18 @@ function removeCartItem(id, context) {
 }
 
 function clearCart(context) {
-  context.req.session.value = undefined;
-  return { list: [] };
+  return new Promise((resolve, reject) => {
+    logger.log({
+      level: "info",
+      message: `clearCart(): Setting session.value to undefined`,
+    })
+    context.req.session.value = undefined;
+    return resolve({ list: [] });
+  })
 }
 var resolvers = {
   Query: {
     cart: (_1, _2, context) => {
-      console.log("cart sessionID: ", context.req.sessionID);
       return typeof context.req.session.value === "object" ? { list: context.req.session.value } : { list: [] };
     },
     getProduct: (_, { id }, { getTable }) => getTable({ tableName: "product", term: id }, true),
@@ -139,10 +144,10 @@ var resolvers = {
   },
   Mutation: {
     saveCart: (_, { input }, context) => {
-      console.log("saveCart sessionID: ", context.req.sessionID);
       context.req.session.value = input;
       return "Check Console for req deets";
     },
+    clearCart: (_, _1, context) => clearCart(context),
     cartOperations: (_, { input }, context) => {
       switch (input.type) {
         case 'add':
@@ -162,6 +167,15 @@ var resolvers = {
           })
           return new Error(errormsg);
       }
+    },
+    log: (_, { message }) => {
+      return new Promise((resolve, reject) => {
+        logger.log({
+          level: "info",
+          message,
+        })
+        return resolve("ACK");
+      })
     }
   },
   Product: {

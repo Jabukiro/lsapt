@@ -11,7 +11,7 @@ const fs = require('fs');
 const { schema } = require('./schema');
 const { DatabaseManager } = require('./databaseManager');
 const Cart = require('./cartProduct');
-const { NONAME } = require('dns');
+const { logger } = require("./logger");
 
 
 var msqlConnOptions = {
@@ -27,8 +27,18 @@ let sessionStore = new MySQLStore(msqlConnOptions);
 const DBMan = new DatabaseManager(msqlConnOptions);
 
 //Attempt connection initiation
-DBMan.connect().then((result) => { console.log(result) })
-    .catch((err) => { console.log(err) })
+DBMan.connect().then((result) => {
+    logger.log({
+        level: "info",
+        message: `DBMan: Connection ID: ${result}`
+    });
+})
+    .catch((err) => {
+        logger.log({
+            level: "error",
+            message: `DBMan: Error whilst initiaing connection ${err}`
+        });
+    })
 
 /**
  * General Method for fetching a table field.
@@ -46,7 +56,10 @@ function getTable(queryOptions, first_result = false) {
             return result[0];
         }
     }).catch((err) => {
-        console.log(err);
+        logger.log({
+            level: "error",
+            message: `getTable(): Error whilst Fetching table: ${err}`
+        });
         return new Error(err);
     });
 }
@@ -63,7 +76,10 @@ function createField(tableName, input) {
             ...input
         };
     }).catch((err) => {
-        console.log(err);
+        logger.log({
+            level: "error",
+            message: `createField(): Error whilst adding new record to table: ${err}`
+        });
         return new Error(err);
     });
 }
@@ -87,9 +103,9 @@ app.use('/graphql',
         name: process.env.SESSION_NAME,
         cookie: {
             sameSite: "none",
-            httpOnly: true,
+            httpOnly: false,
             secure: true,
-            maxAge: 600000 // Time is in miliseconds
+            maxAge: 24 * 60 * 60 * 1000 // Time is in miliseconds
         },
         store: sessionStore,
         resave: false,
@@ -102,10 +118,7 @@ app.use('/graphql',
 );
 
 let apollo = null;
-const CORS = process.env.NODE_ENV === 'production' ?
-    { origin: process.env.ORIGIN, credentials: "true" } :
-    { origin: ["https://lapt.localhost", "https://studio.apollographql.com"], credentials: "true" };
-
+const CORS = { origin: process.env.ORIGIN.split(", "), credentials: "true" };
 async function startServer() {
     apollo = new ApolloServer({
         uploads: false,
@@ -113,7 +126,6 @@ async function startServer() {
         context: (object) => context(object)
     });
     await apollo.start();
-    console.log("Apollo started");
     apollo.applyMiddleware({ app, cors: CORS });
 }
 startServer();
