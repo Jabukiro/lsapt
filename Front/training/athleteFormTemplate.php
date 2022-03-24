@@ -6,7 +6,7 @@
 <div class="accordion mb-3" style="display: none; max-width: 500-px" id="accordionAthlete{{athleteNumber}}">
     <div class="card">
         <div class="card-header p-0 d-flex" id="accordionHeading{{athleteNumber}}">
-            <button class="btn btn-dark btn-accent text-left" style="color: var(--main-color); flex-grow: 2;" type="button" data-toggle="collapse" data-target="#collapse{{athleteNumber}}" aria-expanded="true" aria-controls="collapse{{athleteNumber}}">
+            <button id="accordionHeaderAthlete{{athleteNumber}}" class="btn btn-dark btn-accent text-left" style="color: var(--main-color); flex-grow: 2; overflow: hidden; text-overflow:ellipsis" type="button" data-toggle="collapse" data-target="#collapse{{athleteNumber}}" aria-expanded="true" aria-controls="collapse{{athleteNumber}}">
                 Athlete - {{athleteNumber}}
             </button>
             <button class="btn btn-light" style="color: var(--main-color)" type="button" onclick="document.getElementById('accordionAthlete{{athleteNumber}}').remove();">
