@@ -161,4 +161,7 @@
     .training-list .landing-content .on-dark.p-large {
         text-align: center;
     }
+    .main{
+        padding: 0;
+    }
 }
