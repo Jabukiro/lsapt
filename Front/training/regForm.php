@@ -1,6 +1,6 @@
 <div id="registrationForm">
     <form style="padding-left: 10px;" class="mb-4" aria-describedby="athleteFormHelp">
-        <h6 class="heading mr-2"><strong>Step 1</strong> - Participant Information</h6>
+        <h6 class="heading mr-2" style="font-size: 1rem"><strong>1</strong> - Participant Information</h6>
         <div id="athleteFormsContainer">
             <?php
             $data = array("athleteNumber" => "1");
@@ -11,6 +11,10 @@
         </div>
         <button id="addAthleteBtn" class="btn btn-outline-primary btn-sm" type="button"></span>Add Athlete</button>
         <small id="emailHelp" class="form-text text-muted">You may add as many atheltes as you wish.</small>
+        <h6 class="heading mr-2 mt-4" style="font-size: 1rem"><strong>2</strong> - Guardian Information</h6>
+        <div id="guardianFormContainer">
+            <?php echo file_get_contents("$webroot/training/guardianForm.php"); ?>
+        </div>
     </form>
     <div class="d-flex session-button-container">
         <div class="ml-auto mr-auto">
