@@ -26,8 +26,14 @@ if (in_array($_SERVER["SCRIPT_NAME"], $NO_NAV_BAR)) {
                     <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
-                    <li id="training-link" class="nav-item">
-                        <a class="nav-link" href="/training">Sessions</a>
+                    <li id="training-link" class="nav-item dropdown dis-block">
+                        <a class="nav-link dropdown-toggle" href="/training" id="dropdownSessions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sessions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownSessions">
+                            <a class="dropdown-item" href="/training/speed-agility">SAQ</a>
+                            <a class="dropdown-item" href="/training/linear-speed">Linear Speed</a>
+                            <a class="dropdown-item" href="/training/holiday-program">Holiday Program</a>
+                            <a class="dropdown-item" href="/training/team-speed">Team Training</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -53,8 +59,14 @@ if (in_array($_SERVER["SCRIPT_NAME"], $NO_NAV_BAR)) {
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
-                <li id="training-link" class="nav-item">
-                    <a class="nav-link" href="/training">Sessions</a>
+                <li id="training-link" class="nav-item dropdown dis-block">
+                    <a class="nav-link dropdown-toggle" href="/training" id="dropdownSessions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sessions</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownSessions">
+                        <a class="dropdown-item" href="/training/speed-agility">SAQ</a>
+                        <a class="dropdown-item" href="/training/linear-speed">Linear Speed</a>
+                        <a class="dropdown-item" href="/training/holiday-program">Holiday Program</a>
+                        <a class="dropdown-item" href="/training/team-speed">Team Training</a>
+                    </div>
                 </li>
             </ul>
         </div>
