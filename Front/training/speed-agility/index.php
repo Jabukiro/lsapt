@@ -76,16 +76,8 @@ require "$webroot/_openHead.php"
                 <li>Alternate&nbsp;drills</li>
                 <li>Cooldown - Static&nbsp;stretches</li>
             </ul>
-            <div class="d-flex session-button-container">
-                <div class="ml-auto mr-auto">
-                    <button data-id="3" class="btn btn-dark btn-accent" style="min-width: 250px;">Add To Cart</button>
-                    <div id="storeCreationLoading" class="angel-linear-loading">
-                        <div class="line"></div>
-                        <div class="subline inc"></div>
-                        <div class="subline dec"></div>
-                    </div>
-                </div>
-            </div>
+            <strong>Register:</strong><br><br>
+            <?php require "$webroot/training/regForm.php" ?>
             <!--
             <p>
                 <a href="/contact" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact&nbsp;Us</a> to begin your journey to improved  Speed, Agility and Quickness with Linespeed.
@@ -145,6 +137,7 @@ require "$webroot/_openHead.php"
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="/js/base.js"></script>
+    <script src="/js/regForm.js"></script>
 </body>
 
 </html>

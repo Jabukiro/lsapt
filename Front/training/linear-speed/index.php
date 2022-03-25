@@ -8,7 +8,6 @@ $keywords = $HEAD["KEYWORDS"] . ", Top-Speed Training";
 
 $image = $HEAD["IMAGE"];
 $SITE_NAME = $HEAD["SITE_NAME"];
-require "$webroot/modules/fillTemplate.php";
 require "$webroot/_openHead.php";
 ?>
 <link rel="stylesheet" href="/css/quickAction.css">

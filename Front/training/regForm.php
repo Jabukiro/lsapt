@@ -1,3 +1,4 @@
+<?php require "$webroot/modules/fillTemplate.php"; ?>
 <div id="registrationForm">
     <form style="padding-left: 10px;" class="mb-4" aria-describedby="athleteFormHelp">
         <h6 class="heading mr-2" style="font-size: 1rem"><strong>1</strong> - Participant Information</h6>

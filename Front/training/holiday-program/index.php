@@ -68,6 +68,8 @@ require "$webroot/_openHead.php"
             <p>
                 <strong>Note: </strong>Location and times to be confirmed.
                 <br><br>
+                <strong>Register:</strong><br><br>
+                <?php require "$webroot/training/regForm.php" ?>
                 <!--
                 <a href="/contact" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact Us</a> to register your interest or for further information.
     -->
@@ -138,6 +140,7 @@ require "$webroot/_openHead.php"
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="/js/base.js"></script>
+    <script src="/js/regForm.js"></script>
 </body>
 
 </html>
