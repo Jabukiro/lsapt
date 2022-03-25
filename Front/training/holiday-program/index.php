@@ -74,16 +74,6 @@ require "$webroot/_openHead.php"
                 <a href="/contact" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact Us</a> to register your interest or for further information.
     -->
             </p>
-            <div class="d-flex session-button-container">
-                <div class="ml-auto mr-auto">
-                    <button data-id="6" class="btn btn-dark btn-accent" style="min-width: 250px;">Add To Cart</button>
-                    <div id="storeCreationLoading" class="angel-linear-loading">
-                        <div class="line"></div>
-                        <div class="subline inc"></div>
-                        <div class="subline dec"></div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!--Svelte content target. Drawer for the cart from right only.-->
