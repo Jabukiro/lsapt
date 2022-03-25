@@ -79,16 +79,9 @@ require "$webroot/_openHead.php"
                 <a href="/contact" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact Us</a> to begin your journey of increased team sport performance with Linespeed.
     -->
             </p>
-            <div class="d-flex session-button-container">
-                <div class="ml-auto mr-auto">
-                    <button data-id="4" class="btn btn-dark btn-accent" style="min-width: 250px;">Add To Cart</button>
-                    <div id="storeCreationLoading" class="angel-linear-loading">
-                        <div class="line"></div>
-                        <div class="subline inc"></div>
-                        <div class="subline dec"></div>
-                    </div>
-                </div>
-            </div>
+            <p>
+                <strong>Register: </strong>Please <a href="/contact" class="mx-auto btn btn-success" role="button" aria-pressed="true">Contact Us</a> to register a Team Training sessions
+            </p>
         </div>
     </div>
     <!--Svelte content target. Drawer for the cart from right only.-->
