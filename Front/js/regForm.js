@@ -5,7 +5,7 @@ const parser = new DOMParser();
 const addAthleteRoutine = () => {
     const athleteFormTemplate = document.getElementById("accordionAthlete{{athleteNumber}}");
     const athleteFormDocument = parser.parseFromString(populateAthleteTemplate(athleteFormTemplate.outerHTML), "text/html");
-    addAthleteEventListeners(athleteFormDocument.body.firstChild, athleteCount += 1);
+    addAthleteEventListeners(athleteFormDocument.body.firstChild, athleteCount + 1);
     athleteFormDocument.body.firstChild.style.display = "block";
     document.getElementById(`athleteFormsContainer`).appendChild(athleteFormDocument.body.firstChild);
     athleteCount += 1;
