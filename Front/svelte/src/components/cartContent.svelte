@@ -2,10 +2,12 @@
   export let closeDrawer;
   //expects a list, whether empty or not.
   //if not empty then it is a list containing CartProducts
-  export let cartList;
+  export let cartProductList;
+  export let cartSessionsList;
   export let cartOps;
-  import CartProduct from "./cartProductCard.svelte";
-  const HOSTNAME = "https://live.linespeedapt.com";
+  import CartSession from "./cartSession.svelte";
+  //const HOSTNAME = "https://live.linespeedapt.com";
+  const HOSTNAME = "https://lapt.localhost";
 
   function toggleLoading(id, state) {
     const domEls = Array.from(document.querySelectorAll(".cart-product-card"));
@@ -78,10 +80,23 @@
       },
     });
   };
-
-  $: subTotal = cartList.reduce((previous, current) => {
-    return previous + current.fee * current.count;
-  }, 0);
+  function calcSubtotal() {
+    console.log("cartSessionsList", cartSessionsList);
+    const productsCost =
+      cartProductList.length > 0
+        ? cartProductList.reduce((previous, current) => {
+            return previous + current.fee * current.count;
+          }, 0)
+        : 0;
+    const sessionsCost =
+      cartSessionsList.length > 0
+        ? cartSessionsList.reduce((previous, current) => {
+            return previous + current.session.fee * current.athleteList.length;
+          }, 0)
+        : 0;
+    return productsCost + sessionsCost;
+  }
+  $: subTotal = calcSubtotal();
   //Reserved. Might be usefull if discounts are available.
   $: total = subTotal;
 </script>
@@ -89,7 +104,7 @@
 <div class="cart-header">
   <div class="cart-header-main">
     <h2 class="h3">Shopping Cart</h2>
-    <label for="cart-drawer" class="small-font">{cartList.length}</label>
+    <label for="cart-drawer" class="small-font">{cartProductList.length}</label>
   </div>
   <button
     on:click={closeDrawer}
@@ -102,16 +117,14 @@
 </div>
 <div class="cart-body-wrapper">
   <div class="mb-5 cart-body">
-    {#each cartList as product (product.id)}
-      <CartProduct
-        {product}
-        incrementItem={() => incrementItem(product.id)}
-        decrementItem={() => decrementItem(product.id)}
-        {removeItem}
-      />
+    {#each cartSessionsList as cartSession (cartSession.session.id)}
+      <CartSession {cartSession} {removeItem} />
     {/each}
   </div>
-  <div class="cart-checkout" class:displayHide={cartList.length === 0}>
+  <div
+    class="cart-checkout"
+    class:displayHide={cartSessionsList.length + cartProductList.length === 0}
+  >
     <div class="cart-checkout-totals mb-3">
       <div
         class="cart-checkout-subtotals d-flex flex-row justify-content-between small-font"

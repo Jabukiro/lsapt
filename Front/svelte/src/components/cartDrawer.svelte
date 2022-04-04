@@ -1,6 +1,6 @@
 <script>
   import CartContent from "./cartContent.svelte";
-  const HOSTNAME = "https://live.linespeedapt.com";
+  const HOSTNAME = "https://lapt.localhost";
   let isOpen = false;
 
   //Represent the location of flyer like products
@@ -28,7 +28,11 @@
     });
   };
 
-  let cartList = [];
+  let cartProductList = [];
+  let cartSessionsList = [];
+  window.setCartSessionsList = (newCartSessionsList) => {
+    cartSessionsList = newCartSessionsList;
+  };
   const cartQuery = ({ onCompletion = null } = {}) => {
     const start = new Date().getTime();
     fetch(`${HOSTNAME}:4000/graphql`, {
@@ -49,6 +53,15 @@
             fee
             count
           }
+          registeredSessions{
+            id
+            session{
+              id
+            }
+            athleteList{
+              full_name
+            }
+          }
         }}`,
       }),
     })
@@ -66,7 +79,7 @@
           typeof data.data.cart === "object" &&
           typeof data.data.cart.list === "object"
         ) {
-          cartList = data.data.cart.list;
+          cartProductList = data.data.cart.list;
           return;
         }
         if (data && data.data && typeof data.data.cart === "object") {
@@ -136,7 +149,7 @@
           typeof data.data.cartOperations === "object" &&
           typeof data.data.cartOperations.list === "object"
         ) {
-          cartList = data.data.cartOperations.list;
+          cartProductList = data.data.cartOperations.list;
           return;
         }
         if (data && data.data && typeof data.data.cartOperations === "object") {
@@ -219,7 +232,7 @@
     });
   }
 
-  //Put loaders onto action buttons for sessions
+  /* Implemented in regForm as of 4/04/2022
   if (SESSIONLOCATION.some((location) => pageUrl.pathname.match(location))) {
     console.log("Page pathname matches target pages with sessions");
     const domProducts = Array.from(
@@ -242,10 +255,11 @@
         });
     });
   }
+  */
 </script>
 
 <div class="cart-paper" class:open={isOpen === true}>
-  <CartContent {cartOps} {cartList} {closeDrawer} />
+  <CartContent {cartOps} {cartProductList} {cartSessionsList} {closeDrawer} />
 </div>
 
 <style>
