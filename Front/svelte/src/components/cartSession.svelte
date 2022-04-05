@@ -43,7 +43,7 @@
         <a
           class="btn btn-link btn-sm"
           type="button"
-          href="training/speed-agility">Add Athlete</a
+          href="{cartSession.session.href}">Add Athlete</a
         >
       </div>
     </div>
