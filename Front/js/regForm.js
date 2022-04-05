@@ -72,12 +72,12 @@ const getGuardianInfo = guardianElement => {
         return false;
     }
     const guardianInfo = guardianElement.firstElementChild.firstElementChild.children;
-    result.full_name = guardianInfo["0"].lastElementChild.value;
-    result.email = guardianInfo["1"].lastElementChild.value;
-    result.contact_number = guardianInfo["2"].lastElementChild.value;
-    result.address = guardianInfo["3"].lastElementChild.value;
-    result.alt_name = guardianInfo["4"].lastElementChild.value;
-    result.alt_contact_number = guardianInfo["5"].lastElementChild.value;
+    result.full_name = guardianInfo[0].children[1].value;
+    result.email = guardianInfo[1].children[1].value;
+    result.contact_number = guardianInfo[2].children[1].value;
+    result.address = guardianInfo[3].children[1].value;
+    result.alt_name = guardianInfo[4].children[1].value;
+    result.alt_contact_number = guardianInfo[5].children[1].value;
     return result;
 }
 const checkNotEmpty = (value, FieldName, Form) => {
