@@ -3,9 +3,9 @@
         <div class="form-group">
             <label for="guardianName">Full Name*:</label>
             <input required type="text" class="form-control" id="guardianName" placeholder="Guardian's Name">
-        </div>
-        <div class="invalid-feedback">
-            Full Name is required
+            <div class="invalid-feedback">
+                Full Name is required
+            </div>
         </div>
         <div class="form-group">
             <label for="guardianAddress">Address:</label>
