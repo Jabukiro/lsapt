@@ -4,7 +4,7 @@
 ROOT="/var/www/LAPT/public_html"
 #Files that are not to be deployed
 EXCLUDE="NotToBeDeployed.txt"
-SERVER="jabukiro@172.105.188.27:/var/www/html/public_html/"
+SERVER="jabukiro@172.105.176.102:/var/www/LAPT"
 ERRORSTRING="Error. Please make sure you've indicated correct parameters"
 if [ $# -eq 0 ]
     then
