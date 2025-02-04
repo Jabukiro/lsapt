@@ -13,6 +13,11 @@ DataServer | a NodeJS Graphql server. Session-managed with express-session-mysql
 ---- schema.js | Graphql schema
 ---- databaseManajer.js | includes boilerplate code for intereacting with mysql
 
+TODO:
+---- Set-up a pre-deployment tool to turn *.php that can be made static into html
+---- Think around making as much page to be as static as possible
+---- So far I think all pages can be made to be static as all pages *load* the same content for every visit!
+---- If so look into setting up a JAM stack. You've got the J and A part set-up.
 
 Wednesday 19/01/2022
 
@@ -73,3 +78,17 @@ After converstation with Joseph, it was decided that sessions products should ha
 ---- Still with a link to the page that gives more information
 ---- Be able to register as well as pay
 -------- Means input informationabout the athelte as well as their Parent/Guardian information
+
+Thursday 24/03/2022
+---- Starting work on registering
+---- Idea is to add a register form on each session page.
+---- Then when At least one Athelte and Guardian Info has been added, allow to add to cart and save on server.
+---- Then use the same payment flow
+---- Add "Template" to each file name that is a template(Needs some data to be added to it to be usefull.)
+---- Templating done using the basic {{key}} technique.
+---- (Partly&Skeleton only)Session Form added. Only contains athlete form.
+
+Monday 21/06/2022
+---- Can now add session to cart
+---- Working n repopulating page with session information that has been added to cart
+-------- This is done in case user wnats to edit session infomration(Add/remove athlete for e.g.)

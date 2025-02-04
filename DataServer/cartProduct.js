@@ -37,6 +37,9 @@ exports.addSession = (newSession, sessionList) => {
     sessionList.push(newSession)
     return sessionList;
 }
+exports.removeSession = (sessionId, registeredSessionsList) => {
+    return registeredSessionsList.filter(registeredSession => { registeredSession.session.id != sessionId });
+}
 exports.decrementItem = (id, productList) => {
     const index = productList.findIndex((product) => product.id == id); //Find where the product with corresponding ID is
     if (index === -1) { return productList; } // no such product in cart
@@ -47,12 +50,12 @@ exports.decrementItem = (id, productList) => {
     productList[index].count -= 1; //decrement
     return productList;
 };
+exports.removeItem = (id, productList) => {
+    return productList.filter((product) => product.id != id);
+}
 getProducts = (cartSession) => {
     return typeof cartSession.value === "object" ? cartSession.value : [];
 }
 getRegisteredSessions = (cartSession) => {
     return typeof cartSession.registeredSessions === "object" ? cartSession.registeredSessions : [];
-}
-exports.removeItem = (id, productList) => {
-    return productList.filter((product) => product.id != id);
 }

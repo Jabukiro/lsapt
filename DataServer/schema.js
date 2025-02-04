@@ -98,6 +98,7 @@ var typeDefs = `
     id: ID
     session: Session!
     athleteList: [Athlete]!
+    guardianInfo: Guardian
   }
 
   type Session{
@@ -119,7 +120,7 @@ var typeDefs = `
 }
 
   input SessionRegistration{
-    sessionID: ID!
+    sessionHref: String!
     athleteList: [AthleteInput!]!
     guardianInfo: GuardianInput
   }
@@ -136,7 +137,6 @@ var typeDefs = `
     saveCart(input: [CartProductInput!]!): String!
     clearCart: CartList!
     addSessionToCart(input: SessionRegistration!): [RegisteredSession]!
-    removeSessionFromCart(id: ID!): CartList!
     log(message: String!): String!
   }
 `;
@@ -184,6 +184,19 @@ function removeCartItem(id, context) {
     return reject(new Error(errormsg));
   });
 }
+function removeSession(id, context) {
+  if (typeof context.req.session.registeredSessions !== 'object') return [];
+  context.req.session.registeredSessions = context.Cart.removeSession(id, context.req.session.registeredSessions);
+  logger.log({
+    level: "info",
+    message: `removeSession registeredSessions: id-${id} / ${JSON.stringify(context.req.session.registeredSessions)}`,
+  })
+  typeof context.req.session.cart !== 'object'
+  return {
+    list: typeof context.req.session.value === "object" ? context.req.session.value : [],
+    registeredSessions: context.req.session.registeredSessions,
+  };
+}
 
 function clearCart(context) {
   return new Promise((resolve, reject) => {
@@ -230,7 +243,8 @@ var resolvers = {
       return "Check Console for req deets";
     },
     clearCart: (_, _1, context) => clearCart(context),
-    cartOperations: (_, { input }, context) => {
+    cartOperations: async (_, { input }, context) => {
+      //all switches but removeSession are untested and most likely do not work
       switch (input.type) {
         case 'add':
           return addCart(input.id, context);
@@ -238,10 +252,12 @@ var resolvers = {
           return decrementCartItem(input.id, context);
         case 'remove':
           return removeCartItem(input.id, context);
+        case 'removeSession':
+          return removeSession(input.id, context);
         case 'clear':
           return clearCart(context);
         default:
-          const errormsg = `cartOperations: Expected 'type' parameter to be one of 'add', 'decrement' or 'clear'. Instead got ${input.type}`;
+          const errormsg = `cartOperations: Expected 'type' parameter to be one of 'add', 'decrement', 'remove', 'removeSession' or 'clear'. Instead got ${input.type}`;
           logger.log({
             level: "error",
             message: errormsg,
@@ -255,12 +271,13 @@ var resolvers = {
         level: "info",
         message: `addSessionToCart input: ${JSON.stringify(input)}`,
       })
-      return context.getTable({ tableName: "trainingSessions", term: input.sessionID }, true).then((result) => {
+      return context.getTable({ tableName: "trainingSessions", term: input.sessionHref, column: "href" }, true).then((result) => {
         //Add to Cart
         const oldCart = typeof context.req.session.registeredSessions === 'object' ? context.req.session.registeredSessions : [];
         const newRegisteredSession = {
           session: result,
-          athleteList: input.athleteList
+          athleteList: input.athleteList,
+          guardianInfo: input.guardianInfo
         }
         logger.log({
           level: "info",

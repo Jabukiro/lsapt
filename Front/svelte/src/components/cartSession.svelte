@@ -13,7 +13,7 @@
       >
     </div>
     <button
-      id="removeItemBtn"
+      id="removeItemBtn{cartSession.session.id}"
       type="button"
       class="close small-font"
       aria-label="Remove product"
@@ -43,7 +43,7 @@
         <a
           class="btn btn-link btn-sm"
           type="button"
-          href="{cartSession.session.href}">Add Athlete</a
+          href={cartSession.session.href}>Add Athlete</a
         >
       </div>
     </div>

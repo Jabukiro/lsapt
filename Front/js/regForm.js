@@ -1,12 +1,29 @@
 var athleteCount = 0
 const parser = new DOMParser();
 let isValid_flag = true;
+let alreadyRegistered_flag = false;
+let cartSessionsList = [];
+const pageUrl = new URL(window.location.href);
 const HOSTNAME = "https://lapt.localhost";
+
+//Maps the attributes of the guardian/athlete form to their corresponding
+//index in the guardian/athlete form.
+//Used to iterate through the DOMelements with the correct attributes to the object from DataServer
+//To be changed when/if the html structure of each is changed
+const guardianFormMapping = ["full_name", "address", "email", "contact_number", "alt_name", "alt_contact_number"];
+const athleteFormMapping = ["full_name", "gender", "dob", "school"];
+const sessionsHref = ["/training/speed-agility/", "/training/linear-speed/", "/training/holiday-program/"];
+
 //Only to be called
-const addAthleteRoutine = () => {
+const addAthleteRoutine = (athleteInfo) => {
     const athleteFormTemplate = document.getElementById("accordionAthlete{{athleteNumber}}");
     const athleteFormDocument = parser.parseFromString(populateAthleteTemplate(athleteFormTemplate.outerHTML), "text/html");
     addAthleteEventListeners(athleteFormDocument.body.firstChild, athleteCount + 1);
+    //Inject information about the athlete if it has been given
+    if (typeof athleteInfo === 'object') {
+        console.log("Athlete Info contents: ", athleteInfo);
+        setAthleteInfo(athleteFormDocument, athleteInfo);
+    }
     athleteFormDocument.body.firstChild.style.display = "block";
     document.getElementById(`athleteFormsContainer`).appendChild(athleteFormDocument.body.firstChild);
     athleteCount += 1;
@@ -34,7 +51,10 @@ const extractAthleteNumber = id => {
     const possibleMatch = id.match("[0-9]+$");
     return possibleMatch === null ? null : possibleMatch[0];
 }
-
+//returns the session href that matches with the current page url
+const getSessionHref = () => {
+    return sessionsHref.find(sessionHref => pageUrl.pathname.match(sessionHref) !== null);
+}
 //Based on athlete form group
 //See /training/athleteFormTemplate.php for a template of the ahtlete's form.
 //Enclose in a try/catch if using
@@ -51,13 +71,19 @@ const getAthleteInfo = (athleteForm, id) => {
     }
     const result = {};
     const athleteInfoList = athleteForm.firstElementChild.lastElementChild.firstElementChild.children;
-    result.full_name = athleteInfoList[0].children[1].value;
-    result.gender = athleteInfoList[1].children[1].value;
-    result.dob = athleteInfoList[2].children[1].value;
-    result.school = athleteInfoList[3].children[1].value;
+    athleteFormMapping.forEach((attribute, index) => {
+        result[attribute] = athleteInfoList[index].children[1].value;
+    })
     return result
 }
-
+const setAthleteInfo = (athleteForm, athleteInfo) => {
+    athleteFormMapping.forEach((attribute, index) => {
+        athelteForm.firstElementChild.lastElementChild.firstElementChild.children[index].children[1].value
+            = athleteInfo[attribute];
+    })
+    athleteForm.classList.add("was-validated");
+}
+const getGuardianForm = () => document.getElementById("guardianFormContainer").firstElementChild;
 //Based on guardian form group
 //See /training/guardianForm.php for a template of the ahtlete's form.
 //returns false if form is not valid. Extracted Guardian info otherwise.
@@ -72,14 +98,19 @@ const getGuardianInfo = guardianElement => {
         return false;
     }
     const guardianInfo = guardianElement.firstElementChild.firstElementChild.children;
-    result.full_name = guardianInfo[0].children[1].value;
-    result.email = guardianInfo[1].children[1].value;
-    result.contact_number = guardianInfo[2].children[1].value;
-    result.address = guardianInfo[3].children[1].value;
-    result.alt_name = guardianInfo[4].children[1].value;
-    result.alt_contact_number = guardianInfo[5].children[1].value;
+    guardianFormMapping.forEach((attribute, index) => {
+        result[attribute] = guardianInfo[index].children[1].value;
+    })
     return result;
 }
+
+const setGuardianInfo = (guardianForm, guardianInfo) => {
+    guardianFormMapping.forEach((attribute, index) => {
+        guardianForm.firstElementChild.children[index].children[1].value = guardianInfo[attribute];
+    })
+    guardianForm.classList.add("was-validated");
+}
+
 const checkNotEmpty = (value, FieldName, Form) => {
     if (value === "") {
         isValid_flag = false;
@@ -266,6 +297,10 @@ const loadingCart = (id, state, productEl, productBtn) => {
 const domProduct = document.querySelector(".session-button-container");
 domProduct.querySelector(".btn") //the Add To Cart button
     .addEventListener("click", (e) => {
+        if (alreadyRegistered_flag) {
+            const isOk = confirm("Are you sure you want to overwrite the already registered session?");
+            if (!isOk) return;
+        }
         const id = e.target.getAttribute("data-id");
         const result = getForms();
         if (result === false) {
@@ -274,7 +309,7 @@ domProduct.querySelector(".btn") //the Add To Cart button
             return;
         }
         loadingCart(id, "start", domProduct, e.target);
-        result.sessionID = 1;
+        result.sessionHref = getSessionHref();
         generalFetch({
             body: addSessionfetchBody(result),
             resolve: addSessionfetchResolve,
@@ -350,4 +385,35 @@ const cartOps = ({
             }
         });
 };
-document.getElementById("addAthleteBtn").addEventListener("click", addAthleteRoutine)
+
+document.getElementById("addAthleteBtn").addEventListener("click", () => addAthleteRoutine());
+
+var CSLintervalID = setInterval(() => {
+    if (window.getCartSessionsList().length > 0) {
+        //do stuff
+        console.log("cartSessionList not empty");
+        rePopulateFormsRoutine();
+        return;
+    }
+    console.log("cartSessionList empty");
+}, 1000)
+
+//For the current page script is running on,
+//Return the relevant cart Session
+//Used to populate cart content back onto the form.
+const getRelevantCartSession = () => {
+    return window.getCartSessionsList().find((cartSession) => pageUrl.pathname.match(cartSession.session.href) !== null);
+}
+const rePopulateFormsRoutine = () => {
+    clearInterval(CSLintervalID);
+    const cartSession = getRelevantCartSession();
+    if (cartSession == undefined) {
+        //no session mathcing to this page
+        return;
+    }
+    //There is a registered session in the cart corresponding to this session page
+    alreadyRegistered_flag = true;
+    console.log("Matching cartSession:", cartSession);
+    setGuardianInfo(getGuardianForm(), cartSession.guardianInfo)
+    cartSession.athleteList.map(singleAthleteInfo => { athleteRoutine });
+}

@@ -70,6 +70,17 @@
       },
     });
   };
+  const removeSessionItem = (id) => {
+    toggleLoading(id, "start");
+    cartOps({
+      id,
+      type: "removeSession",
+      onCompletion: () => {
+        toggleLoading(id, "stop");
+      },
+    });
+  };
+
   const removeItem = (id) => {
     toggleLoading(id, "start");
     cartOps({
@@ -118,7 +129,7 @@
 <div class="cart-body-wrapper">
   <div class="mb-5 cart-body">
     {#each cartSessionsList as cartSession (cartSession.session.id)}
-      <CartSession {cartSession} {removeItem} />
+      <CartSession {cartSession} removeItem={removeSessionItem} />
     {/each}
   </div>
   <div

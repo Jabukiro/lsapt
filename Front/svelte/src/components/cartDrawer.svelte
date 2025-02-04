@@ -1,5 +1,6 @@
 <script>
   import CartContent from "./cartContent.svelte";
+  import CartSession from "./cartSession.svelte";
   const HOSTNAME = "https://lapt.localhost";
   let isOpen = false;
 
@@ -30,9 +31,12 @@
 
   let cartProductList = [];
   let cartSessionsList = [];
+  // /js/regForm.js needs to read/write access to the cartSessionsList
   window.setCartSessionsList = (newCartSessionsList) => {
     cartSessionsList = newCartSessionsList;
   };
+  window.getCartSessionsList = () => cartSessionsList;
+
   const cartQuery = ({ onCompletion = null } = {}) => {
     const start = new Date().getTime();
     fetch(`${HOSTNAME}:4000/graphql`, {
@@ -57,9 +61,23 @@
             id
             session{
               id
-            }
+              name
+              description
+              image
+              attributes
+              fee
+              href
+           }
             athleteList{
+                full_name
+            }
+            guardianInfo{
               full_name
+              email
+              contact_number
+              address
+              alt_name
+              alt_contact_number
             }
           }
         }}`,
@@ -80,6 +98,7 @@
           typeof data.data.cart.list === "object"
         ) {
           cartProductList = data.data.cart.list;
+          cartSessionsList = data.data.cart.registeredSessions;
           return;
         }
         if (data && data.data && typeof data.data.cart === "object") {
@@ -130,6 +149,29 @@
             fee
             count
           }
+          registeredSessions{
+            id
+            session{
+              id
+              name
+              description
+              image
+              attributes
+              fee
+              href
+           }
+            athleteList{
+                full_name
+            }
+            guardianInfo{
+              full_name
+              email
+              contact_number
+              address
+              alt_name
+              alt_contact_number
+            }
+          }
         }}`,
         variables: { input: { id, type } },
       }),
@@ -149,7 +191,9 @@
           typeof data.data.cartOperations === "object" &&
           typeof data.data.cartOperations.list === "object"
         ) {
+          console.log("cartOperations returned data: ", type, data);
           cartProductList = data.data.cartOperations.list;
+          cartSessionsList = data.data.cartOperations.registeredSessions;
           return;
         }
         if (data && data.data && typeof data.data.cartOperations === "object") {
